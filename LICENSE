@@ -1,0 +1,131 @@
+# License Selection Guide
+
+Choosing the right license for your SaaS product is an important decision that affects how others can use, modify, and distribute your code. This file serves as both a guide and a placeholder -- once you've chosen your license, replace the guide section with your actual license text.
+
+---
+
+## Common SaaS License Options
+
+### MIT License
+**Best for:** Open source projects that want maximum adoption.
+
+| Aspect | Detail |
+|--------|--------|
+| **Permissions** | Commercial use, modification, distribution, private use |
+| **Conditions** | License and copyright notice must be included |
+| **Limitations** | No liability, no warranty |
+| **Pros** | Maximum adoption, simplest to understand, widely recognized |
+| **Cons** | No patent protection, anyone can compete with your code |
+
+**When to use:** You want maximum community growth and don't mind competitors using your code.
+
+---
+
+### Apache License 2.0
+**Best for:** Open source projects that need patent protection.
+
+| Aspect | Detail |
+|--------|--------|
+| **Permissions** | Commercial use, modification, distribution, patent use, private use |
+| **Conditions** | License and copyright notice, state changes, include NOTICE file |
+| **Limitations** | No liability, no warranty, no trademark use |
+| **Pros** | Patent protection, widely understood, corporate-friendly |
+| **Cons** | More complex than MIT, requires NOTICE file |
+
+**When to use:** You're building something with patentable technology and want to protect contributors.
+
+---
+
+### AGPL-3.0 (Affero General Public License)
+**Best for:** SaaS products that want to prevent proprietary forks.
+
+| Aspect | Detail |
+|--------|--------|
+| **Permissions** | Commercial use, modification, distribution, patent use, private use |
+| **Conditions** | Disclose source, license and copyright notice, same license, state changes, **network use is distribution** |
+| **Limitations** | No liability, no warranty |
+| **Pros** | Strongest copyleft -- even network use requires source disclosure |
+| **Cons** | Scares away some enterprise users, limits commercial adoption |
+
+**When to use:** You want to ensure that anyone who runs a modified version of your software as a service must also open-source their modifications.
+
+---
+
+### BSL 1.1 (Business Source License)
+**Best for:** Companies that want time-delayed open source.
+
+| Aspect | Detail |
+|--------|--------|
+| **Permissions** | Source available immediately, becomes open source after a defined period |
+| **Conditions** | Non-production use is free, production use requires a license (until the change date) |
+| **Limitations** | Production use is restricted until the change date |
+| **Pros** | Source is visible (builds trust), prevents competitors from self-hosting, becomes open source over time |
+| **Cons** | Not OSI-approved, may confuse some users, requires defining "production use" |
+
+**When to use:** You want source transparency but need to monetize your hosted version. Used by Sentry, MariaDB, CockroachDB, and others.
+
+---
+
+### Proprietary / All Rights Reserved
+**Best for:** Closed-source commercial SaaS.
+
+| Aspect | Detail |
+|--------|--------|
+| **Permissions** | Only what you explicitly grant |
+| **Conditions** | Users agree to your Terms of Service |
+| **Limitations** | No redistribution, no modification, no reverse engineering |
+| **Pros** | Maximum control, clear commercial model |
+| **Cons** | No community contributions, less trust, harder to hire (engineers can't see your code) |
+
+**When to use:** Your business value is in the code itself and you have no interest in open source.
+
+---
+
+### Dual License
+**Best for:** Projects that want open source community AND commercial revenue.
+
+| Aspect | Detail |
+|--------|--------|
+| **Structure** | Open source license (e.g., AGPL) + commercial license for enterprises |
+| **Permissions** | Community users get AGPL; paying customers get a permissive commercial license |
+| **Pros** | Best of both worlds -- community growth and commercial revenue |
+| **Cons** | Complex to manage, requires CLA (Contributor License Agreement) |
+
+**When to use:** You want a thriving open source community but also need enterprise customers who won't accept copyleft terms.
+
+---
+
+## Recommendations by SaaS Model
+
+| SaaS Model | Recommended License | Why |
+|-------------|-------------------|-----|
+| **Open source tool** | MIT or Apache 2.0 | Maximum adoption |
+| **Open core** (free + paid features) | AGPL or BSL for core, proprietary for premium | Protects your competitive advantage |
+| **Source-available** | BSL 1.1 | Transparency without free-riding |
+| **Closed source** | Proprietary | Full control |
+| **Developer tool** | Dual (AGPL + Commercial) | Community growth + enterprise revenue |
+| **B2B platform** | Proprietary or BSL | Enterprise customers expect it |
+
+---
+
+## Your License
+
+<!-- TEMPLATE: Replace everything below this line with your chosen license text. -->
+<!-- Keep the selection guide above if you want (or delete it). -->
+
+```
+Copyright (c) [YEAR] [YOUR NAME/COMPANY]
+
+[CHOSEN LICENSE TEXT HERE]
+
+For commercial licensing inquiries, contact: [YOUR_EMAIL]
+```
+
+---
+
+## Resources
+
+- [choosealicense.com](https://choosealicense.com/) -- Simple license comparison tool
+- [OSI Approved Licenses](https://opensource.org/licenses/) -- Full list of OSI-approved licenses
+- [SPDX License List](https://spdx.org/licenses/) -- Standard license identifiers
+- [tl;drLegal](https://tldrlegal.com/) -- Plain-language license summaries

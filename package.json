@@ -1,0 +1,17 @@
+{
+  "name": "your-saas-app",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "SaaS application built with SaaS-Viber template. Replace this description with your own.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "type-check": "tsc --noEmit",
+    "postbuild": "node scripts/generate-sitemap.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

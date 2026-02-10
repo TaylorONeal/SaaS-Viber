@@ -1,0 +1,44 @@
+{
+  // ============================================
+  // [YOUR_APP_NAME] TypeScript Configuration (Node Tooling)
+  // ============================================
+  // Compiler options for Node.js config files (vite.config.ts, etc.).
+  // These files run in Node, not in the browser.
+  //
+  // TEMPLATE: Add additional config files to "include" as needed.
+
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+
+    // Strictness
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    // Module interop
+    "esModuleInterop": true,
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+
+    // Emit
+    "noEmit": true,
+
+    "skipLibCheck": true
+  },
+
+  // Include Node.js config files
+  "include": [
+    "vite.config.ts",
+    "tailwind.config.ts",
+    "postcss.config.js"
+    // TEMPLATE: Add other config files here as needed:
+    // "vitest.config.ts",
+    // "playwright.config.ts",
+  ]
+}
