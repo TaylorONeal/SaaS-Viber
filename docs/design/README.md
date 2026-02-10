@@ -147,9 +147,28 @@ docs/design/
   04-consumer-pages.md         -- Consumer-facing page templates
   05-components.md             -- Component inventory
   06-cross-platform.md         -- Cross-platform guidelines
+  07-animations.md             -- Animation system and keyframes
+  08-theming.md                -- Theme config (light/dark/custom)
+  09-visual-inventory.md       -- Visual patterns catalog (layouts, cards, forms)
   tokens/
     tokens.json                -- Machine-readable tokens
 ```
+
+---
+
+## Quick Reference for Designers
+
+| I want to... | Go to |
+|---|---|
+| Change brand colors | `08-theming.md` → Light/Dark Theme sections |
+| Change fonts or type scale | `02-design-tokens.md` → Typography section |
+| Add or edit animations | `07-animations.md` → Standard Animations |
+| Change spacing or radius | `tokens/tokens.json` → spacing/borderRadius |
+| See what components exist | `05-components.md` → Component tables |
+| See page layout patterns | `09-visual-inventory.md` → Page Layouts |
+| See card, form, nav patterns | `09-visual-inventory.md` → relevant section |
+| Set up Figma | `03-figma-structure.md` |
+| Design for mobile/tablet | `06-cross-platform.md` |
 
 ---
 
@@ -157,6 +176,9 @@ docs/design/
 
 1. Read this overview to understand the system structure
 2. Customize `tokens.json` with your brand values
-3. Set up your Figma file following `03-figma-structure.md`
-4. Build out components per `05-components.md`
-5. Design consumer pages using `04-consumer-pages.md` as a template
+3. Review `08-theming.md` and set up light + dark mode CSS variables
+4. Review `07-animations.md` for animation patterns and where to edit them
+5. Set up your Figma file following `03-figma-structure.md`
+6. Build out components per `05-components.md`
+7. Use `09-visual-inventory.md` as a visual reference for page layouts
+8. Design consumer pages using `04-consumer-pages.md` as a template
