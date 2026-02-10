@@ -1,0 +1,56 @@
+# Cursor Rules -- SaaS-Viber Project
+
+## Stack
+- React + TypeScript + Vite
+- Tailwind CSS with CSS custom properties for theming
+- shadcn/ui (Radix UI primitives) for accessible components
+- Design tokens in docs/design/tokens/tokens.json
+
+## File Structure
+- src/components/ → UI components (ui/ for shadcn base, feature dirs for custom)
+- src/pages/ → Route-level components
+- src/hooks/ → Custom hooks (useAuth, useTheme, etc.)
+- src/lib/ → Utilities and API clients
+- src/contexts/ → React context providers
+- src/types/ → Shared TypeScript types
+- src/styles/ → Global CSS and theme variables
+
+## Code Style
+- PascalCase for components (UserProfile.tsx)
+- camelCase for hooks (useAuth.ts) and utils (formatCurrency.ts)
+- Use @/ path alias for src/ imports
+- One component per file
+- TypeScript strict mode -- no `any` types
+- Tailwind utility classes -- no inline styles
+- All colors via CSS custom properties, never hardcoded hex
+
+## Design System
+- 4px spacing grid (4, 8, 12, 16, 24, 32, 48, 64)
+- WCAG 2.1 AA contrast ratios (4.5:1 text, 3:1 UI)
+- 44x44px minimum touch targets
+- Skeleton loading states over spinners
+- Respect prefers-reduced-motion for all animations
+- Light + dark mode via class strategy on html element
+
+## Component Rules
+- Wrap shadcn/ui components to extend -- never modify base ui/ files
+- Include TypeScript props interface on every component
+- Add ARIA labels and keyboard navigation
+- Handle loading, error, and empty states
+- Use Radix UI primitives for overlay/menu/dialog patterns
+
+## Architecture References
+- docs/architecture/DOMAIN_MODEL.md → Data model
+- docs/architecture/ROLE_ACCESS_CONTROL.md → RBAC and permissions
+- docs/design/05-components.md → Component inventory
+- docs/design/07-animations.md → Animation system
+- docs/design/08-theming.md → Theme configuration
+- docs/design/tokens/tokens.json → Design tokens (machine-readable)
+
+## Avoid
+- Hardcoded color values
+- any types in TypeScript
+- Modifying shadcn/ui base components directly
+- Adding unnecessary dependencies
+- Inline styles
+- Files outside established directory structure
