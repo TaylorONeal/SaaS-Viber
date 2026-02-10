@@ -1,0 +1,30 @@
+{
+  // ============================================
+  // [YOUR_APP_NAME] TypeScript Configuration (Root)
+  // ============================================
+  // This is the root tsconfig that references the app and node configs.
+  // It does not compile anything directly -- it delegates to the sub-configs.
+  //
+  // TEMPLATE: Modify compiler options in the sub-configs, not here.
+  // - tsconfig.app.json  -- For your application source code (src/)
+  // - tsconfig.node.json -- For Node.js tooling configs (vite.config.ts, etc.)
+
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+
+  // Shared compiler options (inherited by sub-configs via extends if desired)
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  }
+}

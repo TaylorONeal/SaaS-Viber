@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ============================================ -->
+    <!-- TEMPLATE: Replace all [PLACEHOLDERS] below   -->
+    <!-- See SETUP_GUIDE.md Phase 2 for guidance      -->
+    <!-- ============================================ -->
+
+    <!-- Primary Meta Tags -->
+    <title>[YOUR_APP_NAME] - [Your Tagline]</title>
+    <meta name="title" content="[YOUR_APP_NAME] - [Your Tagline]" />
+    <meta name="description" content="[A compelling 150-160 character description of your SaaS product. This appears in search engine results.]" />
+    <meta name="author" content="[YOUR_COMPANY]" />
+
+    <!-- Favicon -->
+    <!-- TEMPLATE: Replace with your actual favicon files. -->
+    <!-- Generate all sizes at https://realfavicongenerator.net/ -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph / Facebook -->
+    <!-- TEMPLATE: These tags control how your app appears when shared on social media. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://[YOUR_DOMAIN]/" />
+    <meta property="og:title" content="[YOUR_APP_NAME] - [Your Tagline]" />
+    <meta property="og:description" content="[Your social media description -- can differ from meta description]" />
+    <meta property="og:image" content="https://[YOUR_DOMAIN]/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="[YOUR_APP_NAME]" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://[YOUR_DOMAIN]/" />
+    <meta property="twitter:title" content="[YOUR_APP_NAME] - [Your Tagline]" />
+    <meta property="twitter:description" content="[Your Twitter description]" />
+    <meta property="twitter:image" content="https://[YOUR_DOMAIN]/og-image.png" />
+    <!-- TEMPLATE: Uncomment if you have a Twitter/X account -->
+    <!-- <meta property="twitter:site" content="@[YOUR_TWITTER_HANDLE]" /> -->
+
+    <!-- PWA / Mobile -->
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="manifest" href="/manifest.json" />
+    <!-- TEMPLATE: iOS-specific meta tags for PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="[YOUR_APP_NAME]" />
+
+    <!-- Fonts -->
+    <!-- TEMPLATE: Replace with your chosen fonts. -->
+    <!-- Preconnect to font CDN for performance. -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" /> -->
+
+    <!-- Preload critical assets -->
+    <!-- TEMPLATE: Add preload hints for critical resources -->
+    <!-- <link rel="preload" href="/fonts/your-font.woff2" as="font" type="font/woff2" crossorigin /> -->
+
+    <!-- Structured Data (JSON-LD) -->
+    <!-- TEMPLATE: Add structured data for SEO. -->
+    <!-- See https://schema.org/ for vocabulary. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "[YOUR_APP_NAME]",
+      "description": "[Your product description]",
+      "url": "https://[YOUR_DOMAIN]",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- Analytics -->
+    <!-- TEMPLATE: Add analytics scripts here. Prefer loading via your app code -->
+    <!-- for better control, but some tools require being in <head>. -->
+    <!-- Note: Consider using a consent manager before loading analytics. -->
+  </head>
+
+  <body class="min-h-screen bg-background font-sans antialiased">
+    <!-- App Mount Point -->
+    <div id="root"></div>
+
+    <!-- Vite Entry Point -->
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- No-JS Fallback -->
+    <noscript>
+      <div style="padding: 2rem; text-align: center; font-family: system-ui, sans-serif;">
+        <h1>[YOUR_APP_NAME]</h1>
+        <p>This application requires JavaScript to run. Please enable JavaScript in your browser settings.</p>
+      </div>
+    </noscript>
+  </body>
+</html>
