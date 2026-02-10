@@ -18,6 +18,14 @@ SaaS-Viber is a comprehensive template repository that gives you the file struct
 - Small teams that move fast and need structure without ceremony
 - Anyone who has ever said "I'll document this later" and never did
 
+### First Time Here?
+
+**[START_HERE.md](START_HERE.md)** -- Beginner and expert paths, your first AI prompt, and a complete file map.
+
+Agent config files are ready to go:
+- **Claude Code** users: `CLAUDE.md` auto-loads at session start
+- **Cursor** users: `.cursorrules` auto-loads project context
+
 ---
 
 <!-- TEMPLATE: Everything below this line is YOUR product's README. -->
