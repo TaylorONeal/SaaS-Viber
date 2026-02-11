@@ -14,7 +14,6 @@
 docs/
 ├── INDEX.md                  ← You are here
 ├── STATUS.md                 ← Current project status
-├── ROADMAP.md                ← Product roadmap by phase
 ├── FEATURE_INDEX.md          ← Registry of all features
 ├── LOCALIZATION_ANALYSIS.md  ← Internationalization planning
 ├── FAQ.md                    ← Frequently asked questions
@@ -49,8 +48,15 @@ docs/
 ├── ai-agents/                ← AI-assisted development guides
 │   └── [YOUR_AI_AGENT_CONFIGS].md
 │
-└── prds/                     ← Product Requirements Documents
-    └── [YOUR_PRD_FILES].md
+├── roadmap/                  ← Product roadmap and planning
+│   ├── ROADMAP.md            ← Product roadmap by phase
+│   ├── FEATURE_REFERENCE.md  ← Common SaaS features by phase
+│   └── COMPETITOR_ANALYSIS.md← Competitive analysis framework
+│
+└── prd/                      ← Product Requirements Documents
+    ├── PRD-TEMPLATE.md       ← Template for new PRDs
+    ├── PRD-001-example.md    ← Example PRD
+    └── prd-tracker.json      ← PRD status and task tracker
 ```
 
 ---
@@ -63,7 +69,7 @@ You care about what we're building, why, and when.
 
 | Start Here | Then Read | Deep Dive |
 |---|---|---|
-| [ROADMAP.md](./ROADMAP.md) | [FEATURE_INDEX.md](./FEATURE_INDEX.md) | `prds/` directory |
+| [ROADMAP.md](./roadmap/ROADMAP.md) | [FEATURE_INDEX.md](./FEATURE_INDEX.md) | `prds/` directory |
 | [STATUS.md](./STATUS.md) | [NEXT_STEPS.md](./NEXT_STEPS.md) | `decisions/` directory |
 | [FAQ.md](./FAQ.md) | [DEMO_MODE.md](./DEMO_MODE.md) | [BILLING_MODELS.md](./architecture/BILLING_MODELS.md) |
 
@@ -131,7 +137,9 @@ You are leveraging AI assistants (Claude, ChatGPT, Copilot, etc.) to accelerate 
 
 ### Project Status
 - [Project Status](./STATUS.md) — What's working, what's not
-- [Roadmap](./ROADMAP.md) — Where we're headed
+- [Roadmap](./roadmap/ROADMAP.md) — Where we're headed
+- [Feature Reference](./roadmap/FEATURE_REFERENCE.md) — Common SaaS features by phase
+- [PRD Tracker](./prd/prd-tracker.json) — PRD status and task completion
 - [Next Steps](./NEXT_STEPS.md) — Immediate priorities
 - [Feature Index](./FEATURE_INDEX.md) — Every feature, tracked
 
