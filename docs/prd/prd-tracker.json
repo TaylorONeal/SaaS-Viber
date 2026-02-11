@@ -1,0 +1,273 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "_description": "PRD Tracker — tracks the status and completion of all Product Requirements Documents. Update this file as PRDs are created, reviewed, and implemented.",
+  "_usage": "Reference this file to see which PRDs exist, their current status, and implementation progress. AI agents can read this to understand what has been planned vs built.",
+  "prds": [
+    {
+      "id": "PRD-001",
+      "title": "User Onboarding Flow",
+      "file": "docs/prd/PRD-001-example.md",
+      "status": "example",
+      "phase": "Phase 1 — MVP",
+      "priority": "P0",
+      "owner": "[OWNER]",
+      "created": "[DATE]",
+      "updated": "[DATE]",
+      "tasks": {
+        "total": 8,
+        "completed": 0,
+        "items": [
+          { "task": "Welcome screen with role selection", "status": "not_started", "section": "5.1" },
+          { "task": "Guided core action wizard (3-5 steps)", "status": "not_started", "section": "5.2" },
+          { "task": "Progress bar / step indicator component", "status": "not_started", "section": "5.2" },
+          { "task": "Persistent milestone checklist", "status": "not_started", "section": "5.3" },
+          { "task": "Skip and resume capability", "status": "not_started", "section": "5.2" },
+          { "task": "Onboarding analytics events", "status": "not_started", "section": "5.2" },
+          { "task": "24-hour re-engagement email", "status": "not_started", "section": "5.4" },
+          { "task": "Database migration (user fields + events table)", "status": "not_started", "section": "6" }
+        ]
+      }
+    },
+    {
+      "id": "PRD-002",
+      "title": "User Authentication",
+      "file": null,
+      "status": "planned",
+      "phase": "Phase 1 — MVP",
+      "priority": "P0",
+      "owner": "[OWNER]",
+      "created": null,
+      "updated": null,
+      "tasks": {
+        "total": 7,
+        "completed": 0,
+        "items": [
+          { "task": "Email/password registration", "status": "not_started" },
+          { "task": "Email/password sign in", "status": "not_started" },
+          { "task": "Email verification flow", "status": "not_started" },
+          { "task": "Password reset flow", "status": "not_started" },
+          { "task": "Session management and token refresh", "status": "not_started" },
+          { "task": "OAuth sign in (Google)", "status": "not_started" },
+          { "task": "Account deletion", "status": "not_started" }
+        ]
+      }
+    },
+    {
+      "id": "PRD-003",
+      "title": "Payment Integration",
+      "file": null,
+      "status": "planned",
+      "phase": "Phase 1 — MVP",
+      "priority": "P0",
+      "owner": "[OWNER]",
+      "created": null,
+      "updated": null,
+      "tasks": {
+        "total": 6,
+        "completed": 0,
+        "items": [
+          { "task": "Pricing page with plan comparison", "status": "not_started" },
+          { "task": "Stripe checkout integration", "status": "not_started" },
+          { "task": "Subscription creation and management", "status": "not_started" },
+          { "task": "Billing portal (manage card, invoices)", "status": "not_started" },
+          { "task": "Webhook handler for payment events", "status": "not_started" },
+          { "task": "Dunning flow (failed payment retry)", "status": "not_started" }
+        ]
+      }
+    },
+    {
+      "id": "PRD-004",
+      "title": "Dashboard and Navigation",
+      "file": null,
+      "status": "planned",
+      "phase": "Phase 1 — MVP",
+      "priority": "P0",
+      "owner": "[OWNER]",
+      "created": null,
+      "updated": null,
+      "tasks": {
+        "total": 6,
+        "completed": 0,
+        "items": [
+          { "task": "Sidebar navigation with route structure", "status": "not_started" },
+          { "task": "Header with user menu and theme toggle", "status": "not_started" },
+          { "task": "Dashboard home page with stat cards", "status": "not_started" },
+          { "task": "Settings page (profile, preferences)", "status": "not_started" },
+          { "task": "Responsive layout (mobile sidebar drawer)", "status": "not_started" },
+          { "task": "404 page", "status": "not_started" }
+        ]
+      }
+    },
+    {
+      "id": "PRD-005",
+      "title": "Core Entity CRUD",
+      "file": null,
+      "status": "planned",
+      "phase": "Phase 1 — MVP",
+      "priority": "P0",
+      "owner": "[OWNER]",
+      "created": null,
+      "updated": null,
+      "tasks": {
+        "total": 7,
+        "completed": 0,
+        "items": [
+          { "task": "Database schema and migrations", "status": "not_started" },
+          { "task": "API endpoints (list, create, read, update, delete)", "status": "not_started" },
+          { "task": "List view with search and filtering", "status": "not_started" },
+          { "task": "Detail view", "status": "not_started" },
+          { "task": "Create/edit form with validation", "status": "not_started" },
+          { "task": "Empty state with onboarding CTA", "status": "not_started" },
+          { "task": "Loading skeletons and error states", "status": "not_started" }
+        ]
+      }
+    },
+    {
+      "id": "PRD-006",
+      "title": "Team and Organization Management",
+      "file": null,
+      "status": "planned",
+      "phase": "Phase 2 — Growth",
+      "priority": "P0",
+      "owner": "[OWNER]",
+      "created": null,
+      "updated": null,
+      "tasks": {
+        "total": 5,
+        "completed": 0,
+        "items": [
+          { "task": "Organization creation and settings", "status": "not_started" },
+          { "task": "Invite team members via email", "status": "not_started" },
+          { "task": "Role-based access control (admin, member, viewer)", "status": "not_started" },
+          { "task": "Member management (remove, change role)", "status": "not_started" },
+          { "task": "Organization billing and plan management", "status": "not_started" }
+        ]
+      }
+    },
+    {
+      "id": "PRD-007",
+      "title": "Notification System",
+      "file": null,
+      "status": "planned",
+      "phase": "Phase 2 — Growth",
+      "priority": "P1",
+      "owner": "[OWNER]",
+      "created": null,
+      "updated": null,
+      "tasks": {
+        "total": 4,
+        "completed": 0,
+        "items": [
+          { "task": "In-app notification bell with dropdown", "status": "not_started" },
+          { "task": "Transactional email templates", "status": "not_started" },
+          { "task": "Notification preferences page", "status": "not_started" },
+          { "task": "Email digest (weekly summary)", "status": "not_started" }
+        ]
+      }
+    },
+    {
+      "id": "PRD-008",
+      "title": "Analytics Dashboard",
+      "file": null,
+      "status": "planned",
+      "phase": "Phase 2 — Growth",
+      "priority": "P1",
+      "owner": "[OWNER]",
+      "created": null,
+      "updated": null,
+      "tasks": {
+        "total": 4,
+        "completed": 0,
+        "items": [
+          { "task": "User analytics (DAU, WAU, MAU)", "status": "not_started" },
+          { "task": "Revenue analytics (MRR, churn, LTV)", "status": "not_started" },
+          { "task": "Funnel tracking (signup → activation → payment)", "status": "not_started" },
+          { "task": "CSV export", "status": "not_started" }
+        ]
+      }
+    },
+    {
+      "id": "PRD-009",
+      "title": "Compliance and Security",
+      "file": null,
+      "status": "planned",
+      "phase": "Phase 3 — Scale",
+      "priority": "P0",
+      "owner": "[OWNER]",
+      "created": null,
+      "updated": null,
+      "tasks": {
+        "total": 7,
+        "completed": 0,
+        "items": [
+          { "task": "Audit logging system", "status": "not_started" },
+          { "task": "GDPR data export (right to access)", "status": "not_started" },
+          { "task": "GDPR data deletion (right to erasure)", "status": "not_started" },
+          { "task": "Cookie consent banner", "status": "not_started" },
+          { "task": "Terms of Service page", "status": "not_started" },
+          { "task": "Privacy Policy page", "status": "not_started" },
+          { "task": "Two-factor authentication (2FA)", "status": "not_started" }
+        ]
+      }
+    },
+    {
+      "id": "PRD-010",
+      "title": "Platform Hardening",
+      "file": null,
+      "status": "planned",
+      "phase": "Phase 3 — Scale",
+      "priority": "P0",
+      "owner": "[OWNER]",
+      "created": null,
+      "updated": null,
+      "tasks": {
+        "total": 6,
+        "completed": 0,
+        "items": [
+          { "task": "Rate limiting on public endpoints", "status": "not_started" },
+          { "task": "Database query optimization", "status": "not_started" },
+          { "task": "Caching layer (CDN + API)", "status": "not_started" },
+          { "task": "Uptime monitoring with alerting", "status": "not_started" },
+          { "task": "Structured logging", "status": "not_started" },
+          { "task": "Automated database backups with tested restore", "status": "not_started" }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "total_prds": 10,
+    "by_status": {
+      "example": 1,
+      "planned": 9,
+      "draft": 0,
+      "in_review": 0,
+      "approved": 0,
+      "in_development": 0,
+      "shipped": 0
+    },
+    "by_phase": {
+      "Phase 1 — MVP": 5,
+      "Phase 2 — Growth": 3,
+      "Phase 3 — Scale": 2,
+      "Phase 4 — Expand": 0
+    },
+    "total_tasks": 60,
+    "tasks_completed": 0,
+    "completion_percentage": 0
+  },
+  "_status_definitions": {
+    "planned": "Feature identified but no PRD document written yet",
+    "draft": "PRD is being written",
+    "in_review": "PRD is written and under review",
+    "approved": "PRD is approved, ready for implementation",
+    "in_development": "Implementation is in progress",
+    "shipped": "Feature is live in production",
+    "example": "Example PRD for reference only"
+  },
+  "_task_status_definitions": {
+    "not_started": "Task has not been started",
+    "in_progress": "Task is actively being worked on",
+    "completed": "Task is finished and verified",
+    "blocked": "Task is blocked by a dependency or issue"
+  }
+}
