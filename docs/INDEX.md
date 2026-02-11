@@ -30,13 +30,17 @@ docs/
 │   ├── MAINTAINABILITY.md
 │   ├── VERSION_MANAGEMENT.md
 │   ├── BILLING_MODELS.md
+│   ├── ANALYTICS_ARCHITECTURE.md ← Admin dashboard, KPIs, growth metrics
 │   ├── DEMO_SEPARATION.md
 │   └── PromptGuide-Architecture.md
 │
 ├── decisions/                ← Architecture Decision Records (ADRs)
+│   ├── ANALYTICS_CHOICES.md  ← Compare PostHog, GA4, Mixpanel, etc.
 │   └── [YOUR_DECISION_FILES].md
 │
 ├── developer/                ← Developer guides and setup
+│   ├── analytics-setup.md    ← PostHog + GA4 implementation guide
+│   ├── tracking-plan.md      ← Event registry and tracking checklist
 │   └── [YOUR_DEV_GUIDES].md
 │
 ├── design/                   ← Design system and assets
@@ -89,6 +93,7 @@ You care about how things work, how to set up, and how to contribute.
 |---|---|---|
 | `developer/` setup guides | [DOMAIN_MODEL.md](./architecture/DOMAIN_MODEL.md) | [ROLE_ACCESS_CONTROL.md](./architecture/ROLE_ACCESS_CONTROL.md) |
 | [STATUS.md](./STATUS.md) | [MAINTAINABILITY.md](./architecture/MAINTAINABILITY.md) | [RELIABILITY.md](./architecture/RELIABILITY.md) |
+| [Analytics Setup](./developer/analytics-setup.md) | [Tracking Plan](./developer/tracking-plan.md) | [Analytics Architecture](./architecture/ANALYTICS_ARCHITECTURE.md) |
 | [FEATURE_INDEX.md](./FEATURE_INDEX.md) | [VERSION_MANAGEMENT.md](./architecture/VERSION_MANAGEMENT.md) | [MOBILE_ARCHITECTURE.md](./architecture/MOBILE_ARCHITECTURE.md) |
 
 **Key questions this path answers:**
@@ -154,6 +159,12 @@ You are leveraging AI assistants (Claude, ChatGPT, Copilot, etc.) to accelerate 
 - [Audit & Compliance](./architecture/AUDIT_COMPLIANCE.md) — Regulatory requirements
 - [App Store Compliance](./architecture/APP_STORE_COMPLIANCE.md) — iOS and Android requirements
 - [Demo Separation](./architecture/DEMO_SEPARATION.md) — Marketing vs app architecture
+
+### Analytics
+- [Analytics Choices](../decisions/ANALYTICS_CHOICES.md) — Compare PostHog, GA4, Mixpanel, Amplitude, Plausible
+- [Analytics Setup](./developer/analytics-setup.md) — PostHog + GA4 implementation guide with code
+- [Analytics Architecture](./architecture/ANALYTICS_ARCHITECTURE.md) — Admin dashboard, KPIs, growth metrics
+- [Tracking Plan](./developer/tracking-plan.md) — Event registry, funnels, implementation checklist
 
 ### Guides & References
 - [Demo Mode](./DEMO_MODE.md) — Show before you build

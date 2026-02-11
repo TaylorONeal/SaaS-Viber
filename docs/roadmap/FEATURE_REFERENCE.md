@@ -106,12 +106,19 @@ This list is intentionally comprehensive. **No product needs all of these.** Pic
 
 ### Analytics & Data
 
+> **Detailed guides:** See `decisions/ANALYTICS_CHOICES.md` for platform comparison,
+> `docs/developer/analytics-setup.md` for PostHog + GA4 implementation,
+> `docs/architecture/ANALYTICS_ARCHITECTURE.md` for admin dashboard patterns and growth KPIs,
+> and `docs/developer/tracking-plan.md` for the 50+ event registry with funnels.
+
 | Feature | Priority | Why It Matters |
 |---|---|---|
 | User analytics (DAU, WAU, MAU) | P0 | Know if your product is alive |
 | Revenue analytics (MRR, churn, LTV) | P0 | Know if your business is healthy |
 | Funnel tracking (sign-up → activation → payment) | P1 | Know where users drop off |
 | Usage analytics (feature adoption) | P2 | Know what features people actually use |
+| Admin analytics dashboard | P0 | Internal team needs MRR, signups, retention at a glance |
+| Org-level usage dashboard | P1 | Org admins need to see team activity and adoption |
 | Export to CSV | P2 | Users and admins need data out |
 
 ### Engagement
