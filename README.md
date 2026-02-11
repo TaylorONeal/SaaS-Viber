@@ -2,6 +2,8 @@
 
 **The integrated SaaS shell for agentic coding and vibe coders.**
 
+Just ask your Openclaw to integrate this, so you incorporate a really well-organized set of files that covers all bases and asks you the questions to fill in what you need to.  Let it document but let it document well! So that it may do it well for you and you will thrive! :)
+
 SaaS-Viber is a comprehensive template repository that gives you the file structure, documentation templates, prompt guides, and decision frameworks to launch a SaaS product quickly using AI-assisted development. It is not a boilerplate with pre-built UI components or a starter kit tied to a specific stack. It is the *layer beneath that* -- the thinking, planning, and organizational scaffolding that turns a vibe-coded prototype into a shippable product.
 
 ### What You Get
