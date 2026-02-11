@@ -1,4 +1,4 @@
-# LinkedIn Article: SaaS-Viber
+# Article: SaaS-Viber
 ## Draft Outline + Content
 
 ---
