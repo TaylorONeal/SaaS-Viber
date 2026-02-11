@@ -197,7 +197,7 @@ Every [Monday / start of sprint]:
 ```
 Review the current state of [YOUR_APP_NAME] based on:
 - docs/STATUS.md (what's working, what's not)
-- docs/ROADMAP.md (current phase and goals)
+- docs/roadmap/ROADMAP.md (current phase and goals)
 - docs/FEATURE_INDEX.md (feature statuses)
 
 Generate a prioritized list of next steps following the template in docs/NEXT_STEPS.md.

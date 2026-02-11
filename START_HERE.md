@@ -71,8 +71,9 @@ You know your stack, you've built SaaS before, and you want to move fast. Here's
 | Animation system | `docs/design/07-animations.md` |
 | Theming (light/dark/custom) | `docs/design/08-theming.md` |
 | Visual patterns catalog | `docs/design/09-visual-inventory.md` |
+| Roadmap + feature reference | `docs/roadmap/` (ROADMAP.md + FEATURE_REFERENCE.md) |
+| PRD templates + tracker | `docs/prd/` (PRD-TEMPLATE.md + prd-tracker.json) |
 | Prompt templates for AI coding | `docs/ai-agents/PromptGuide-AI-Development.md` |
-| PRD templates | `docs/prd/PRD-TEMPLATE.md` |
 | GDPR/compliance checklist | `docs/architecture/AUDIT_COMPLIANCE.md` |
 | Launch checklist | `docs/guides/LAUNCH_CHECKLIST.md` |
 
