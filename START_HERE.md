@@ -72,6 +72,10 @@ You know your stack, you've built SaaS before, and you want to move fast. Here's
 | Theming (light/dark/custom) | `docs/design/08-theming.md` |
 | Visual patterns catalog | `docs/design/09-visual-inventory.md` |
 | Roadmap + feature reference | `docs/roadmap/` (ROADMAP.md + FEATURE_REFERENCE.md) |
+| Analytics platform choices | `decisions/ANALYTICS_CHOICES.md` |
+| Analytics setup (PostHog + GA4) | `docs/developer/analytics-setup.md` |
+| Admin dashboard + growth KPIs | `docs/architecture/ANALYTICS_ARCHITECTURE.md` |
+| Event tracking plan (50+ events) | `docs/developer/tracking-plan.md` |
 | PRD templates + tracker | `docs/prd/` (PRD-TEMPLATE.md + prd-tracker.json) |
 | Prompt templates for AI coding | `docs/ai-agents/PromptGuide-AI-Development.md` |
 | GDPR/compliance checklist | `docs/architecture/AUDIT_COMPLIANCE.md` |
@@ -129,7 +133,8 @@ SaaS-Viber/
 │   ├── AUTH_CHOICES.md
 │   ├── PAYMENT_CHOICES.md
 │   ├── PLATFORM_CHOICES.md
-│   └── DEPLOYMENT_CHOICES.md
+│   ├── DEPLOYMENT_CHOICES.md
+│   └── ANALYTICS_CHOICES.md   ← PostHog vs GA4 vs Mixpanel vs Amplitude
 │
 ├── docs/
 │   ├── design/                ← For designers: tokens, animations, themes
@@ -146,6 +151,8 @@ SaaS-Viber/
 │   │
 │   ├── architecture/          ← For developers: system design
 │   ├── developer/             ← For developers: setup + patterns
+│   │   ├── analytics-setup.md ← PostHog + GA4 implementation guide
+│   │   └── tracking-plan.md   ← Event registry + funnels
 │   ├── guides/                ← For everyone: checklists + paths
 │   │   └── TRAINING_PATH.md   ← Phase-by-phase build guide
 │   ├── ai-agents/             ← For AI tools: prompts + context
