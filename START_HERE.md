@@ -83,6 +83,7 @@ You know your stack, you've built SaaS before, and you want to move fast. Here's
 
 2. **Set up your agent:**
    - Claude Code users: `CLAUDE.md` is in the repo root -- it auto-loads context
+   - Codex / CLI agent users: `AGENTS.md` in the repo root provides startup instructions
    - Cursor users: `.cursorrules` is in the repo root -- it auto-loads rules
    - Other tools: copy the context from `docs/ai-agents/AGENTS.md` into your first prompt
 
@@ -126,6 +127,7 @@ SaaS-Viber/
 │
 ├── START_HERE.md              ← You are here
 ├── CLAUDE.md                  ← Auto-loaded by Claude Code
+├── AGENTS.md                  ← Root instructions for Codex/CLI agents
 ├── .cursorrules               ← Auto-loaded by Cursor
 │
 ├── decisions/                 ← Read FIRST: choose your stack
