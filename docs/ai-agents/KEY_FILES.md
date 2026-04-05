@@ -100,9 +100,12 @@
 
 | File | Purpose | When to Reference |
 |------|---------|-------------------|
+| `AGENTS.md` | Codex/CLI agent onboarding and repo norms | Starting agent sessions outside Claude/Cursor |
 | `docs/ai-agents/AGENTS.md` | AI assistant onboarding | Starting AI sessions |
 | `docs/ai-agents/DESIGN_SYSTEM.md` | Design system reference | UI/styling work |
 | `docs/ai-agents/LESSONS_LEARNED.md` | Known pitfalls | Avoiding repeat mistakes |
+| `docs/guides/IOS_READINESS_CHECKLIST.md` | iOS launch checklist | Preparing App Store submission |
+| `docs/templates/IOS_READINESS_TEMPLATE.md` | iOS readiness planning template | Tailoring mobile-readiness docs per repo |
 | `docs/design/02-design-tokens.md` | Design token definitions | Theme customization |
 | `docs/workflows/` | Operational workflow docs | Process reference |
 

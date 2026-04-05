@@ -2,6 +2,11 @@
 
 Five checklists that cover the full lifecycle of a SaaS product, from first decisions through post-launch iteration. Work through them in order. Come back and re-check them periodically.
 
+If you plan to ship mobile apps, pair this file with:
+- `IOS_READINESS_CHECKLIST.md` for App Store submission readiness
+- `ANDROID_READINESS_CHECKLIST.md` for Google Play readiness
+- `../templates/IOS_READINESS_TEMPLATE.md` to tailor iOS planning to your repo
+
 ---
 
 ## Pre-Development Checklist
