@@ -26,6 +26,7 @@ SaaS-Viber is a comprehensive template repository that gives you the file struct
 
 Agent config files are ready to go:
 - **Claude Code** users: `CLAUDE.md` auto-loads at session start
+- **Codex / CLI agents**: `AGENTS.md` provides repository-level onboarding context
 - **Cursor** users: `.cursorrules` auto-loads project context
 
 ---
@@ -138,11 +139,22 @@ All documentation lives in the `docs/` directory. Start with the index:
 
 | Guide | Purpose |
 |-------|---------|
-| `prompts/PromptGuide-PRD.md` | Writing product requirement documents |
-| `prompts/PromptGuide-Architecture.md` | Generating architecture documentation |
-| `prompts/PromptGuide-Feature.md` | Implementing features with AI assistance |
-| `prompts/PromptGuide-Debug.md` | Structured debugging workflows |
-| `prompts/PromptGuide-Migration.md` | Database migration planning |
+| `docs/prd/PromptGuide-PRD.md` | Writing product requirement documents |
+| `docs/ai-agents/PromptGuide-AI-Development.md` | End-to-end AI development workflows |
+| `docs/guides/PromptGuide-Guides.md` | Generating and maintaining operational guides |
+| `docs/workflows/PromptGuide-Workflows.md` | Building and documenting workflow specs |
+
+### AI Agent Instructions
+
+- `CLAUDE.md` -- auto-loaded context and coding conventions for Claude Code
+- `AGENTS.md` -- codex/CLI-agent onboarding and documentation norms
+- `docs/ai-agents/AGENTS.md` -- reusable onboarding template for AI assistants
+
+### Mobile Readiness Documentation
+
+- `docs/guides/IOS_READINESS_CHECKLIST.md` -- App Store launch checklist
+- `docs/templates/IOS_READINESS_TEMPLATE.md` -- repo-tailoring template for iOS readiness
+- `docs/guides/ANDROID_READINESS_CHECKLIST.md` -- Android launch counterpart
 
 ---
 
@@ -244,9 +256,7 @@ Key architectural decisions are documented in the `decisions/` folder:
 <!-- TEMPLATE: Replace with your chosen license. See the LICENSE file for a -->
 <!-- selection guide if you haven't decided yet. -->
 
-[Your chosen license]. See [LICENSE](LICENSE) for details.
-
-Copyright (c) [YEAR] [YOUR_COMPANY].
+MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 

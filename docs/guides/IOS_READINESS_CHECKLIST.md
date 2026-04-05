@@ -2,6 +2,8 @@
 
 Everything required to get your app from development to the App Store. This guide covers the bureaucratic and technical requirements that Apple enforces -- miss any of them and your submission will be rejected.
 
+For repo-specific implementation planning, use this checklist with `../templates/IOS_READINESS_TEMPLATE.md`.
+
 ---
 
 ## 1. Apple Developer Account

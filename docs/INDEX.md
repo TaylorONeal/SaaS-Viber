@@ -52,6 +52,9 @@ docs/
 ├── ai-agents/                ← AI-assisted development guides
 │   └── [YOUR_AI_AGENT_CONFIGS].md
 │
+├── templates/                ← Reusable documentation templates
+│   └── IOS_READINESS_TEMPLATE.md
+│
 ├── roadmap/                  ← Product roadmap and planning
 │   ├── ROADMAP.md            ← Product roadmap by phase
 │   ├── FEATURE_REFERENCE.md  ← Common SaaS features by phase
@@ -127,7 +130,7 @@ You are leveraging AI assistants (Claude, ChatGPT, Copilot, etc.) to accelerate 
 
 | Start Here | Then Read | Deep Dive |
 |---|---|---|
-| `CLAUDE.md` (project root) | [PromptGuide-Architecture.md](./architecture/PromptGuide-Architecture.md) | `ai-agents/` directory |
+| `CLAUDE.md` + `../AGENTS.md` (project root) | [PromptGuide-Architecture.md](./architecture/PromptGuide-Architecture.md) | `ai-agents/` directory |
 | [DOMAIN_MODEL.md](./architecture/DOMAIN_MODEL.md) | [FEATURE_INDEX.md](./FEATURE_INDEX.md) | `prds/` directory |
 
 **Key questions this path answers:**
@@ -171,6 +174,8 @@ You are leveraging AI assistants (Claude, ChatGPT, Copilot, etc.) to accelerate 
 - [Localization Analysis](./LOCALIZATION_ANALYSIS.md) — i18n planning
 - [FAQ](./FAQ.md) — Common questions by audience
 - [Architecture Prompt Guide](./architecture/PromptGuide-Architecture.md) — AI prompts for generating docs
+- [iOS Readiness Checklist](./guides/IOS_READINESS_CHECKLIST.md) — App Store launch readiness
+- [iOS Readiness Template](./templates/IOS_READINESS_TEMPLATE.md) — Repo-tailored iOS readiness planning
 
 ---
 
