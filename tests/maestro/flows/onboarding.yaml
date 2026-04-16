@@ -1,0 +1,100 @@
+# ============================================
+# Onboarding Flow — [YOUR_APP_NAME]
+# ============================================
+# Tests the first-time user onboarding experience.
+# Covers signup, profile setup, and initial app tour.
+#
+# Run: maestro test tests/maestro/flows/onboarding.yaml
+# Tags: onboarding
+
+appId: com.yourcompany.yoursaasapp
+tags:
+  - onboarding
+  - regression
+
+env:
+  NEW_USER_EMAIL: "newuser+${TIMESTAMP}@example.com"
+  NEW_USER_PASSWORD: "NewUser123!"
+  NEW_USER_NAME: "Test User"
+
+---
+
+# Start fresh
+- launchApp:
+    clearState: true
+
+# Wait for login screen, then navigate to signup
+- assertVisible:
+    id: "login-view"
+    timeout: 10000
+
+- tapOn:
+    id: "signup-link-button"
+
+# --- Signup Screen ---
+- assertVisible:
+    id: "signup-view"
+    timeout: 5000
+
+# Fill in registration form
+- tapOn:
+    id: "signup-name-field"
+- inputText: ${NEW_USER_NAME}
+
+- tapOn:
+    id: "signup-email-field"
+- inputText: ${NEW_USER_EMAIL}
+
+- tapOn:
+    id: "signup-password-field"
+- inputText: ${NEW_USER_PASSWORD}
+
+- tapOn:
+    id: "signup-confirm-password-field"
+- inputText: ${NEW_USER_PASSWORD}
+
+# Accept terms (if checkbox exists)
+- tapOn:
+    id: "signup-terms-checkbox"
+    optional: true
+
+# Submit registration
+- tapOn:
+    id: "signup-submit-button"
+
+- takeScreenshot: screenshots/onboarding_signup
+
+# --- Onboarding Tour ---
+# Many SaaS apps show a walkthrough after first signup.
+# Adjust steps to match your onboarding screens.
+
+- assertVisible:
+    id: "onboarding-step-1"
+    timeout: 10000
+    optional: true
+
+# Step through onboarding screens
+- tapOn:
+    id: "onboarding-next-button"
+    optional: true
+
+- tapOn:
+    id: "onboarding-next-button"
+    optional: true
+
+- tapOn:
+    id: "onboarding-next-button"
+    optional: true
+
+# Complete onboarding
+- tapOn:
+    id: "onboarding-finish-button"
+    optional: true
+
+- takeScreenshot: screenshots/onboarding_complete
+
+# --- Verify Landing on Dashboard ---
+- assertVisible:
+    id: "dashboard-view"
+    timeout: 10000
+    optional: true

@@ -1,0 +1,85 @@
+# ============================================
+# Login Flow — [YOUR_APP_NAME]
+# ============================================
+# Tests the complete login flow: entering credentials,
+# submitting, and verifying successful authentication.
+#
+# Run: maestro test tests/maestro/flows/login.yaml
+# Tags: smoke, auth
+
+appId: com.yourcompany.yoursaasapp
+tags:
+  - smoke
+  - auth
+  - regression
+
+env:
+  EMAIL: ${TEST_EMAIL}
+  PASSWORD: ${TEST_PASSWORD}
+
+---
+
+# Start from a clean state (logged out)
+- launchApp:
+    clearState: true
+
+# Wait for the login screen
+- assertVisible:
+    id: "login-view"
+    timeout: 10000
+
+# --- Enter Email ---
+- tapOn:
+    id: "login-email-field"
+- inputText: ${EMAIL}
+
+# --- Enter Password ---
+- tapOn:
+    id: "login-password-field"
+- inputText: ${PASSWORD}
+
+# --- Submit Login ---
+- tapOn:
+    id: "login-submit-button"
+
+# --- Verify Successful Login ---
+# The app should navigate away from the login screen.
+# Replace with your dashboard/home screen identifier.
+- assertVisible:
+    id: "dashboard-view"
+    timeout: 15000
+
+- assertNotVisible:
+    id: "login-error-message"
+
+- takeScreenshot: screenshots/login_success
+
+
+# ============================================
+# Login with Invalid Credentials
+# ============================================
+# Uncomment and run as a separate flow or extend above.
+#
+# - launchApp:
+#     clearState: true
+#
+# - assertVisible:
+#     id: "login-view"
+#     timeout: 10000
+#
+# - tapOn:
+#     id: "login-email-field"
+# - inputText: "invalid@example.com"
+#
+# - tapOn:
+#     id: "login-password-field"
+# - inputText: "WrongPassword"
+#
+# - tapOn:
+#     id: "login-submit-button"
+#
+# - assertVisible:
+#     id: "login-error-message"
+#     timeout: 5000
+#
+# - takeScreenshot: screenshots/login_error

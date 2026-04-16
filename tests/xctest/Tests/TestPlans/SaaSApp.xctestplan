@@ -1,0 +1,87 @@
+{
+  "configurations" : [
+    {
+      "id" : "1A2B3C4D-5E6F-7A8B-9C0D-1E2F3A4B5C6D",
+      "name" : "Default",
+      "options" : {
+        "language" : "en",
+        "region" : "US",
+        "targetForVariableExpansion" : {
+          "containerPath" : "container:SaaSApp.xcodeproj",
+          "identifier" : "SaaSAppTarget",
+          "name" : "SaaSApp"
+        }
+      }
+    },
+    {
+      "id" : "2B3C4D5E-6F7A-8B9C-0D1E-2F3A4B5C6D7E",
+      "name" : "Dark Mode",
+      "options" : {
+        "language" : "en",
+        "region" : "US",
+        "uiTestingScreenshotsLifetime" : "keepAlways",
+        "userAttachmentLifetime" : "keepAlways"
+      }
+    },
+    {
+      "id" : "3C4D5E6F-7A8B-9C0D-1E2F-3A4B5C6D7E8F",
+      "name" : "Accessibility (Large Text)",
+      "options" : {
+        "language" : "en",
+        "region" : "US"
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:SaaSApp.xcodeproj",
+          "identifier" : "SaaSAppTarget",
+          "name" : "SaaSApp"
+        }
+      ]
+    },
+    "commandLineArgumentEntries" : [
+      {
+        "argument" : "--uitesting"
+      },
+      {
+        "argument" : "--reset-state"
+      }
+    ],
+    "environmentVariableEntries" : [
+      {
+        "key" : "DISABLE_ANIMATIONS",
+        "value" : "true"
+      },
+      {
+        "key" : "USE_MOCK_DATA",
+        "value" : "true"
+      }
+    ],
+    "testRepetitionMode" : "none",
+    "testTimeoutsEnabled" : true,
+    "defaultTestExecutionTimeAllowance" : 60,
+    "maximumTestExecutionTimeAllowance" : 300
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:SaaSApp.xcodeproj",
+        "identifier" : "SaaSAppUnitTests",
+        "name" : "SaaSAppUnitTests"
+      }
+    },
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:SaaSApp.xcodeproj",
+        "identifier" : "SaaSAppUITests",
+        "name" : "SaaSAppUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

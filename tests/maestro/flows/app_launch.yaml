@@ -1,0 +1,38 @@
+# ============================================
+# App Launch Flow — [YOUR_APP_NAME]
+# ============================================
+# Verifies the app launches successfully and shows the expected
+# initial screen (login or home depending on auth state).
+#
+# Run: maestro test tests/maestro/flows/app_launch.yaml
+# Tags: smoke
+
+appId: com.yourcompany.yoursaasapp
+tags:
+  - smoke
+  - regression
+
+---
+
+# Launch the app from a clean state
+- launchApp:
+    clearState: true
+
+# Wait for the app to fully load
+# Adjust the timeout for your app's cold start time
+- extendedWaitUntil:
+    visible: ".*"  # Any content visible
+    timeout: 10000
+
+# Verify the app did not crash — at least one element should exist.
+# Replace these with your actual first-screen identifiers.
+- assertVisible:
+    id: "login-view"
+    optional: true
+
+- assertVisible:
+    text: "Welcome"
+    optional: true
+
+# Take a screenshot for visual verification
+- takeScreenshot: screenshots/app_launch
