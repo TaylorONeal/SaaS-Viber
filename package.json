@@ -10,7 +10,12 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
-    "postbuild": "node scripts/generate-sitemap.js"
+    "postbuild": "node scripts/generate-sitemap.js",
+    "test:xctest": "cd tests/xctest && swift test",
+    "test:xctest:unit": "cd tests/xctest && swift test --filter SaaSAppUnitTests",
+    "test:maestro": "maestro test tests/maestro/flows/",
+    "test:maestro:smoke": "maestro test --include-tags=smoke tests/maestro/flows/",
+    "test:maestro:flow": "maestro test"
   },
   "dependencies": {},
   "devDependencies": {}

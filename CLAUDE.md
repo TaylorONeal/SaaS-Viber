@@ -26,7 +26,10 @@ src/types/          → Shared TypeScript type definitions
 src/styles/         → Global CSS, theme variables
 src/data/           → Mock data, fixtures, constants
 docs/               → Architecture docs, design system, guides
+docs/testing/       → Testing framework guides (XCTest, Maestro)
 decisions/          → Architecture Decision Records
+tests/xctest/       → XCTest unit and UI tests (iOS/macOS)
+tests/maestro/      → Maestro E2E test flows (cross-platform mobile)
 ```
 
 ## Code Conventions
@@ -65,6 +68,14 @@ Before making structural decisions, check:
 - `docs/design/05-components.md` → Component inventory and variants
 - `docs/design/07-animations.md` → Animation system and patterns
 - `docs/design/08-theming.md` → Theme system (light/dark/custom)
+
+## Testing References
+
+Before making testing decisions, check:
+- `decisions/TESTING_CHOICES.md` → Framework comparison and stack-based recommendations
+- `docs/testing/TESTING_FRAMEWORK_GUIDE.md` → Full testing strategy guide
+- `docs/testing/XCTEST_SETUP.md` → XCTest integration instructions
+- `docs/testing/MAESTRO_SETUP.md` → Maestro installation and flow authoring
 
 ## Common Tasks
 
