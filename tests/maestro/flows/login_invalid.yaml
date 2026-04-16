@@ -1,0 +1,97 @@
+# ============================================
+# Login Error Handling Flow — [YOUR_APP_NAME]
+# ============================================
+# Tests login failure scenarios: wrong credentials, empty fields,
+# and network error states.
+#
+# Run: maestro test tests/maestro/flows/login_invalid.yaml
+# Tags: auth
+
+appId: com.yourcompany.yoursaasapp
+tags:
+  - auth
+  - regression
+
+---
+
+# ========== Test 1: Invalid Credentials ==========
+
+- launchApp:
+    clearState: true
+
+- assertVisible:
+    id: "login-view"
+    timeout: 10000
+
+# Enter wrong credentials
+- tapOn:
+    id: "login-email-field"
+- inputText: "wrong@example.com"
+
+- tapOn:
+    id: "login-password-field"
+- inputText: "WrongPassword123!"
+
+- tapOn:
+    id: "login-submit-button"
+
+# Error message should appear
+- assertVisible:
+    id: "login-error-message"
+    timeout: 10000
+
+# Should remain on the login screen
+- assertVisible:
+    id: "login-view"
+
+- takeScreenshot: screenshots/login_invalid_credentials
+
+# ========== Test 2: Empty Email ==========
+
+- launchApp:
+    clearState: true
+
+- assertVisible:
+    id: "login-view"
+    timeout: 10000
+
+# Leave email empty, enter password
+- tapOn:
+    id: "login-password-field"
+- inputText: "SomePassword123!"
+
+- tapOn:
+    id: "login-submit-button"
+
+# Validation error should appear
+- assertVisible:
+    id: "email-validation-error"
+    timeout: 5000
+    optional: true
+
+- takeScreenshot: screenshots/login_empty_email
+
+# ========== Test 3: Empty Password ==========
+
+- launchApp:
+    clearState: true
+
+- assertVisible:
+    id: "login-view"
+    timeout: 10000
+
+# Enter email, leave password empty
+- tapOn:
+    id: "login-email-field"
+- inputText: "user@example.com"
+
+- tapOn:
+    id: "login-submit-button"
+
+# Validation error should appear
+- assertVisible:
+    id: "password-validation-error"
+    timeout: 5000
+    optional: true
+
+- takeScreenshot: screenshots/login_empty_password

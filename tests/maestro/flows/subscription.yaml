@@ -1,0 +1,97 @@
+# ============================================
+# Subscription Flow — [YOUR_APP_NAME]
+# ============================================
+# Tests the subscription and billing UI.
+# Does NOT complete actual purchases — verifies the flow
+# up to the platform payment sheet.
+#
+# Run: maestro test tests/maestro/flows/subscription.yaml
+# Tags: payments
+
+appId: com.yourcompany.yoursaasapp
+tags:
+  - payments
+  - regression
+
+---
+
+# Launch authenticated
+- launchApp:
+    clearState: false
+    arguments:
+      autologin: "true"
+
+# Navigate to the subscription/pricing screen.
+# Adjust navigation path for your app.
+
+# Option A: Via settings
+- tapOn:
+    text: "Settings"
+    optional: true
+- tapOn:
+    text: "Subscription"
+    optional: true
+
+# Option B: Via a paywall/upgrade prompt
+- tapOn:
+    id: "upgrade-button"
+    optional: true
+
+# --- Verify Pricing Screen ---
+- assertVisible:
+    id: "subscription-view"
+    timeout: 10000
+    optional: true
+
+- takeScreenshot: screenshots/subscription_plans
+
+# --- Verify Plan Options ---
+# Your app should display available plans.
+# Customize these to match your actual plan names.
+
+- assertVisible:
+    text: "Free"
+    optional: true
+
+- assertVisible:
+    text: "Pro"
+    optional: true
+
+- assertVisible:
+    text: "Enterprise"
+    optional: true
+
+# --- Select a Plan ---
+- tapOn:
+    id: "plan-pro-button"
+    optional: true
+
+- takeScreenshot: screenshots/subscription_plan_selected
+
+# --- Verify Billing Toggle ---
+# Monthly vs annual toggle
+- tapOn:
+    id: "billing-toggle-annual"
+    optional: true
+
+- takeScreenshot: screenshots/subscription_annual
+
+# --- Subscription Details ---
+# Verify terms and pricing are visible before purchase
+- assertVisible:
+    id: "subscription-price"
+    optional: true
+
+- assertVisible:
+    id: "subscription-terms"
+    optional: true
+
+# --- DO NOT tap the final purchase button ---
+# The platform payment sheet (Apple/Google) cannot be automated.
+# Stop here and verify the flow reached the correct state.
+
+- assertVisible:
+    id: "subscribe-button"
+    optional: true
+
+- takeScreenshot: screenshots/subscription_ready_to_purchase
