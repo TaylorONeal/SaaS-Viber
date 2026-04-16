@@ -1,0 +1,35 @@
+# ============================================
+# Maestro Configuration — [YOUR_APP_NAME]
+# ============================================
+#
+# Global configuration for Maestro test flows.
+# Docs: https://maestro.mobile.dev/
+#
+# SETUP:
+# 1. Install Maestro: curl -Ls "https://get.maestro.mobile.dev" | bash
+# 2. Run all flows: maestro test tests/maestro/flows/
+# 3. Run single flow: maestro test tests/maestro/flows/app_launch.yaml
+# 4. See docs/testing/MAESTRO_SETUP.md for full instructions
+
+# App identifier — replace with your actual app ID
+# iOS: Your bundle identifier from Xcode
+# Android: Your applicationId from build.gradle
+appId: com.yourcompany.yoursaasapp
+
+# Tags for filtering which flows to run
+# Usage: maestro test --include-tags=smoke tests/maestro/flows/
+tags:
+  smoke: "Critical path tests that must pass before any release"
+  regression: "Full regression suite for release candidates"
+  auth: "Authentication and authorization flows"
+  payments: "Payment and subscription flows"
+  onboarding: "First-time user experience flows"
+
+# Global environment variables available in all flows.
+# Override per-flow with env: blocks or .env files.
+# Use ${VAR_NAME} syntax in flows to reference these.
+env:
+  TEST_EMAIL: "testuser@example.com"
+  TEST_PASSWORD: "TestPassword123!"
+  API_BASE_URL: "http://localhost:8080"
+  DEMO_MODE: "true"

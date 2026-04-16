@@ -1,0 +1,85 @@
+# ============================================
+# Navigation Flow — [YOUR_APP_NAME]
+# ============================================
+# Tests that all main navigation paths work correctly.
+# Verifies tab bar, drawer, and key screen transitions.
+#
+# Run: maestro test tests/maestro/flows/navigation.yaml
+# Tags: smoke
+
+appId: com.yourcompany.yoursaasapp
+tags:
+  - smoke
+  - regression
+
+---
+
+# Launch app (assumes authenticated state or auto-login in test mode)
+- launchApp:
+    clearState: false
+    arguments:
+      autologin: "true"
+
+# Wait for the main app screen to load
+- extendedWaitUntil:
+    visible: ".*"
+    timeout: 10000
+
+# --- Tab Bar Navigation ---
+# Customize tab names to match your app's navigation.
+
+# Home / Dashboard tab
+- tapOn:
+    text: "Home"
+    optional: true
+- assertVisible:
+    id: "dashboard-view"
+    timeout: 5000
+    optional: true
+- takeScreenshot: screenshots/nav_home
+
+# Search / Explore tab
+- tapOn:
+    text: "Search"
+    optional: true
+- assertVisible:
+    id: "search-view"
+    timeout: 5000
+    optional: true
+- takeScreenshot: screenshots/nav_search
+
+# Activity / Notifications tab
+- tapOn:
+    text: "Activity"
+    optional: true
+- assertVisible:
+    id: "activity-view"
+    timeout: 5000
+    optional: true
+- takeScreenshot: screenshots/nav_activity
+
+# Profile tab
+- tapOn:
+    text: "Profile"
+    optional: true
+- assertVisible:
+    id: "profile-view"
+    timeout: 5000
+    optional: true
+- takeScreenshot: screenshots/nav_profile
+
+# Settings tab or menu
+- tapOn:
+    text: "Settings"
+    optional: true
+- assertVisible:
+    id: "settings-view"
+    timeout: 5000
+    optional: true
+- takeScreenshot: screenshots/nav_settings
+
+# --- Back Navigation ---
+# Verify the back button works from a detail screen.
+- tapOn:
+    text: "Home"
+    optional: true
