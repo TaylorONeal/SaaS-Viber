@@ -235,7 +235,7 @@ The PRD template covers:
 - Technical approach
 - Edge cases
 
-Save PRDs to `docs/prds/[feature-name].md`.
+Save PRDs to `docs/prd/[feature-name].md`.
 
 ### 4.2 Implement with AI Assistance
 

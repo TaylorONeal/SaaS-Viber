@@ -91,7 +91,7 @@ A: [Describe your auth approach. e.g., "We use [AUTH_PROVIDER, e.g., Supabase Au
 A: [Describe your multi-tenancy approach. e.g., "We use row-level security with an `organization_id` column on all tenant-scoped tables. The current tenant is determined by [SESSION / SUBDOMAIN / PATH]."] See [DOMAIN_MODEL.md](./architecture/DOMAIN_MODEL.md).
 
 **Q: How do I add a new feature?**
-A: 1) Create or reference the PRD in `docs/prds/`. 2) Add the feature to [FEATURE_INDEX.md](./FEATURE_INDEX.md). 3) Create the database migration if needed. 4) Implement the API endpoints. 5) Build the UI components. 6) Write tests. 7) Submit a PR following our [review guidelines](./architecture/MAINTAINABILITY.md).
+A: 1) Create or reference the PRD in `docs/prd/`. 2) Add the feature to [FEATURE_INDEX.md](./FEATURE_INDEX.md). 3) Create the database migration if needed. 4) Implement the API endpoints. 5) Build the UI components. 6) Write tests. 7) Submit a PR following our [review guidelines](./architecture/MAINTAINABILITY.md).
 
 ### API & Integrations
 
@@ -152,7 +152,7 @@ A: [e.g., "Yes. Submit feature requests via [METHOD, e.g., 'our feedback portal 
 ## Prompt Guide for Generating FAQ
 
 ```
-Based on the features documented in docs/FEATURE_INDEX.md and the PRDs in docs/prds/,
+Based on the features documented in docs/FEATURE_INDEX.md and the PRDs in docs/prd/,
 generate an FAQ for [YOUR_APP_NAME] following the template in docs/FAQ.md.
 
 For each feature, generate:

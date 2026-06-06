@@ -259,3 +259,50 @@ When you encounter a new pitfall, add it here with:
 2. **Why it happens** (root cause)
 3. **Code example** showing the wrong and right approach
 4. **Category** matching one of the sections above (or create a new one)
+
+---
+
+## Harvesting Lessons Across Apps
+
+This template is only as valuable as the learnings you feed back into it. Each
+app you build surfaces something reusable -- the trick is to capture it where
+the *next* app will benefit, not bury it in one repo's history.
+
+### The Loop
+
+```mermaid
+flowchart LR
+    A[Hit a pitfall<br/>in App N] --> B{Generalizable?}
+    B -->|No, app-specific| C[Fix in App N only]
+    B -->|Yes| D[Write the lesson here]
+    D --> E{Seen in 2+ apps?}
+    E -->|Yes| F[Promote: encode as a rule]
+    E -->|Not yet| G[Leave as a lesson]
+    F --> H[Skill / CLAUDE.md / .cursorrules]
+    H --> I[Note it in CHANGELOG.md]
+```
+
+### Where a Learning Belongs
+
+| Maturity | Lives In | Effect |
+|----------|----------|--------|
+| One-off, app-specific | The app's own repo | None on the template |
+| Generalizable insight | This file (`LESSONS_LEARNED.md`) | Informs future builds |
+| Proven across 2+ apps | A rule in `CLAUDE.md` / `.cursorrules` | Enforced on every generation |
+| Repeatable capability | A skill in `skills/` | Loads automatically when relevant |
+| A decision others re-make | A record in `decisions/` | Saves the next builder the analysis |
+
+### Promotion Rule of Thumb
+
+A lesson is *information*; a rule or skill is *enforcement*. When the same
+pitfall bites you in a second app, stop writing prose and promote it: add a line
+to `CLAUDE.md`/`.cursorrules`, or -- if it is a whole way of working -- a skill.
+Record the promotion in `CHANGELOG.md` so apps syncing from this template know a
+new standard landed.
+
+### Keep It Honest
+
+- One lesson per real incident. Do not pad with hypotheticals.
+- Show the wrong approach next to the right one; the contrast is the lesson.
+- Date-stamp entries you expect to age (framework-version-specific advice).
+- Delete or mark `Deprecated` when a lesson stops being true.

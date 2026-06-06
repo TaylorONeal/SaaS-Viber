@@ -21,7 +21,9 @@ You're building a SaaS and want AI tools (Claude Code, Cursor, Copilot) to do mo
 2. **Fill in your identity** (10 min) -- Open `docs/guides/BRANDING_GUIDE.md` and complete the Quick Setup section. At minimum, decide:
    - Product name
    - Primary brand color
-   - One font (Inter is a safe default)
+   - One font -- for a distinctive brand, reach for `Geist`, `Outfit`, or
+     `Satoshi` over the over-used `Inter` (see `skills/taste-skill/SKILL.md`,
+     the authority on frontend visual standards in this template)
 
 3. **Start your first AI session** (5 min) -- Copy the prompt below into Claude Code, Cursor, or your AI tool of choice:
 
@@ -71,6 +73,8 @@ You know your stack, you've built SaaS before, and you want to move fast. Here's
 | Animation system | `docs/design/07-animations.md` |
 | Theming (light/dark/custom) | `docs/design/08-theming.md` |
 | Visual patterns catalog | `docs/design/09-visual-inventory.md` |
+| Frontend design standards (anti-AI-slop) | `skills/taste-skill/SKILL.md` |
+| Reusable agent skills | `skills/README.md` |
 | Roadmap + feature reference | `docs/roadmap/` (ROADMAP.md + FEATURE_REFERENCE.md) |
 | Analytics platform choices | `decisions/ANALYTICS_CHOICES.md` |
 | Analytics setup (PostHog + GA4) | `docs/developer/analytics-setup.md` |
@@ -137,6 +141,10 @@ SaaS-Viber/
 │   ├── PLATFORM_CHOICES.md
 │   ├── DEPLOYMENT_CHOICES.md
 │   └── ANALYTICS_CHOICES.md   ← PostHog vs GA4 vs Mixpanel vs Amplitude
+│
+├── skills/                    ← Reusable agent skills (carry across apps)
+│   ├── README.md              ← Skill catalog + how to add your own
+│   └── taste-skill/           ← Frontend visual standards (anti-AI-slop)
 │
 ├── docs/
 │   ├── design/                ← For designers: tokens, animations, themes

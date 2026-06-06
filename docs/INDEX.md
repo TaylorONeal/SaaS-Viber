@@ -31,12 +31,7 @@ docs/
 │   ├── VERSION_MANAGEMENT.md
 │   ├── BILLING_MODELS.md
 │   ├── ANALYTICS_ARCHITECTURE.md ← Admin dashboard, KPIs, growth metrics
-│   ├── DEMO_SEPARATION.md
-│   └── PromptGuide-Architecture.md
-│
-├── decisions/                ← Architecture Decision Records (ADRs)
-│   ├── ANALYTICS_CHOICES.md  ← Compare PostHog, GA4, Mixpanel, etc.
-│   └── [YOUR_DECISION_FILES].md
+│   └── PromptGuide-Architecture.md ← Prompts to generate the docs above
 │
 ├── developer/                ← Developer guides and setup
 │   ├── analytics-setup.md    ← PostHog + GA4 implementation guide
@@ -66,6 +61,14 @@ docs/
     └── prd-tracker.json      ← PRD status and task tracker
 ```
 
+**Repo-root companions** (these live at the repository root, not under `docs/`):
+
+| Path | Purpose |
+|---|---|
+| `decisions/` | Architecture Decision Records -- backend, auth, payments, hosting, analytics, testing |
+| `skills/` | Reusable Claude Code skills (see `skills/README.md`; the `taste-skill` governs frontend visual standards) |
+| `CHANGELOG.md` | Version history for the template itself |
+
 ---
 
 ## Role-Based Reading Paths
@@ -76,7 +79,7 @@ You care about what we're building, why, and when.
 
 | Start Here | Then Read | Deep Dive |
 |---|---|---|
-| [ROADMAP.md](./roadmap/ROADMAP.md) | [FEATURE_INDEX.md](./FEATURE_INDEX.md) | `prds/` directory |
+| [ROADMAP.md](./roadmap/ROADMAP.md) | [FEATURE_INDEX.md](./FEATURE_INDEX.md) | `prd/` directory |
 | [STATUS.md](./STATUS.md) | [NEXT_STEPS.md](./NEXT_STEPS.md) | `decisions/` directory |
 | [FAQ.md](./FAQ.md) | [DEMO_MODE.md](./DEMO_MODE.md) | [BILLING_MODELS.md](./architecture/BILLING_MODELS.md) |
 
@@ -131,7 +134,8 @@ You are leveraging AI assistants (Claude, ChatGPT, Copilot, etc.) to accelerate 
 | Start Here | Then Read | Deep Dive |
 |---|---|---|
 | `CLAUDE.md` + `../AGENTS.md` (project root) | [PromptGuide-Architecture.md](./architecture/PromptGuide-Architecture.md) | `ai-agents/` directory |
-| [DOMAIN_MODEL.md](./architecture/DOMAIN_MODEL.md) | [FEATURE_INDEX.md](./FEATURE_INDEX.md) | `prds/` directory |
+| [DOMAIN_MODEL.md](./architecture/DOMAIN_MODEL.md) | [FEATURE_INDEX.md](./FEATURE_INDEX.md) | `prd/` directory |
+| [skills/README.md](../skills/README.md) -- reusable agent skills | [LESSONS_LEARNED.md](./ai-agents/LESSONS_LEARNED.md) | [taste-skill](../skills/taste-skill/SKILL.md) -- frontend visual standards |
 
 **Key questions this path answers:**
 - How do I prompt an AI assistant to generate architecture docs?
@@ -161,7 +165,7 @@ You are leveraging AI assistants (Claude, ChatGPT, Copilot, etc.) to accelerate 
 - [Version Management](./architecture/VERSION_MANAGEMENT.md) — Versioning and migrations
 - [Audit & Compliance](./architecture/AUDIT_COMPLIANCE.md) — Regulatory requirements
 - [App Store Compliance](./architecture/APP_STORE_COMPLIANCE.md) — iOS and Android requirements
-- [Demo Separation](./architecture/DEMO_SEPARATION.md) — Marketing vs app architecture
+- [Architecture Prompt Guide](./architecture/PromptGuide-Architecture.md) — AI prompts to generate the docs above
 
 ### Analytics
 - [Analytics Choices](../decisions/ANALYTICS_CHOICES.md) — Compare PostHog, GA4, Mixpanel, Amplitude, Plausible
@@ -173,7 +177,7 @@ You are leveraging AI assistants (Claude, ChatGPT, Copilot, etc.) to accelerate 
 - [Demo Mode](./DEMO_MODE.md) — Show before you build
 - [Localization Analysis](./LOCALIZATION_ANALYSIS.md) — i18n planning
 - [FAQ](./FAQ.md) — Common questions by audience
-- [Architecture Prompt Guide](./architecture/PromptGuide-Architecture.md) — AI prompts for generating docs
+- [Skills](../skills/README.md) — Reusable agent skills (taste-skill governs frontend visual standards)
 - [iOS Readiness Checklist](./guides/IOS_READINESS_CHECKLIST.md) — App Store launch readiness
 - [iOS Readiness Template](./templates/IOS_READINESS_TEMPLATE.md) — Repo-tailored iOS readiness planning
 
@@ -213,5 +217,5 @@ Each document and feature uses the following status indicators:
 
 ---
 
-*Last updated: [DATE]*
-*Documentation version: Template v1.0*
+*Last updated: 2026-06-06*
+*Documentation version: Template v1.0 (see [CHANGELOG.md](../CHANGELOG.md) for unreleased changes)*

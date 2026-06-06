@@ -43,6 +43,8 @@ tests/maestro/      → Maestro E2E test flows (cross-platform mobile)
 
 ## Design System Rules
 
+- **Authority on visual polish**: `skills/taste-skill/SKILL.md`. When this file
+  and the taste skill disagree on a visual detail, the taste skill wins.
 - All colors must use CSS custom properties (not hardcoded hex values)
 - Spacing follows a 4px grid: 4, 8, 12, 16, 24, 32, 48, 64
 - Border radius uses the `--radius` variable from shadcn/ui
@@ -50,6 +52,10 @@ tests/maestro/      → Maestro E2E test flows (cross-platform mobile)
 - Always respect `prefers-reduced-motion` for animations
 - Minimum touch target: 44x44px
 - Color contrast: WCAG 2.1 AA (4.5:1 for text, 3:1 for UI elements)
+- **No emojis** in code, markup, content, or alt text -- use an icon library
+  (Radix, Phosphor, Lucide) or clean SVG instead (per the taste skill)
+- For a distinctive brand, prefer `Geist`/`Outfit`/`Satoshi` over the
+  over-used `Inter`; serif fonts are banned on dashboards/software UIs
 
 ## Component Patterns
 
@@ -58,6 +64,12 @@ tests/maestro/      → Maestro E2E test flows (cross-platform mobile)
 - Loading states use skeleton components, not spinners
 - Error states show helpful messages with recovery actions
 - All forms use controlled components with validation
+
+## Skills
+
+Reusable, opinionated capabilities live in `skills/` and load automatically when
+a task matches. See `skills/README.md` for the catalog. The `taste-skill` is the
+canonical source for frontend visual standards -- load it for any UI work.
 
 ## Architecture References
 

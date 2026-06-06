@@ -102,8 +102,12 @@
 |------|---------|-------------------|
 | `AGENTS.md` | Codex/CLI agent onboarding and repo norms | Starting agent sessions outside Claude/Cursor |
 | `docs/ai-agents/AGENTS.md` | AI assistant onboarding | Starting AI sessions |
-| `docs/ai-agents/DESIGN_SYSTEM.md` | Design system reference | UI/styling work |
-| `docs/ai-agents/LESSONS_LEARNED.md` | Known pitfalls | Avoiding repeat mistakes |
+| `docs/ai-agents/DESIGN_SYSTEM.md` | Design system reference (defers to the taste skill on visuals) | UI/styling work |
+| `docs/ai-agents/LESSONS_LEARNED.md` | Known pitfalls + cross-app harvesting workflow | Avoiding repeat mistakes |
+| `skills/README.md` | Reusable agent skill catalog | Adding/using skills across apps |
+| `skills/taste-skill/SKILL.md` | Frontend visual standards (authority) | Any UI/frontend work |
+| `docs/architecture/PromptGuide-Architecture.md` | Prompts to generate architecture docs | Scaffolding domain/RBAC/billing docs |
+| `CHANGELOG.md` | Template version history | Syncing template updates into an app |
 | `docs/guides/IOS_READINESS_CHECKLIST.md` | iOS launch checklist | Preparing App Store submission |
 | `docs/templates/IOS_READINESS_TEMPLATE.md` | iOS readiness planning template | Tailoring mobile-readiness docs per repo |
 | `docs/design/02-design-tokens.md` | Design token definitions | Theme customization |
