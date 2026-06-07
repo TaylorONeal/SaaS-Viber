@@ -251,6 +251,183 @@ for serverless workloads.
 
 ---
 
+## Working With AI Agents
+
+### 25. Context Beats Cleverness
+
+An agent with the right docs in context outperforms a cleverly-worded prompt
+against an empty repo. Point it at `CLAUDE.md`, the domain model, and the
+relevant decision record *before* asking for code. The time spent writing
+durable docs is repaid every session, on every app.
+
+### 26. Constrain Scope Per Session
+
+Agents drift when asked to do everything at once. Give one concern per session
+("build the auth flow," not "build the app"). A tight scope produces reviewable
+diffs; a broad one produces a pile you cannot trust.
+
+### 27. Mock Data First, Real Integration Second
+
+Build against realistic in-memory fixtures before wiring a backend. You validate
+the UI, the empty/loading/error states, and the data shape without fighting auth
+and network at the same time. Swap the data source once the surface is proven.
+
+### 28. Make the Agent Verify, Not Assert
+
+"Done" is not done until something ran. Have the agent run the app, the test, or
+the type-check and report the actual output. An unverified "this should work" is
+the single most expensive sentence in AI-assisted development.
+
+### 29. Commit Small, Commit Often
+
+Each working slice is a checkpoint you can return to. When an agent goes sideways
+on the next change, a clean recent commit is the difference between `git reset`
+and an afternoon of untangling.
+
+### 30. One Source of Truth, or You Get Drift
+
+The same rule stated in two files will eventually contradict itself, and the
+agent will obey whichever it read last. Designate one canonical file per concern
+(design -> the taste skill, conventions -> `CLAUDE.md`) and have the others link
+to it rather than restate it.
+
+---
+
+## Mobile & Cross-Platform
+
+### 31. Separate the Marketing Site From the App From Day One
+
+The landing page and the product are different deploys with different audiences,
+release cadences, and performance budgets. Coupling them means a copy tweak risks
+the app and an app outage takes down your storefront. Decide the boundary before
+you build, not after.
+
+### 32. Share Design Tokens, Not Components, Across Platforms
+
+Web and native should look like one brand because they consume the same
+`tokens.json` (colors, spacing, type scale), not because you forced a React
+component to render on both. Tokens travel cleanly; components carry
+platform-specific baggage.
+
+### 33. Plan App Store Compliance Before You Build
+
+Privacy nutrition labels, account deletion, and a clear data-use story are
+architecture decisions, not submission-day paperwork. Retrofitting "delete my
+account" or "we don't actually need that permission" after the fact is far more
+expensive than designing for it. See `docs/architecture/APP_STORE_COMPLIANCE.md`.
+
+### 34. Decide Web vs In-App Billing Early
+
+Web checkout (Stripe) and in-app purchase (StoreKit / Play Billing, often via
+RevenueCat) carry different fees, rules, and entitlement plumbing. The store
+takes its cut and forbids steering around it inside the app. Pick the model
+before you write entitlement logic, because it shapes the whole billing layer.
+
+### 35. Test Safe Areas on a Real Device
+
+Notches, home indicators, dynamic toolbars, and the mobile viewport (`100dvh`,
+not `100vh`) break in ways no desktop browser reveals. A layout that is perfect
+in the simulator can clip behind the home bar on hardware. Test on a physical
+mid-tier device.
+
+---
+
+## Privacy & Sensitive Data
+
+### 36. Collect the Minimum
+
+Every field you store is a liability you must secure, justify, and one day
+delete. If a feature does not require a piece of personal data, do not collect
+it. The cheapest data to protect is the data you never held.
+
+### 37. Treat Personal and Health Data as Radioactive
+
+Sensitive data (health, biometric, location, anything tied to identity) gets
+encrypted at rest, scoped by row-level security, and kept out of logs, analytics
+events, error reports, and LLM prompts. Assume any place you copy it is a place
+it can leak. See `docs/architecture/AUDIT_COMPLIANCE.md` and
+`docs/data/DATA_TAXONOMY.md`.
+
+### 38. Local-First Where You Can
+
+Data that lives on the device is data you cannot breach, subpoena, or lose. Sync
+only what genuinely needs to be shared across devices or users, and be explicit
+about what crosses that boundary.
+
+### 39. Consent Is Explicit, Revocable, and Reversible
+
+Opt-in beats opt-out. The user must be able to export their data and delete their
+account without emailing support, and both must actually purge downstream copies
+(backups, analytics, third parties). Build export and delete from day one; they
+are far harder to bolt on later.
+
+### 40. Never Put Secrets or PII in the Client
+
+Anything shipped to the browser or app bundle is public: API secrets, other
+users' data, internal IDs you did not mean to expose. Secrets live server-side;
+client keys are publishable-only and scoped by RLS. Audit analytics payloads and
+LLM prompts too -- PII leaks through both.
+
+---
+
+## Product & Scope
+
+### 41. Ship the Empty State First
+
+A beautiful empty state with a clear "do this next" is a feature; a broken full
+state is not. Designing the zero-data case first forces you to answer how the
+user gets started, which is the moment most products lose people.
+
+### 42. Realistic Seed Data Sells the Vision
+
+Believable names, numbers, and content make a prototype feel real; lorem ipsum
+and "John Doe / 99.99%" make it feel fake. When demoing or designing, populate
+with organic, specific-looking data (see the taste skill's "Jane Doe Effect").
+
+### 43. Cut to One Core Loop
+
+A working slice of the single most important user journey beats a broad platform
+where nothing quite works. Ruthlessly defer everything that is not the core loop;
+you can always add the second feature once the first earns its keep.
+
+### 44. Defer Auth and Payments Until the Value Is Proven
+
+Login walls and paywalls are friction you add *after* the product is worth
+logging into. Prove the core experience first -- often in a demo mode with no
+account required -- then gate it. See `docs/DEMO_MODE.md`.
+
+---
+
+## Performance & Operations
+
+### 45. Test on a Mid-Tier Phone, Throttled
+
+Your development machine on office wifi is the best case almost no user
+experiences. Profile on a mid-range device with a throttled network; that is
+where jank, layout shift, and oversized bundles actually show up.
+
+### 46. Code-Split From the Start
+
+Lazy-load routes and heavy components (charts, editors, date pickers) before the
+bundle gets large, not after it is already slow. Retrofitting code-splitting onto
+a monolithic bundle is tedious; building with it is free.
+
+### 47. Images Dominate the Payload
+
+Images are usually the largest thing you ship. Serve responsive sizes, lazy-load
+below the fold, and use modern formats (AVIF/WebP). One unoptimized hero image
+can outweigh your entire JavaScript bundle.
+
+### 48. Instrument Before You Launch
+
+Error tracking and basic analytics go in *before* the first user, not after the
+first incident. When something breaks in production, the difference between a
+five-minute fix and a five-hour mystery is whether you were already capturing the
+error. Set budget alerts on every metered service (database rows, function
+invocations, egress, LLM tokens) so a runaway loop is a notification, not a bill.
+
+---
+
 ## Adding New Lessons
 
 When you encounter a new pitfall, add it here with:

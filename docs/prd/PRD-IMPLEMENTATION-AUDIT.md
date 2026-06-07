@@ -98,7 +98,7 @@ For each gap identified in the audit above, create a detailed entry below.
 | Attribute | Detail |
 |-----------|--------|
 | **Feature** | User Settings |
-| **PRD Reference** | [PRD-005, Section 5.2](./PRD-005.md#52-settings-form) |
+| **PRD Reference** | PRD-005, Section 5.2 (example -- link to your real PRD file) |
 | **Gap Type** | Incomplete |
 | **Dimension** | Backend |
 | **Severity** | High |
