@@ -235,7 +235,7 @@ New users who sign up for the platform abandon the product within the first 24 h
 ### Architecture Overview
 The onboarding flow is a frontend-driven wizard that communicates with the existing API layer. No new microservices are needed. The frontend stores step state locally (for responsiveness) and syncs to the backend on each step completion. The re-engagement email is handled by the existing background job system.
 
-Reference: [ARCHITECTURE.md](../ARCHITECTURE.md) for the full system architecture.
+Reference: [ARCHITECTURE.md](../../ARCHITECTURE.md) for the full system architecture.
 
 ### Database Changes
 | Change Type | Table/Collection | Description | Migration Notes |

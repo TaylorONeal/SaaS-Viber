@@ -16,8 +16,13 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
   add them, surfaced from README, START_HERE, CLAUDE.md, AGENTS.md, and INDEX.
 - `docs/architecture/PromptGuide-Architecture.md` -- completes the prompt-guide
   set (was referenced from INDEX but missing).
-- `docs/ai-agents/LESSONS_LEARNED.md` -> "Harvesting Lessons Across Apps" --
-  the workflow for promoting a per-app lesson into the shared template.
+- `docs/ai-agents/LESSONS_LEARNED.md`: 24 new generalizable principles across
+  Working With AI Agents, Mobile & Cross-Platform, Privacy & Sensitive Data,
+  Product & Scope, and Performance & Operations, plus a "Harvesting Lessons
+  Across Apps" workflow for promoting a per-app lesson into the shared template.
+- `opensource/CODE_OF_CONDUCT.md`, `opensource/SECURITY.md`,
+  `opensource/GOVERNANCE.md`, `opensource/CONTRIBUTORS.md` -- the governance
+  templates the opensource README and CONTRIBUTING advertised but were missing.
 - This `CHANGELOG.md`.
 
 ### Changed
@@ -30,6 +35,12 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
 - `docs/INDEX.md`: removed dead links to `architecture/DEMO_SEPARATION.md` and
   the missing architecture prompt guide; corrected `prds/` -> `prd/`; clarified
   that `decisions/` lives at the repo root, not under `docs/`.
+- Corrected `docs/prds/` -> `docs/prd/` in `SETUP_GUIDE.md` and `docs/FAQ.md`.
+- Fixed broken `../ARCHITECTURE.md` -> `../../ARCHITECTURE.md` links in
+  `docs/prd/platform-overview.md` and `docs/prd/PRD-001-example.md`.
+- De-linked the dangling example PRD reference in `PRD-IMPLEMENTATION-AUDIT.md`.
+- Full internal-link audit: every local markdown link now resolves except the
+  intentional `[PRD-XXX]` fill-in placeholders.
 
 ---
 
