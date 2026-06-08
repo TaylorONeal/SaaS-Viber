@@ -125,6 +125,10 @@ For the full architecture documentation, diagrams, and design decisions, see **[
 
 All documentation lives in the `docs/` directory. Start with the index:
 
+Run `npm run docs:check` to validate that every internal doc link resolves
+(CI enforces this on every push). Use `npm run docs:orphans` to list docs not
+reached by any Markdown link.
+
 - **[docs/INDEX.md](docs/INDEX.md)** -- Master documentation index
 - **[SETUP_GUIDE.md](SETUP_GUIDE.md)** -- Phase-by-phase setup from clone to launch
 - **[QUICKSTART.md](QUICKSTART.md)** -- Get running in 2 minutes
