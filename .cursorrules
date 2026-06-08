@@ -25,12 +25,15 @@
 - All colors via CSS custom properties, never hardcoded hex
 
 ## Design System
+- Authority on visual polish: skills/taste-skill/SKILL.md (it wins on conflicts)
 - 4px spacing grid (4, 8, 12, 16, 24, 32, 48, 64)
 - WCAG 2.1 AA contrast ratios (4.5:1 text, 3:1 UI)
 - 44x44px minimum touch targets
 - Skeleton loading states over spinners
 - Respect prefers-reduced-motion for all animations
 - Light + dark mode via class strategy on html element
+- No emojis in code/markup/content -- use Radix, Phosphor, or Lucide icons
+- Prefer Geist/Outfit/Satoshi over Inter for brand type; no serif on dashboards
 
 ## Component Rules
 - Wrap shadcn/ui components to extend -- never modify base ui/ files
@@ -54,3 +57,4 @@
 - Adding unnecessary dependencies
 - Inline styles
 - Files outside established directory structure
+- Emojis and the over-used Inter font (see Design System above)

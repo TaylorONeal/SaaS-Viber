@@ -1,0 +1,29 @@
+name: Docs Check
+
+# Keeps the documentation tight: fails the build if any local Markdown link
+# points at a file that does not exist. Runs only when docs or the checker
+# change, so it stays fast and relevant.
+
+on:
+  push:
+    paths:
+      - "**/*.md"
+      - "scripts/check-docs.py"
+      - ".github/workflows/docs-check.yml"
+  pull_request:
+    paths:
+      - "**/*.md"
+      - "scripts/check-docs.py"
+      - ".github/workflows/docs-check.yml"
+
+jobs:
+  links:
+    name: Validate Markdown links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Check documentation links
+        run: python3 scripts/check-docs.py

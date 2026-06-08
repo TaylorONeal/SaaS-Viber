@@ -21,14 +21,20 @@ the operational and documentation backbone for building one.
 3. `docs/INDEX.md` -- master documentation map
 4. `docs/ai-agents/KEY_FILES.md` -- assistant-oriented file index
 5. `CLAUDE.md` -- coding conventions and architecture references
+6. `skills/README.md` -- reusable skills; the `taste-skill` is the authority on frontend visual standards
 
 ## Working Norms for Agents
 
 - Prefer small, focused documentation edits over broad rewrites.
-- Keep links relative and verify target files exist.
+- Keep links relative and verify target files exist. Run `npm run docs:check`
+  (or `python3 scripts/check-docs.py`) before committing doc changes; CI enforces
+  it via `.github/workflows/docs-check.yml`.
 - Preserve template placeholders unless a task explicitly asks to fill them.
 - When adding a new guide/template, register it in `docs/INDEX.md`.
 - Keep AI-assistant docs synchronized (`CLAUDE.md`, this file, and `docs/ai-agents/*`).
+- For visual/frontend decisions, defer to `skills/taste-skill/SKILL.md` (no
+  emojis, no default Inter, no serif on dashboards). Record any new repo-wide
+  standard in `CHANGELOG.md`.
 
 ## Documentation Priorities
 

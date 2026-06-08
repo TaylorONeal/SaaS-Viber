@@ -102,7 +102,7 @@ For [target customer] who [statement of need], [Product Name] is a [product cate
 
 ## 4. Architecture Overview
 
-> For the full technical architecture, see [ARCHITECTURE.md](../ARCHITECTURE.md).
+> For the full technical architecture, see [ARCHITECTURE.md](../../ARCHITECTURE.md).
 
 ### System Context Diagram
 ```

@@ -68,13 +68,19 @@
 
 ## Typography
 
+> **Font choice:** `skills/taste-skill/SKILL.md` is the authority here. It
+> recommends `Geist`, `Outfit`, `Cabinet Grotesk`, or `Satoshi` for a
+> distinctive brand over the over-used `Inter`, and bans serif fonts on
+> dashboards/software UIs. The values below are neutral placeholders -- replace
+> them with your chosen stack, not with Inter-by-default.
+
 ### Font Families
 
 ```css
---font-display: 'YOUR_DISPLAY_FONT', serif;         /* Hero headings */
+--font-display: 'YOUR_DISPLAY_FONT', sans-serif;     /* Hero headings (no serif on app UIs) */
 --font-heading: 'YOUR_HEADING_FONT', sans-serif;     /* Section headings */
---font-body:    'Inter', system-ui, sans-serif;       /* Body text */
---font-mono:    'JetBrains Mono', monospace;          /* Code blocks */
+--font-body:    'YOUR_BODY_FONT', system-ui, sans-serif; /* Body text -- e.g. Geist/Satoshi */
+--font-mono:    'JetBrains Mono', monospace;          /* Code blocks, data, metrics */
 ```
 
 ### Font Sizes (rem scale)
