@@ -29,6 +29,9 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
 - `scripts/generate-sitemap.js` -- the `postbuild` script `package.json`
   referenced but was missing; warns and exits 0 until SITE_URL is configured,
   so it never breaks the build.
+- `skills/data-privacy` and `skills/mobile-cross-platform` -- the most-repeated
+  universal lessons (Privacy & Sensitive Data, Mobile & Cross-Platform) promoted
+  from prose into enforceable, auto-loading skills; registered in `skills/README.md`.
 - This `CHANGELOG.md`.
 
 ### Changed

@@ -17,6 +17,8 @@ every new project -- you write the standard once and carry it from app to app.
 | Skill | Folder | What It Does | Use When |
 |-------|--------|--------------|----------|
 | **design-taste-frontend** | `taste-skill/` | Senior UI/UX engineering standards that override default LLM design biases: deterministic typography, color calibration, motion/density dials, performance guardrails, and 100 "AI tell" patterns to avoid. | Building or refining any frontend -- landing pages, dashboards, components. This is the authority on visual polish across all apps. |
+| **data-privacy** | `privacy-skill/` | Data minimization and privacy-by-default: collect the minimum, treat sensitive data as radioactive, keep secrets/PII out of the client and out of logs/analytics/LLM prompts, consent and deletion from day one. | Any work touching user data -- auth, storage, queries, tracking, error reporting, or AI features that could carry PII. |
+| **mobile-cross-platform** | `mobile-skill/` | Web+native standards: separate marketing site from app, share tokens not components, plan store compliance early, choose web vs in-app billing, and handle mobile viewport/safe-area realities. | Mobile UI, cross-platform, or App Store/Play submission work. |
 
 This skill is the **single source of truth for frontend visual standards** in
 this template. When other docs (`docs/ai-agents/DESIGN_SYSTEM.md`,
