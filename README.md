@@ -125,6 +125,10 @@ For the full architecture documentation, diagrams, and design decisions, see **[
 
 All documentation lives in the `docs/` directory. Start with the index:
 
+Run `npm run docs:check` to validate that every internal doc link resolves
+(CI enforces this on every push). Use `npm run docs:orphans` to list docs not
+reached by any Markdown link.
+
 - **[docs/INDEX.md](docs/INDEX.md)** -- Master documentation index
 - **[SETUP_GUIDE.md](SETUP_GUIDE.md)** -- Phase-by-phase setup from clone to launch
 - **[QUICKSTART.md](QUICKSTART.md)** -- Get running in 2 minutes
@@ -141,6 +145,7 @@ All documentation lives in the `docs/` directory. Start with the index:
 |-------|---------|
 | `docs/prd/PromptGuide-PRD.md` | Writing product requirement documents |
 | `docs/ai-agents/PromptGuide-AI-Development.md` | End-to-end AI development workflows |
+| `docs/architecture/PromptGuide-Architecture.md` | Generating domain model, RBAC, billing, and reliability docs |
 | `docs/guides/PromptGuide-Guides.md` | Generating and maintaining operational guides |
 | `docs/workflows/PromptGuide-Workflows.md` | Building and documenting workflow specs |
 
@@ -149,6 +154,13 @@ All documentation lives in the `docs/` directory. Start with the index:
 - `CLAUDE.md` -- auto-loaded context and coding conventions for Claude Code
 - `AGENTS.md` -- codex/CLI-agent onboarding and documentation norms
 - `docs/ai-agents/AGENTS.md` -- reusable onboarding template for AI assistants
+
+### Reusable Skills
+
+Carry opinionated capabilities from app to app via the `skills/` folder:
+
+- `skills/README.md` -- how skills work and how to add your own
+- `skills/taste-skill/SKILL.md` -- senior frontend design standards (the authority on visual polish across every app)
 
 ### Mobile Readiness Documentation
 
