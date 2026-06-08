@@ -23,6 +23,12 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
 - `opensource/CODE_OF_CONDUCT.md`, `opensource/SECURITY.md`,
   `opensource/GOVERNANCE.md`, `opensource/CONTRIBUTORS.md` -- the governance
   templates the opensource README and CONTRIBUTING advertised but were missing.
+- `scripts/check-docs.py` + `.github/workflows/docs-check.yml` + the
+  `docs:check`/`docs:orphans` npm scripts -- dependency-free link checker that
+  fails CI on any broken internal doc link, so the docs stay tight permanently.
+- `scripts/generate-sitemap.js` -- the `postbuild` script `package.json`
+  referenced but was missing; warns and exits 0 until SITE_URL is configured,
+  so it never breaks the build.
 - This `CHANGELOG.md`.
 
 ### Changed

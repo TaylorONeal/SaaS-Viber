@@ -26,7 +26,9 @@ the operational and documentation backbone for building one.
 ## Working Norms for Agents
 
 - Prefer small, focused documentation edits over broad rewrites.
-- Keep links relative and verify target files exist.
+- Keep links relative and verify target files exist. Run `npm run docs:check`
+  (or `python3 scripts/check-docs.py`) before committing doc changes; CI enforces
+  it via `.github/workflows/docs-check.yml`.
 - Preserve template placeholders unless a task explicitly asks to fill them.
 - When adding a new guide/template, register it in `docs/INDEX.md`.
 - Keep AI-assistant docs synchronized (`CLAUDE.md`, this file, and `docs/ai-agents/*`).
