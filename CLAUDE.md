@@ -71,6 +71,10 @@ Reusable, opinionated capabilities live in `skills/` and load automatically when
 a task matches. See `skills/README.md` for the catalog. The `taste-skill` is the
 canonical source for frontend visual standards -- load it for any UI work.
 
+## Modern Agentic Workflow
+
+Before substantial feature, refactor, migration, or release work, read `docs/ai-agents/MODERN_AGENTIC_DEVELOPMENT.md`. Use its task packet, capability-aware routing, and verification checklist to keep long-context/tool-using agents focused and reviewable.
+
 ## Architecture References
 
 Before making structural decisions, check:
