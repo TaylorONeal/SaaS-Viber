@@ -49,7 +49,8 @@ docs/
 │   └── [YOUR_AI_AGENT_CONFIGS].md
 │
 ├── templates/                ← Reusable documentation templates
-│   └── IOS_READINESS_TEMPLATE.md
+│   ├── IOS_READINESS_TEMPLATE.md
+│   └── CONNECTOR_AUTOMATION_TEMPLATE.md
 │
 ├── roadmap/                  ← Product roadmap and planning
 │   ├── ROADMAP.md            ← Product roadmap by phase
@@ -180,9 +181,11 @@ You are leveraging AI assistants (Claude, ChatGPT, Copilot, etc.) to accelerate 
 - [Localization Analysis](./LOCALIZATION_ANALYSIS.md) — i18n planning
 - [FAQ](./FAQ.md) — Common questions by audience
 - [Modern Agentic Development](./ai-agents/MODERN_AGENTIC_DEVELOPMENT.md) — Latest-model agent workflow, task routing, and verification packets
+- [Public Repo Repurposing Guide](./guides/PUBLIC_REPO_REPURPOSING_GUIDE.md) — Patterns mined from related public repos for SaaS starter-kit reuse
 - [Skills](../skills/README.md) — Reusable agent skills (taste-skill governs frontend visual standards)
 - [iOS Readiness Checklist](./guides/IOS_READINESS_CHECKLIST.md) — App Store launch readiness
 - [iOS Readiness Template](./templates/IOS_READINESS_TEMPLATE.md) — Repo-tailored iOS readiness planning
+- [Connector and Automation Safety Template](./templates/CONNECTOR_AUTOMATION_TEMPLATE.md) — Import, integration, bulk-action, and AI automation guardrails
 
 ---
 

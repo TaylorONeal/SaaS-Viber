@@ -135,6 +135,8 @@ reached by any Markdown link.
 - **[ARCHITECTURE.md](ARCHITECTURE.md)** -- System architecture overview
 - **[DEPLOYMENT.md](DEPLOYMENT.md)** -- Production deployment guide
 - **[DATA_INTEROPERABILITY.md](DATA_INTEROPERABILITY.md)** -- Data ownership and portability
+- **[docs/guides/PUBLIC_REPO_REPURPOSING_GUIDE.md](docs/guides/PUBLIC_REPO_REPURPOSING_GUIDE.md)** -- Reusable patterns mined from related public repos
+- **[docs/templates/CONNECTOR_AUTOMATION_TEMPLATE.md](docs/templates/CONNECTOR_AUTOMATION_TEMPLATE.md)** -- Safety template for connectors, imports, bulk actions, and AI automation
 
 ### Prompt Guides
 
