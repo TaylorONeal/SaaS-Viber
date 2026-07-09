@@ -82,6 +82,7 @@ You know your stack, you've built SaaS before, and you want to move fast. Here's
 | Event tracking plan (50+ events) | `docs/developer/tracking-plan.md` |
 | PRD templates + tracker | `docs/prd/` (PRD-TEMPLATE.md + prd-tracker.json) |
 | Prompt templates for AI coding | `docs/ai-agents/PromptGuide-AI-Development.md` |
+| Latest-model agent workflow | `docs/ai-agents/MODERN_AGENTIC_DEVELOPMENT.md` |
 | GDPR/compliance checklist | `docs/architecture/AUDIT_COMPLIANCE.md` |
 | Launch checklist | `docs/guides/LAUNCH_CHECKLIST.md` |
 
@@ -96,6 +97,7 @@ You know your stack, you've built SaaS before, and you want to move fast. Here's
 ```
 Read the following files for context:
 - CLAUDE.md (or .cursorrules)
+- docs/ai-agents/MODERN_AGENTIC_DEVELOPMENT.md
 - docs/design/tokens/tokens.json
 - docs/architecture/DOMAIN_MODEL.md
 - docs/architecture/ROLE_ACCESS_CONTROL.md
@@ -165,7 +167,7 @@ SaaS-Viber/
 │   │   └── tracking-plan.md   ← Event registry + funnels
 │   ├── guides/                ← For everyone: checklists + paths
 │   │   └── TRAINING_PATH.md   ← Phase-by-phase build guide
-│   ├── ai-agents/             ← For AI tools: prompts + context
+│   ├── ai-agents/             ← For AI tools: prompts, context, modern agent playbooks
 │   ├── prd/                   ← For product: requirements templates
 │   └── workflows/             ← For product: user flow templates
 │
