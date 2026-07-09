@@ -23,6 +23,10 @@ the operational and documentation backbone for building one.
 5. `CLAUDE.md` -- coding conventions and architecture references
 6. `skills/README.md` -- reusable skills; the `taste-skill` is the authority on frontend visual standards
 
+## Modern Agentic Workflow
+
+For substantial feature, refactor, migration, or release work, use `docs/ai-agents/MODERN_AGENTIC_DEVELOPMENT.md` as the operating model. It defines task packets, capability-aware routing, verification requirements, and anti-patterns for latest-generation coding agents.
+
 ## Working Norms for Agents
 
 - Prefer small, focused documentation edits over broad rewrites.

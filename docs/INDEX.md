@@ -45,6 +45,7 @@ docs/
 │   └── BRANDING_GUIDE.md
 │
 ├── ai-agents/                ← AI-assisted development guides
+│   ├── MODERN_AGENTIC_DEVELOPMENT.md
 │   └── [YOUR_AI_AGENT_CONFIGS].md
 │
 ├── templates/                ← Reusable documentation templates
@@ -135,7 +136,8 @@ You are leveraging AI assistants (Claude, ChatGPT, Copilot, etc.) to accelerate 
 |---|---|---|
 | `CLAUDE.md` + `../AGENTS.md` (project root) | [PromptGuide-Architecture.md](./architecture/PromptGuide-Architecture.md) | `ai-agents/` directory |
 | [DOMAIN_MODEL.md](./architecture/DOMAIN_MODEL.md) | [FEATURE_INDEX.md](./FEATURE_INDEX.md) | `prd/` directory |
-| [skills/README.md](../skills/README.md) -- reusable agent skills | [LESSONS_LEARNED.md](./ai-agents/LESSONS_LEARNED.md) | [taste-skill](../skills/taste-skill/SKILL.md) -- frontend visual standards |
+| [skills/README.md](../skills/README.md) -- reusable agent skills | [Modern Agentic Development](./ai-agents/MODERN_AGENTIC_DEVELOPMENT.md) | [taste-skill](../skills/taste-skill/SKILL.md) -- frontend visual standards |
+| [LESSONS_LEARNED.md](./ai-agents/LESSONS_LEARNED.md) | [PromptGuide-AI-Development.md](./ai-agents/PromptGuide-AI-Development.md) | [KEY_FILES.md](./ai-agents/KEY_FILES.md) |
 
 **Key questions this path answers:**
 - How do I prompt an AI assistant to generate architecture docs?
@@ -177,6 +179,7 @@ You are leveraging AI assistants (Claude, ChatGPT, Copilot, etc.) to accelerate 
 - [Demo Mode](./DEMO_MODE.md) — Show before you build
 - [Localization Analysis](./LOCALIZATION_ANALYSIS.md) — i18n planning
 - [FAQ](./FAQ.md) — Common questions by audience
+- [Modern Agentic Development](./ai-agents/MODERN_AGENTIC_DEVELOPMENT.md) — Latest-model agent workflow, task routing, and verification packets
 - [Skills](../skills/README.md) — Reusable agent skills (taste-skill governs frontend visual standards)
 - [iOS Readiness Checklist](./guides/IOS_READINESS_CHECKLIST.md) — App Store launch readiness
 - [iOS Readiness Template](./templates/IOS_READINESS_TEMPLATE.md) — Repo-tailored iOS readiness planning
@@ -217,5 +220,5 @@ Each document and feature uses the following status indicators:
 
 ---
 
-*Last updated: 2026-06-06*
+*Last updated: 2026-07-09*
 *Documentation version: Template v1.0 (see [CHANGELOG.md](../CHANGELOG.md) for unreleased changes)*
