@@ -145,6 +145,7 @@ reached by any Markdown link.
 |-------|---------|
 | `docs/prd/PromptGuide-PRD.md` | Writing product requirement documents |
 | `docs/ai-agents/PromptGuide-AI-Development.md` | End-to-end AI development workflows |
+| `docs/ai-agents/MODERN_AGENTIC_DEVELOPMENT.md` | Latest-model agent operating model, task routing, and verification packets |
 | `docs/architecture/PromptGuide-Architecture.md` | Generating domain model, RBAC, billing, and reliability docs |
 | `docs/guides/PromptGuide-Guides.md` | Generating and maintaining operational guides |
 | `docs/workflows/PromptGuide-Workflows.md` | Building and documenting workflow specs |
@@ -154,6 +155,7 @@ reached by any Markdown link.
 - `CLAUDE.md` -- auto-loaded context and coding conventions for Claude Code
 - `AGENTS.md` -- codex/CLI-agent onboarding and documentation norms
 - `docs/ai-agents/AGENTS.md` -- reusable onboarding template for AI assistants
+- `docs/ai-agents/MODERN_AGENTIC_DEVELOPMENT.md` -- latest-model playbook for long-context, tool-using coding agents
 
 ### Reusable Skills
 
