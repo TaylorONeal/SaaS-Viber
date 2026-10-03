@@ -576,11 +576,12 @@ Inspect the produced artifact. Note when CI artifacts expire and rebuild before.
 A placeholder package id in a prepared app means a new listing later. Choose
 permanent ids and key ownership first.
 
-### 74. Do Not Promise No-Cloud and Ship a Server
+### 74. If You Make a Privacy Promise, Make the Architecture Keep It
 
-A free, local-first, privacy-first promise conflicted with a challenge and rate
-limit server. Remove the component, or drop the claim. Do not harden what you
-do not need.
+"No cloud" or "local-first" is an optional positioning choice for privacy-focused
+apps, not a requirement for SaaS. If you do promise it, a challenge server, rate
+limiter, or sync endpoint contradicts it. Remove the component, or drop the claim.
+Do not harden something you should not need.
 
 ### 75. One Agent Holds the Device
 
