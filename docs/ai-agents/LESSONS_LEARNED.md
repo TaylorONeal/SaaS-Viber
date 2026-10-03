@@ -428,6 +428,178 @@ invocations, egress, LLM tokens) so a runaway loop is a notification, not a bill
 
 ---
 
+## Launch and Store Submission
+
+> Harvested from shipping several apps to the App Store and Google Play. The
+> full sequence lives in the
+> [Web to Mobile Launch Playbook](../guides/WEB_TO_MOBILE_LAUNCH_PLAYBOOK.md).
+
+### 49. A Build Upload Is Not a Test
+
+Dozens of beta builds can go out with zero installs on a real device. Count
+installs, not builds. The first physical-device run is where sign-in, purchases
+and permissions actually get exercised, so schedule it early.
+
+### 50. Start Every Long-Lead Item on Day One, in Parallel
+
+Entity formation, business identifier, developer-account verification, banking
+and tax forms, and trader declarations are independent of each other and of your
+code. Running them one after another cost weeks. Their waits are calendar time,
+so start them all the same day, and record the exact date each clock started.
+
+### 51. One Publisher Can Cover a Whole Portfolio
+
+Set up the legal entity and developer accounts once and reuse them for every app.
+Keep a portfolio-level checklist so the second app starts at "accounts done."
+
+### 52. Only Evidence Closes a Gate
+
+Docs, nightly bot summaries and old notes drifted away from live state
+(migrations "unapplied" after being applied). Evidence order: live dashboard or
+database, then CI run URL, then dated entry, then summaries. If nothing proves a
+gate, write `UNVERIFIED`. Flag anything with no evidence in 7 days as stale.
+
+### 53. One Canonical Tracker
+
+Status split across a playbook, a project tracker and a next-steps file was
+wrong in two of the three. Keep one tracker. Every session that moves a gate edits it.
+See [Launch Tracker Template](../templates/LAUNCH_TRACKER_TEMPLATE.md).
+
+### 54. Freeze Scope at the Release Candidate
+
+A submit date slipped for days while scope stayed open. Freeze at the RC and put
+everything else on a written 1.0.1 list.
+
+### 55. Never Delete a Feature to Pass CI
+
+A social sign-in was removed to get a green build and rebuilt months later. Tag
+the failure, track it, and restore the feature.
+
+### 56. Reconcile Billing Once, Before the First Sandbox Test
+
+A product-type mismatch (non-consumable versus non-renewing subscription) was
+caught only in a late red-team pass. Check product ids, product types against
+paywall copy, prices, offering and entitlement mapping, server acceptance of every
+store value, webhook endpoint and production secrets in one pass.
+
+### 57. Per Platform: Full Billing Path or Free
+
+A server that accepted receipts from only one store left the other store with no
+billing path. Decide per platform. Do not leave billing half wired.
+
+### 58. Static Billing Verification When a Real Purchase Is Impossible
+
+If a device purchase cannot run, still verify product ids across paywall, server
+and provider, run billing tests on the exact RC tag, and confirm the webhook is
+live. Then write the residual risk down for the owner to accept or overrule.
+
+### 59. Keep a "Cannot Verify" List for Secrets
+
+Agents often cannot read production secrets. Put each unverified secret and
+environment variable on a short list for a human, with the exact location.
+
+### 60. Protect Live Billing During a Launch
+
+Do not change live subscriber billing configuration or webhooks while launching
+something else. Mark it do-not-touch in `CLAUDE.md`.
+
+### 61. Find Submit-Day Blockers a Week Early
+
+App price, availability, new regulated-category declarations, and the rule that a
+subscription group must be added to the draft separately all surfaced only at
+"Add for Review". Click through each console's submission flow a week early,
+stopping before Submit.
+
+### 62. Add Products and the Subscription Group to One Draft
+
+First in-app purchases and subscriptions go in a single draft submission. The
+subscription group is added separately or Submit stays disabled. Check the
+"items ready" count against the packet.
+
+### 63. Review Screenshots Need an Exact Size
+
+An in-app purchase review screenshot above the minimum was still rejected for wrong
+dimensions. Produce the exact accepted size and verify with a command. One paywall
+image showing every tier can serve every product.
+
+### 64. Write Review Notes From an Empty Account
+
+Notes that say "open your saved item" strand a reviewer whose account has none.
+Start at the create flow and say where purchase, restore and delete live.
+
+### 65. Plan Two Human Touches on Submit Day
+
+Agents can prepare nearly everything, but uploading local files through a browser
+extension and clicking the final Submit are human actions. Passwords, sandbox
+credentials and agreements are always human.
+
+### 66. Mirroring Can Fail From the Phone Side
+
+Phone mirroring dropped every session at exactly nine seconds, ended by the
+phone, and Mac-side fixes changed nothing. Budget 15 minutes, then switch to a
+manual script, a view-only capture or command-line checks. See the
+[Device Test Runbook](../guides/DEVICE_TEST_RUNBOOK.md).
+
+### 67. Verify the Installed Build by Command
+
+Use `xcrun devicectl device info apps` (iOS) or `adb shell dumpsys package`
+(Android). Do not trust "I installed the latest."
+
+### 68. Pick the Device as the Capture Source First
+
+Opening a recording tool can default to the computer webcam. Select the phone
+as the source first, or ask.
+
+### 69. Capture Store Screenshots in the Test Session
+
+Review screenshots were missing late because nobody captured them while the phone
+was in hand. Capture paywall and core-loop screens during the purchase tests.
+
+### 70. Copy a Known-Green CI Pipeline
+
+Dozens of failed builds came from configuration shadowing, signing and shell
+syntax differences. Start every app from a pipeline that has produced a signed
+build. Pre-provision a working CI token and a tag trigger before launch week.
+
+### 71. A CI Gate That Never Ran Is Not a Gate
+
+An end-to-end workflow depended on a variable group that did not exist, so it
+failed at config parse and nobody noticed. Run each gate once and record the run URL.
+
+### 72. Inspect the Artifact, Not the Badge
+
+CI green did not mean a signed bundle with the right target SDK and package name.
+Inspect the produced artifact. Note when CI artifacts expire and rebuild before.
+
+### 73. Choose Permanent App Ids Before the First Signed Build
+
+A placeholder package id in a prepared app means a new listing later. Choose
+permanent ids and key ownership first.
+
+### 74. Do Not Promise No-Cloud and Ship a Server
+
+A free, local-first, privacy-first promise conflicted with a challenge and rate
+limit server. Remove the component, or drop the claim. Do not harden what you
+do not need.
+
+### 75. One Agent Holds the Device
+
+Two agents on one launch duplicated about an hour of work and held different views
+of state. One agent drives the phone. Handoffs read the other agent's merged docs
+and session log first.
+
+### 76. Retire Stale Submit Docs
+
+Notes for an old release candidate stayed in the repo and misled later sessions.
+When a new RC replaces the old, retire its packet.
+
+### 77. Automate the Wait
+
+After submission, a scheduled mailbox check removes manual polling: quiet while
+pending, diagnose on rejection, release checklist on approval.
+
+---
+
 ## Adding New Lessons
 
 When you encounter a new pitfall, add it here with:

@@ -12,6 +12,19 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
 ## [Unreleased]
 
 ### Added
+- `docs/guides/WEB_TO_MOBILE_LAUNCH_PLAYBOOK.md` -- end-to-end sequence for
+  launching a web SaaS on iOS and Android: five parallel lanes, day-one
+  paperwork, billing reconciliation, CI and signing, submit-day flow, release,
+  evidence rules, red flags.
+- `docs/guides/DEVICE_TEST_RUNBOOK.md` -- real-device test matrix, evidence log,
+  build verification commands, mirroring fallbacks.
+- `docs/templates/LAUNCH_TRACKER_TEMPLATE.md` and
+  `docs/templates/SUBMIT_DAY_PACKET_TEMPLATE.md` -- evidence-based gate tracker
+  and the day-before-submission packet.
+- `skills/launch-skill/SKILL.md` -- `web-to-mobile-launch` skill encoding the
+  launch procedure; registered in `skills/README.md`.
+- `docs/ai-agents/LESSONS_LEARNED.md`: new "Launch and Store Submission" section
+  (lessons 49-77) harvested from shipping several apps.
 - `skills/README.md` -- catalog of reusable Claude Code skills, how to use and
   add them, surfaced from README, START_HERE, CLAUDE.md, AGENTS.md, and INDEX.
 - `docs/architecture/PromptGuide-Architecture.md` -- completes the prompt-guide
