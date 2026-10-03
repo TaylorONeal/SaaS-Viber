@@ -45,6 +45,8 @@ For substantial feature, refactor, migration, or release work, use `docs/ai-agen
 When updating docs, keep these sections aligned:
 - **Agent onboarding**: `CLAUDE.md`, `AGENTS.md`, `docs/ai-agents/AGENTS.md`
 - **Navigation hubs**: `README.md`, `START_HERE.md`, `docs/INDEX.md`
+- **Launch playbook**: `docs/guides/WEB_TO_MOBILE_LAUNCH_PLAYBOOK.md`,
+  `docs/guides/DEVICE_TEST_RUNBOOK.md`, `skills/launch-skill/SKILL.md`
 - **Mobile readiness**: `docs/guides/IOS_READINESS_CHECKLIST.md`,
   `docs/templates/IOS_READINESS_TEMPLATE.md`,
   `docs/guides/ANDROID_READINESS_CHECKLIST.md`
