@@ -42,7 +42,9 @@ docs/
 │   └── [YOUR_DESIGN_DOCS].md
 │
 ├── guides/                   ← User and team guides
-│   └── BRANDING_GUIDE.md
+│   ├── BRANDING_GUIDE.md
+│   ├── WEB_TO_MOBILE_LAUNCH_PLAYBOOK.md ← Web, then iOS and Android, end to end
+│   └── DEVICE_TEST_RUNBOOK.md
 │
 ├── ai-agents/                ← AI-assisted development guides
 │   ├── MODERN_AGENTIC_DEVELOPMENT.md
@@ -50,6 +52,8 @@ docs/
 │
 ├── templates/                ← Reusable documentation templates
 │   ├── IOS_READINESS_TEMPLATE.md
+│   ├── LAUNCH_TRACKER_TEMPLATE.md
+│   ├── SUBMIT_DAY_PACKET_TEMPLATE.md
 │   └── CONNECTOR_AUTOMATION_TEMPLATE.md
 │
 ├── roadmap/                  ← Product roadmap and planning
@@ -183,6 +187,10 @@ You are leveraging AI assistants (Claude, ChatGPT, Copilot, etc.) to accelerate 
 - [Modern Agentic Development](./ai-agents/MODERN_AGENTIC_DEVELOPMENT.md) — Latest-model agent workflow, task routing, and verification packets
 - [Public Repo Repurposing Guide](./guides/PUBLIC_REPO_REPURPOSING_GUIDE.md) — Patterns mined from related public repos for SaaS starter-kit reuse
 - [Skills](../skills/README.md) — Reusable agent skills (taste-skill governs frontend visual standards)
+- [Web to Mobile Launch Playbook](./guides/WEB_TO_MOBILE_LAUNCH_PLAYBOOK.md) — End-to-end sequence: parallel paperwork, build, billing, device testing, submission, release
+- [Device Test Runbook](./guides/DEVICE_TEST_RUNBOOK.md) — Real-device test matrix, evidence log, mirroring fallbacks
+- [Launch Tracker Template](./templates/LAUNCH_TRACKER_TEMPLATE.md) — Evidence-based gate tracker for one app or a portfolio
+- [Submit-Day Packet Template](./templates/SUBMIT_DAY_PACKET_TEMPLATE.md) — Fill in the day before store submission
 - [iOS Readiness Checklist](./guides/IOS_READINESS_CHECKLIST.md) — App Store launch readiness
 - [iOS Readiness Template](./templates/IOS_READINESS_TEMPLATE.md) — Repo-tailored iOS readiness planning
 - [Connector and Automation Safety Template](./templates/CONNECTOR_AUTOMATION_TEMPLATE.md) — Import, integration, bulk-action, and AI automation guardrails
