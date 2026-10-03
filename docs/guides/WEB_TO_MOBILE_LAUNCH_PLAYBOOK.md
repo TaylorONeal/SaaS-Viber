@@ -113,9 +113,12 @@ A server that accepts only one store's receipts, with the other store unhandled,
 
 Decide early because it changes architecture:
 
-- Does the app need a server at all? If the promise is "no cloud" or "local-first,"
-  then any challenge server, rate limiter or analytics endpoint contradicts it.
-  Remove the component or drop the claim. Do not harden something you do not need.
+- Is this a privacy-focused product that wants to promise "no cloud" or
+  "local-first"? That is an **optional positioning choice for specific apps, not a
+  default or a requirement.** Most SaaS products need a backend, and that is fine.
+  If you do make the promise, make it true: any server component (challenge
+  endpoint, rate limiter, analytics, sync) contradicts it, so remove the component
+  or drop the claim.
 - What personal data is collected, and can it be minimized? See the
   [privacy skill](../../skills/privacy-skill/SKILL.md).
 - Account deletion must work in-app and in the backend from the first build.
@@ -556,7 +559,7 @@ If any of these is true, stop and fix it before continuing.
 | Review notes written from an account with saved data | Reviewer gets stuck |
 | Scope still changing after the RC | Date will slip |
 | A secret the agent could not verify is not on the human list | Silent production failure |
-| Promise says "no cloud" but a server exists | Trust and review problem |
+| A privacy promise (for example "no cloud") that the architecture does not keep | Trust and review problem. Applies only to apps that make such a promise |
 | Artifact expiry date earlier than submission date | Rebuild needed |
 
 ---
