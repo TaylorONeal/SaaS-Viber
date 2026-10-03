@@ -93,6 +93,15 @@ Before making testing decisions, check:
 - `docs/testing/XCTEST_SETUP.md` → XCTest integration instructions
 - `docs/testing/MAESTRO_SETUP.md` → Maestro installation and flow authoring
 
+## Launch References
+
+Before launch status checks, store submission, release candidates, or billing and
+device-testing work, check:
+- `docs/guides/WEB_TO_MOBILE_LAUNCH_PLAYBOOK.md` -> Phase order, gates, red flags
+- `docs/guides/DEVICE_TEST_RUNBOOK.md` -> Real-device test matrix and evidence log
+- `docs/templates/LAUNCH_TRACKER_TEMPLATE.md` -> One canonical, evidence-based tracker
+- `skills/launch-skill/SKILL.md` -> Agent procedure; evidence over documents, human-only gates
+
 ## Common Tasks
 
 ### Adding a new page
