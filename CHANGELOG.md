@@ -12,6 +12,14 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
 ## [Unreleased]
 
 ### Added
+- `docs/ai-agents/LESSONS_LEARNED.md`: 30 new generalizable lessons (78-107)
+  harvested from shipping several more SaaS/mobile apps, including two new
+  sections -- "Agent Collaboration & Git Workflow" (merge-gate ordering,
+  stacked-PR rebasing, shallow-clone false positives, safe `git rm --cached`
+  usage, PID-based process kills) and "Infrastructure, Domains & SEO"
+  (canonical host choice, DNS verification codes, domain-verification
+  redirects, and where structured data actually lives for crawlers and
+  AI/LLM search surfaces).
 - `docs/guides/WEB_TO_MOBILE_LAUNCH_PLAYBOOK.md` -- end-to-end sequence for
   launching a web SaaS on iOS and Android: five parallel lanes, day-one
   paperwork, billing reconciliation, CI and signing, submit-day flow, release,
