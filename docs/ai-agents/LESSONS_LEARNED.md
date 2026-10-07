@@ -218,6 +218,32 @@ Do not sync form inputs with your global store or server cache. Use a form
 library (React Hook Form) for form state, and only sync to the server on submit.
 Controlled inputs re-render on every keystroke if managed incorrectly.
 
+### 78. Carousel/Slider State Fights Smooth Scroll
+
+Setting the active-tab/dot state on click while a smooth scroll animation to
+that position is still running causes a visible flicker, because scroll
+listeners re-fire and overwrite the state you just set. Lock the active-state
+sync while a programmatic scroll is in flight, and only release it on
+`scrollend` (or a timeout fallback).
+
+### 79. 100% i18n Coverage Can Still Mean Hardcoded Strings
+
+An i18n key-coverage script reports the percentage of translation keys that
+have a value -- it says nothing about whether every user-facing string
+actually goes through the translation function. A literal string typed
+directly into JSX passes a 100% report and still ships in the wrong language.
+Audit literal strings in components separately (a lint rule or a grep for
+quoted text in JSX) from key coverage.
+
+### 80. First-Render Language Flag Races Storage
+
+If the UI language is read from `localStorage`/`AsyncStorage` asynchronously,
+the very first render happens before that read resolves and can lock in the
+wrong `<html lang>` or default copy for a returning user. Use whatever
+synchronous value is available (a cookie, a server-rendered flag) for the
+first paint, and specifically test the returning-user path, not just
+first-visit.
+
 ---
 
 ## Deployment Pitfalls
@@ -248,6 +274,35 @@ Serverless functions open a new database connection per invocation. Use a
 connection pooler (PgBouncer, Supabase's built-in pooler) to prevent
 exhausting your database connection limit. Set pool mode to `transaction`
 for serverless workloads.
+
+### 81. The Deploy Host's "Production" Branch Isn't Always `main`
+
+Treat the hosting provider's actual production-branch setting as the source
+of truth, not a convention. A repo can have `main` as its default branch
+while the host deploys production from `release` or `prod` -- check the
+dashboard setting before assuming a push to `main` ships.
+
+### 82. Verify a Stale-Looking Deploy With a Cache-Busting Fetch
+
+Before concluding a deploy failed because a stakeholder still sees old
+content, rule out their own cache first: fetch the URL with a cache-busting
+query param or header and compare. Chasing a "failed deploy" that was
+actually a stale browser tab wastes a debugging session.
+
+### 83. Test Feature Flags in the Actual Production Build, Not Just Dev
+
+A feature shipped "dark" behind a flag still needs to be built and
+smoke-tested in the production build pipeline, not only `next dev` / debug
+mode. A dev-only guard can fail to strip in certain bundlers or minifiers,
+leaking an unfinished feature into the live build even though the flag is off.
+
+### 84. Confirm Which Server a Client Actually Points to Before Changing Server Logic
+
+When more than one backend deployment exists for a product (a staging copy,
+a sibling app's server, an old environment), confirm which one the client
+app is actually configured to call in production before editing server-side
+logic. Editing the wrong copy produces a change that tests green locally and
+does nothing in production.
 
 ---
 
@@ -290,6 +345,101 @@ The same rule stated in two files will eventually contradict itself, and the
 agent will obey whichever it read last. Designate one canonical file per concern
 (design -> the taste skill, conventions -> `CLAUDE.md`) and have the others link
 to it rather than restate it.
+
+### 85. Check for Existing Infrastructure Before Asking
+
+Before asking the project owner for a hosting account, domain, or repo, check
+the obvious places first (existing DNS records, a password manager entry, a
+prior deploy's config). Re-asking for something that already exists costs
+their time and signals the agent didn't look.
+
+### 86. Record Every Third-Party Account at Creation, Not After
+
+The moment an agent creates an account with a third-party service (a
+registrar, an email provider, an analytics tool), record its login, purpose,
+and owner in that same step. Discovering later that a confirmation email
+silently failed to forward, with no record of which account to check, turns
+a two-minute lookup into a scavenger hunt.
+
+### 87. Check Every Open Browser Context Before Concluding a Page "Isn't There"
+
+If a session can have more than one browser context or tab open (automation
+driving one tab while a human has another), check all of them before
+reporting that a page, modal, or state doesn't exist. It may simply be open
+somewhere else.
+
+### 88. Read the Repo Before Promising to Reuse Its "Deeper" Solution
+
+A sibling project can be meaningfully more mature in one dimension (polished
+UI copy) and shallower in another (no real SEO, no structured content) that
+you actually need. Don't assume "they solved this already, just copy it"
+without opening the code -- verify the specific piece you need actually
+exists there.
+
+### 89. Don't Re-Open a Decision That's Already Recorded
+
+Once a decision is made and written down, a later planning pass shouldn't
+re-present it as an open question -- check the decisions log first.
+Re-litigating settled questions burns review time and erodes trust in the
+log itself.
+
+### 90. Don't Skip the Automated Review Pass to Save Time on a Risky Change
+
+An automated code-review pass catches real bugs often enough that skipping
+it "just this once" to save a few minutes on a release-process or billing
+change isn't worth the risk. The categories where it matters most (billing,
+auth, release pipelines) are exactly the ones where a missed bug is
+expensive.
+
+---
+
+## Agent Collaboration & Git Workflow
+
+### 91. A Merge Gate Can Block Even an Explicit Approval
+
+A CI or bot-driven merge-permission check can still block a PR even after an
+explicit chat approval. In practice it tends to pass reliably only in a
+specific order: approval, then a green CI run, then a clean automated review
+pass -- in that sequence. If the gate is stuck, check whether that order was
+actually followed before assuming it's broken.
+
+### 92. Rebase Stacked PRs After the Base Squash-Merges
+
+When a parent PR is squash-merged, its commit disappears from the branch's
+history as the child branch knew it. Rebase the child onto the new base
+branch, and when both touched the same file, keep the child's version -- it
+has the newer intent. Merging without rebasing reintroduces the parent's
+pre-squash diff as a conflict or a silent revert.
+
+### 93. A Shallow Clone's "Lost Work" Warning Can Be a False Positive
+
+A shallow, single-branch clone has no local remote-tracking ref for a branch
+that was just pushed from elsewhere. A tool that reports "this branch
+doesn't exist, work may be lost" based on local refs alone can simply be
+wrong. Verify against the actual remote (`git ls-remote` or the host's UI)
+before treating it as data loss.
+
+### 94. `git rm --cached -r <dir>` Is Not a Safe Way to Stop Tracking a Directory
+
+Running this to make a directory "untracked going forward" also stages the
+deletion of every file already tracked inside it -- the next commit removes
+them from the repo (though they stay on disk). Add the path to `.gitignore`
+and use `git rm --cached` only on the specific files you mean to detach, or
+accept that a commit will follow removing history for the rest.
+
+### 95. Push Branches the Day They're Created
+
+Work that exists only on a local branch on one machine is one disk failure
+or container rebuild away from gone. Push branches promptly, even
+in-progress ones, and verify with the remote rather than trusting local git
+state as proof the work is safe.
+
+### 96. Kill Background Processes by PID, Not by a Command-Line Pattern
+
+A `pkill`/`kill` call that matches on a command-line substring can match the
+very shell or script that's running the kill command, or an unrelated
+process that happens to share a token. Capture the PID when you start the
+process and kill that, not a pattern match.
 
 ---
 
@@ -368,6 +518,14 @@ users' data, internal IDs you did not mean to expose. Secrets live server-side;
 client keys are publishable-only and scoped by RLS. Audit analytics payloads and
 LLM prompts too -- PII leaks through both.
 
+### 97. Verify a "No Permissions" Privacy Claim Against the Built App Manifest
+
+Privacy copy stating an app requests no special permissions should be
+checked against the actual compiled app's manifest (`AndroidManifest.xml`,
+iOS `Info.plist`), not just the code you wrote. A base library or SDK can
+add a permission declaration the copy never mentions, turning an
+accurate-sounding claim into a false one at submission time.
+
 ---
 
 ## Product & Scope
@@ -395,6 +553,62 @@ you can always add the second feature once the first earns its keep.
 Login walls and paywalls are friction you add *after* the product is worth
 logging into. Prove the core experience first -- often in a demo mode with no
 account required -- then gate it. See `docs/DEMO_MODE.md`.
+
+### 98. One Source of Truth for a Public Contact Address
+
+A support or contact address drifts across the website, store listing, and
+in-app copy unless exactly one place owns it and everything else references
+that place. Treat it like any other piece of content that must never fork.
+
+### 99. Platform and Feature Claims in Copy Come From the Source of Truth
+
+Any claim about what the product supports (platforms, features, limits) in
+marketing or store copy should trace back to the actual code or an explicit
+decision record -- never a plausible-sounding guess, even when the guess is
+probably right. A wrong claim in copy is a support ticket and a store-review
+flag waiting to happen.
+
+### 100. Sweep the Whole User-Facing Surface for House-Style Drift
+
+A long-running site or app accumulates small style violations (an overused
+punctuation mark, a banned phrase, an inconsistent capitalization) faster
+than one-off edits can catch them. When you notice one, grep the whole
+user-facing surface in one pass rather than fixing it file by file as you
+happen to pass through.
+
+---
+
+## Infrastructure, Domains & SEO
+
+### 101. Pick One Canonical Host Early (www vs. Apex) and Keep Everything in Agreement
+
+Decide whether the canonical domain is the www or apex form before launch,
+not after. Every redirect rule, sitemap entry, and search-console property
+verification must agree with that choice, or you'll spend a day
+re-verifying ownership after a silent mismatch.
+
+### 102. Never Reuse or Guess a One-Time DNS Verification Code
+
+Registrars that email a one-time code for a DNS or ownership change will
+lock the account after a handful of wrong attempts. Request a fresh code
+and use it immediately rather than reusing an old one or guessing at a
+partially-remembered one.
+
+### 103. A Domain-Verification File Can Still Work Through a Redirect -- Confirm, Don't Assume
+
+A verification file served at the repo root can continue to resolve
+correctly even through a trailing-slash or extension redirect. Don't assume
+the redirect breaks verification; fetch the exact URL the verifier checks
+and confirm it live before troubleshooting a problem that may not exist.
+
+### 104. Check Where Structured Data Actually Lives Before Editing It
+
+A server-rendered site can silently strip client-side JSON-LD you add and
+generate its own version instead, so the structured data a crawler (or an
+AI answer engine) actually sees may not be the markup in your component.
+Fetch the rendered HTML and confirm which structured data is live before
+editing the wrong copy -- this matters as much for AI/LLM search surfaces
+(AEO/GEO) as for traditional search.
 
 ---
 
@@ -598,6 +812,28 @@ When a new RC replaces the old, retire its packet.
 
 After submission, a scheduled mailbox check removes manual polling: quiet while
 pending, diagnose on rejection, release checklist on approval.
+
+### 105. Re-Check Store and Landing Copy Every Time Launch Scope Changes
+
+Adding a platform, gating a feature, or dropping a promised capability
+invalidates copy that was accurate when it was written. Treat a scope
+change as a trigger to re-read every public-facing description, not just
+the code.
+
+### 106. Label Web-Build Screenshots Captured in a Device Frame -- They Aren't Native
+
+A marketing screenshot generated by placing a web build's screenshot inside
+a phone-shaped frame is not the same as a native device screenshot, and
+some reviewers or store guidelines treat them differently. Label these
+clearly during production and swap in real device captures before store
+submission.
+
+### 107. CI Artifacts From a Public Repo May Be Downloadable Without Authentication
+
+Don't rely on a public repo's CI artifact storage as the handoff channel for
+a signed or production build -- it may be fetchable by anyone with the URL,
+and that's not where you want a release binary sitting. Use a channel
+scoped to the people who should have it.
 
 ---
 
