@@ -12,6 +12,10 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
 ## [Unreleased]
 
 ### Added
+- Platform-independence guard: `scripts/check-platform-independence.sh` plus
+  `.github/workflows/platform-independence.yml` fail CI on hosted app-builder
+  tooling, config, template icons and `attached_assets/`. The rule is recorded in
+  `CLAUDE.md`, `AGENTS.md` and `docs/ai-agents/AGENTS.md`.
 - `docs/ai-agents/LESSONS_LEARNED.md`: 30 new generalizable lessons (78-107)
   harvested from shipping several more SaaS/mobile apps, including two new
   sections -- "Agent Collaboration & Git Workflow" (merge-gate ordering,

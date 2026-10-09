@@ -209,3 +209,7 @@ Types: [path pattern]
 - Add new lessons to `LESSONS_LEARNED.md` after resolving tricky bugs
 - Update `DESIGN_SYSTEM.md` when design tokens or components change
 - Review this guide monthly to ensure accuracy
+
+## Platform independence
+
+No hosted app-builder tooling, hosting, icons, env vars or assets (no builder plugins in `package.json` or lockfiles, no builder config files or asset dumps, no template favicon or placeholder images). CI enforces this with `scripts/check-platform-independence.sh`; run it before pushing.
