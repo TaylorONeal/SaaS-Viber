@@ -132,4 +132,4 @@ device-testing work, check:
 
 ## Platform independence
 
-No vendor-locked scaffolding tools, hosting or assets (for example `lovable-tagger`, `.replit`, template favicons, `attached_assets/`). CI enforces this with `scripts/check-platform-independence.sh`; run it before pushing. Keep the app portable: standard Vite build, any static or Node host.
+No hosted app-builder tooling, hosting, icons, env vars or assets (no builder plugins in `package.json` or lockfiles, no builder config files or asset dumps, no template favicon or placeholder images). CI enforces this with `scripts/check-platform-independence.sh`; run it before pushing. Keep the app portable: standard Vite build, any static or Node host.
