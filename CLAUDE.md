@@ -129,3 +129,7 @@ device-testing work, check:
 - Don't add dependencies without checking if shadcn/ui or existing utils cover the need
 - Don't create files outside the established directory structure
 - Don't modify shadcn/ui base components in `src/components/ui/` directly
+
+## Platform independence
+
+No vendor-locked scaffolding tools, hosting or assets (for example `lovable-tagger`, `.replit`, template favicons, `attached_assets/`). CI enforces this with `scripts/check-platform-independence.sh`; run it before pushing. Keep the app portable: standard Vite build, any static or Node host.
