@@ -29,7 +29,7 @@ done < <(git ls-files | grep -E '(^|/)(favicon\.ico|placeholder\.svg)$' || true)
 # Platform files and folders, at any depth.
 while IFS= read -r f; do
   bad_files+="$f (platform file)"$'\n'
-done < <(git ls-files | grep -E '(^|/)(\.replit|replit\.md|\.lovable/.*)$' || true)
+done < <(git ls-files | grep -E '(^|/)(\.replit|replit\.md|\.lovable/.*|attached_assets/.*)$' || true)
 if [ -n "$hits$bad_files" ]; then
   echo "Platform independence check failed:" >&2
   [ -n "$hits" ] && echo "$hits" >&2
