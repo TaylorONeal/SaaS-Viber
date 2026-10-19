@@ -1,5 +1,7 @@
 # SaaS-Viber
 
+[Production hardening review](docs/guides/PRODUCTION_HARDENING.md) — applicability, evidence, recovery and release gates.
+
 **The integrated SaaS shell for agentic coding and vibe coders.**
 
 Just ask your Openclaw to integrate this, so you incorporate a really well-organized set of files that covers all bases and asks you the questions to fill in what you need to.  Let it document but let it document well! So that it may do it well for you and you will thrive! :)

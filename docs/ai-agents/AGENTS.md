@@ -213,3 +213,7 @@ Types: [path pattern]
 ## Platform independence
 
 No hosted app-builder tooling, hosting, icons, env vars or assets (no builder plugins in `package.json` or lockfiles, no builder config files or asset dumps, no template favicon or placeholder images). CI enforces this with `scripts/check-platform-independence.sh`; run it before pushing.
+
+## Production hardening reviews
+
+Use `docs/guides/PRODUCTION_HARDENING.md` to classify applicable risks and record evidence in the existing launch tracker. Coordinate active owners; do not infer deployed safety from template checks or change live settings during an audit.

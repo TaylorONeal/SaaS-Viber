@@ -1,12 +1,12 @@
 # Comprehensive Launch Checklist
 
-This is the master launch checklist. Everything here should be verified before you go live with real users and real money. Items are grouped by domain. Work through each section methodically.
+This is a menu of launch checks. Apply the [production hardening review](PRODUCTION_HARDENING.md) to decide relevance, priority and evidence before treating an item as a release gate. Preserve the existing launch tracker; mark absent capabilities not applicable.
 
 ---
 
 ## Legal
 
-Do not launch without these. Legal issues can shut you down.
+Determine applicable obligations from product, audience and jurisdiction with the owner or qualified adviser; these examples are not universal legal requirements.
 
 ### Required Documents
 
@@ -129,7 +129,7 @@ Do not launch without these. Legal issues can shut you down.
 - [ ] Check interval: 1-5 minutes
 - [ ] Alert channels configured (email, SMS, Slack)
 - [ ] Status page created and publicly accessible
-- [ ] Test: take your health check endpoint down briefly and verify alert fires
+- [ ] Test: use an isolated synthetic failure or provider test notification and verify the alert reaches its owner; do not interrupt production
 
 ### Log Aggregation
 

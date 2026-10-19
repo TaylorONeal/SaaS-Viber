@@ -12,6 +12,8 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
 ## [Unreleased]
 
 ### Added
+- Evidence-based production hardening guide and review record validator; classify actual risks, preserve release ownership, and require recovery evidence for live changes. Launch checklist now routes through applicability review and avoids production alert outages.
+
 - Platform-independence guard: `scripts/check-platform-independence.sh` plus
   `.github/workflows/platform-independence.yml` fail CI on hosted app-builder
   tooling, config, template icons and `attached_assets/`. The rule is recorded in

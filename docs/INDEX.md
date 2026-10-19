@@ -1,5 +1,7 @@
 # Documentation Navigation Hub
 
+[Production hardening review](guides/PRODUCTION_HARDENING.md) — applicability, evidence, recovery and release gates.
+
 > **Welcome to the [YOUR_APP_NAME] documentation.**
 > This documentation set is structured to serve multiple audiences and use cases.
 > Whether you are a founder shaping the product, a developer building features,
@@ -233,3 +235,5 @@ Each document and feature uses the following status indicators:
 
 *Last updated: 2026-07-09*
 *Documentation version: Template v1.0 (see [CHANGELOG.md](../CHANGELOG.md) for unreleased changes)*
+
+[Hardening review record](templates/HARDENING_REVIEW_TEMPLATE.md) — optional structured evidence and validation.

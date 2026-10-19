@@ -9,11 +9,15 @@ on:
     paths:
       - "**/*.md"
       - "scripts/check-docs.py"
+      - "scripts/check-hardening-review.py"
+      - "tests/tooling/**"
       - ".github/workflows/docs-check.yml"
   pull_request:
     paths:
       - "**/*.md"
       - "scripts/check-docs.py"
+      - "scripts/check-hardening-review.py"
+      - "tests/tooling/**"
       - ".github/workflows/docs-check.yml"
 
 jobs:
@@ -27,3 +31,5 @@ jobs:
           python-version: "3.x"
       - name: Check documentation links
         run: python3 scripts/check-docs.py
+      - name: Test hardening review validator
+        run: python3 -m unittest discover -s tests/tooling -v
