@@ -9,6 +9,7 @@
 > parallel, who has to click what, and what counts as proof.**
 
 **Companion docs:**
+[Production Hardening](./PRODUCTION_HARDENING.md) (risk and evidence triage) |
 [Launch Checklist](./LAUNCH_CHECKLIST.md) (web) |
 [iOS Readiness Checklist](./IOS_READINESS_CHECKLIST.md) |
 [Android Readiness Checklist](./ANDROID_READINESS_CHECKLIST.md) |

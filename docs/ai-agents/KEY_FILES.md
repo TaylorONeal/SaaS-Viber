@@ -1,5 +1,7 @@
 # Key Files Index
 
+[Production hardening review](../guides/PRODUCTION_HARDENING.md) — applicability, evidence, recovery and release gates.
+
 > Maintain this index so AI assistants (and new developers) can quickly find
 > the right file for any task. Update it whenever you add or move significant files.
 
