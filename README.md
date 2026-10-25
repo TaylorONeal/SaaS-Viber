@@ -294,7 +294,7 @@ MIT License. See [LICENSE](LICENSE) for details.
 <!-- TEMPLATE: Credit the tools, libraries, people, and communities that -->
 <!-- helped make your product possible. This section is optional but classy. -->
 
-- Built with [SaaS-Viber](https://github.com/craftled/SaaS-Viber) -- the integrated SaaS shell for agentic coding
+- Built with [SaaS-Viber](https://github.com/TaylorONeal/SaaS-Viber) -- the integrated SaaS shell for agentic coding
 - [List other acknowledgments: libraries, inspirations, contributors]
 
 <!-- TEMPLATE: Remove this comment block when you're done filling in the README. -->

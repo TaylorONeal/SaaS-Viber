@@ -426,4 +426,4 @@ The SaaS-Viber structure scales with you. The prompt guides work just as well fo
 
 ---
 
-*Built with [SaaS-Viber](https://github.com/craftled/SaaS-Viber) -- the integrated SaaS shell for agentic coding and vibe coders.*
+*Built with [SaaS-Viber](https://github.com/TaylorONeal/SaaS-Viber) -- the integrated SaaS shell for agentic coding and vibe coders.*
