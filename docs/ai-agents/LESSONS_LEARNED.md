@@ -837,6 +837,14 @@ scoped to the people who should have it.
 
 ---
 
+### 108. Make Analytics a Launch Gate, Not a Follow-Up
+
+**Wrong:** Ship the apps and sites first, plan to "add analytics later." Each repo grows its own event names, the marketing sites have no tags turned on, no app reads its install source, and when growth experiments start there is nothing to compare.
+
+**Right:** Treat analytics like billing: a gate that blocks submission. Before launch, web pages have hosting analytics, GA4 with consent defaults and Search Console; apps send one shared event taxonomy to a product analytics tool with cohorts and flags; every store link carries a campaign or referrer; privacy labels ship in the same release as the SDK. See the Analytics section of the [Launch Checklist](../guides/LAUNCH_CHECKLIST.md#analytics).
+
+**Also:** some hosting analytics toggles have no API. Enabling them is a dashboard click per project, so put that click on the pre-launch list.
+
 ## Adding New Lessons
 
 When you encounter a new pitfall, add it here with:

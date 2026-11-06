@@ -150,6 +150,17 @@ Determine applicable obligations from product, audience and jurisdiction with th
 
 ## Analytics
 
+**This section is a launch gate.** Do not submit to a store or start a public campaign until every box is checked with evidence (a realtime event, a screenshot, or a readback). A launch you cannot measure cannot teach you anything. Setup details: [Analytics Setup Guide](../developer/analytics-setup.md) and [Tracking Plan](../developer/tracking-plan.md).
+
+### Web Pages
+
+- [ ] Hosting-level analytics on (for example Vercel Web Analytics), enabled in the dashboard and present in code
+- [ ] GA4 tag driven by one env var measurement ID (empty means no tag), with Do Not Track and Global Privacy Control honored
+- [ ] Store-click and outbound-click events, with the click marked as a key event in GA4
+- [ ] Consent Mode v2 defaults: analytics and ads storage denied for EEA, UK and Switzerland until the visitor accepts; ads storage denied everywhere if you run no ads
+- [ ] Search Console (and Bing) verified, sitemap submitted, Search Console linked to GA4
+- [ ] Privacy page names every analytics provider that is on
+
 ### Event Tracking
 
 - [ ] Page views tracked
@@ -171,6 +182,34 @@ Determine applicable obligations from product, audience and jurisdiction with th
 - [ ] Signup date stored
 - [ ] Key usage metrics stored (for segmentation)
 - [ ] UTM parameters captured at signup (to attribute acquisition channels)
+
+### Mobile Apps (Product-Led Growth)
+
+- [ ] Product analytics SDK (for example PostHog) behind one `track()` facade, key from env, no key means no-op
+- [ ] One event taxonomy shared across your apps: `app_opened` (with `first_open`), `onboarding_completed`, `signup_completed`, `activation_reached` (with the app's core `action`), `key_action`, `share_created`, `paywall_viewed`, `purchase_started`, plus purchase and renewal events from your billing provider
+- [ ] Super properties on every event: app, app version, platform, schema version, install source, install campaign
+- [ ] Retention cohorts (D1, D7, D30) built from `app_opened`; feature flags ready for in-app experiments
+- [ ] Billing provider (for example RevenueCat) connected to the analytics tool with a shared user ID, so revenue cohorts line up
+- [ ] First-party only: no advertising ID, no tracking prompt, no session replay by default, no emails or free text in event properties
+
+### Attribution and Original Source
+
+- [ ] Every shared link carries UTMs from one naming convention
+- [ ] App Store links use campaign links (`pt`, `ct`, `mt=8`); read results in App Store Connect App Analytics
+- [ ] Google Play links carry `referrer` UTM params; the app reads the Install Referrer on first launch and stores the source once
+- [ ] Web call-to-action buttons pass the landing UTM on to the store link
+- [ ] Apple Search Ads attribution (AdServices) and AdAttributionKit or SKAdNetwork only if you run paid ads
+
+### Store Experiments
+
+- [ ] One App Store Product Page Optimization test or Custom Product Page per main channel planned for the first 30 days
+- [ ] One Google Play store listing experiment planned
+
+### Privacy Labels
+
+- [ ] App Store privacy label updated in the same release that adds the analytics SDK ("Used to Track You: none"; usage data and user ID listed as linked or not linked, matching what you send)
+- [ ] Google Play Data safety updated the same way
+- [ ] Privacy policy names the analytics processor
 
 ---
 

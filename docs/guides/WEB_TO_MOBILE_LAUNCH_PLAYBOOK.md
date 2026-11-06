@@ -185,7 +185,7 @@ Finish these before investing in store submission. Full lists live in
 | Auth | Sign-up, sign-in, password reset, session handling across tabs and devices |
 | Account deletion | In-app control and a backend purge that is tested |
 | Billing (web) | Webhooks idempotent, checkout and webhook race handled, status transitions covered |
-| Observability | Error tracking and analytics in before the first user |
+| Observability | Error tracking in before the first user. Analytics is a launch gate: web analytics, product analytics with a shared event taxonomy, store attribution and privacy labels, per the [Launch Checklist](./LAUNCH_CHECKLIST.md#analytics) |
 | Security | Row-level security default-deny, secrets never in the client, security headers |
 | Legal | Terms, privacy policy, support contact, data deletion policy |
 | Performance | Tested on a mid-tier phone with throttled network |
