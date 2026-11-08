@@ -190,6 +190,18 @@ The guides that turn a prototype into a shippable product, written plain enough 
 - [Product-Led Growth Framework](docs/guides/PLG_FRAMEWORK.md) -- activation, aha moment, free tier vs trial, honest viral loops
 - [Design Deslop](docs/guides/DESIGN_DESLOP.md) -- an integrated anti-slop design system in our own version, built on the taste skill
 
+### Analytics, Deep (added Nov 8, 2026)
+
+GA4 and web first, not the app, because of the store rules, and how it all connects. Harvested from the CueCraft family repos (yogaflow, TeacherTree, Tandava):
+
+- [GA4 and Web Analytics](docs/guides/GA4_AND_WEB_ANALYTICS.md) -- GA4 decisions for the web, day-one settings, why the web tag does not belong in a native app
+- [Attribution End to End](docs/guides/ATTRIBUTION_END_TO_END.md) -- from first visit to customer record, including where store attribution stops
+- [Admin Dashboard](docs/guides/ADMIN_DASHBOARD.md) -- the admin dashboard choice on the web, with the honest-cohort pattern from yogaflow
+- [Analytics Databases and Customer Records](docs/guides/ANALYTICS_DATABASES_AND_CUSTOMER_RECORDS.md) -- DB choices for analytics events versus customer records
+- [Free vs Paid and Licenses](docs/guides/FREE_VS_PAID_AND_LICENSES.md) -- free vs paid tiers and commercial-use licensing, as of Nov 8, 2026
+
+This batch also corrected stale figures in `decisions/ANALYTICS_CHOICES.md` (Mixpanel free is 1M events a month now, not 20M; PostHog self-hosting is officially unsupported; GA4 is not unlimited; Plausible has funnels at the $19 tier).
+
 ---
 
 ## Project Structure

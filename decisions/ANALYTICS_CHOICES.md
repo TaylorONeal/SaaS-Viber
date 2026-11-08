@@ -4,6 +4,8 @@
 > **product analytics** (what users do inside your app) and
 > **web analytics** (how users find and arrive at your app).
 > Some tools cover both. This guide helps you pick.
+>
+> Figures as of Nov 8, 2026. Verify on the vendor pricing page before you buy. Corrected Nov 8, 2026 from the deep analytics guides; see `docs/guides/FREE_VS_PAID_AND_LICENSES.md`.
 
 ---
 
@@ -12,8 +14,8 @@
 | Factor | PostHog | Google Analytics 4 | Mixpanel | Amplitude | Plausible | Heap |
 |---|---|---|---|---|---|---|
 | **Primary strength** | All-in-one product analytics | Web traffic and acquisition | Event analytics and funnels | Behavioral analytics | Privacy-first web analytics | Auto-capture everything |
-| **Event tracking** | Custom + autocapture | Custom + enhanced measurement | Custom events | Custom events | Pageviews only | Autocapture + custom |
-| **Funnels** | Yes (advanced) | Yes (basic) | Yes (advanced) | Yes (advanced) | No | Yes (advanced) |
+| **Event tracking** | Custom + autocapture | Custom + enhanced measurement | Custom events | Custom events | Pageviews + custom events | Autocapture + custom |
+| **Funnels** | Yes (advanced) | Yes (basic) | Yes (advanced) | Yes (advanced) | Yes ($19 tier) | Yes (advanced) |
 | **Cohort analysis** | Yes | Yes (basic) | Yes | Yes (advanced) | No | Yes |
 | **Retention charts** | Yes | No (use BigQuery) | Yes | Yes | No | Yes |
 | **Session replay** | Yes (built-in) | No | No | Yes (add-on) | No | Yes (built-in) |
@@ -22,10 +24,12 @@
 | **Heatmaps** | Yes (built-in) | No | No | No | No | Yes (built-in) |
 | **Surveys** | Yes (built-in) | No | No | No | No | No |
 | **User identification** | Yes | Limited | Yes | Yes | No (anonymous) | Yes |
-| **Self-host option** | Yes (Docker) | No | No | No | Yes (Docker) | No |
-| **GDPR-friendly** | Yes (self-host = full control) | Requires consent | Requires consent | Requires consent | Yes (no cookies) | Requires consent |
-| **Free tier** | 1M events/mo | Unlimited (sampled) | 20M events/mo | 10M events/mo | 10K pageviews/mo | 10K sessions/mo |
-| **Cost at scale** | $450/mo (10M events) | Free (unsampled in 360) | $833/mo (100M events) | Custom (>10M) | $19/mo (100K views) | Custom |
+| **Self-host option** | Possible (Docker), officially unsupported | No | No | No | Yes (Docker) | No |
+| **GDPR-friendly** | Yes (EU cloud) | Requires consent | Requires consent | Requires consent | Yes (no cookies) | Requires consent |
+| **Free tier** | 1M events/mo | $0 standard, within limits (see below) | 1M events/mo | 10M events/mo (unverified Nov 8, 2026) | No free tier (30-day trial) | 10K sessions/mo (unverified Nov 8, 2026) |
+| **License** | MIT core + ee/ commercial | Proprietary (Google) | Proprietary | Proprietary | Open source self-host (check license in repo) | Proprietary |
+| **Free tier is a production plan?** | No: overage is dropped, not billed | No: 14-month retention max | No: usage pricing above 1M | Check current limits | No free tier | Check current limits |
+| **Cost at scale** | $450/mo (10M anonymous events) | Free (standard); 360 reported ~$50K/yr | $833/mo (100M events, unverified) | Custom (>10M) | $19/mo (up to 10 sites) | Custom |
 | **React SDK** | Yes (posthog-js) | Yes (gtag.js) | Yes (mixpanel-js) | Yes (amplitude-js) | Script tag only | Yes (heap-js) |
 | **Server-side SDK** | Yes (Node, Python, Go) | Yes (Measurement Protocol) | Yes (Node, Python) | Yes (Node, Python) | No | Yes (Node) |
 | **Data warehouse export** | Yes (BigQuery, S3) | Yes (BigQuery linked) | Yes (raw data export) | Yes (Snowflake, BigQuery) | No | Yes |
@@ -49,7 +53,7 @@ PostHog handles:
 ✓ Surveys (collect feedback in-app)
 ```
 
-Cost: Free up to 1M events/month. Self-host for unlimited.
+Cost: Free up to 1M events/month. Above 1M, Cloud pay-as-you-go; self-hosting is officially unsupported, so it is not the scale plan.
 
 ### Growth-Stage SaaS
 
@@ -82,14 +86,14 @@ Cost: Significant ($1K+/mo at scale). Best for funded teams.
 
 ### Privacy-First / EU-Focused
 
-**Plausible + PostHog (self-hosted)** — No cookies, full GDPR compliance.
+**Plausible + PostHog Cloud (EU)** — No cookies, full GDPR compliance.
 
 ```
 Plausible:              → Lightweight web analytics (no consent needed)
-PostHog (self-hosted):  → Full product analytics on your infrastructure
+PostHog Cloud (EU):  → Full product analytics, hosted in Frankfurt
 ```
 
-Cost: Plausible $9/mo + hosting costs for PostHog.
+Cost: Plausible $9/mo + PostHog Cloud free up to 1M events/mo, then pay-as-you-go.
 
 ---
 
@@ -120,14 +124,14 @@ Cost: Plausible $9/mo + hosting costs for PostHog.
 | 0 - 1M events/mo | Free |
 | 1M - 2M events/mo | ~$50/mo |
 | 2M - 10M events/mo | ~$250-450/mo |
-| 10M+ events/mo | Self-host (hosting costs only) |
+| 10M+ events/mo | Cloud pay-as-you-go (anonymous events fall with volume; identified events add $0.000198 each) |
 
 ### Google Analytics 4 (GA4)
 
 **Choose GA4 if:**
 - You need Google Ads integration
 - SEO and organic traffic analysis is important
-- You want free, unlimited web analytics
+- You want free web analytics with known limits (14-month retention, 30 key events, BigQuery daily export 1M events/day)
 - Your team already knows Google's ecosystem
 - You need Search Console integration
 
@@ -145,8 +149,8 @@ Cost: Plausible $9/mo + hosting costs for PostHog.
 **Cost progression:**
 | Scale | Cost |
 |---|---|
-| Any volume | Free (standard) |
-| Enterprise (unsampled) | ~$50K-150K/year (GA4 360) |
+| Any volume | Free (standard), within the limits above |
+| Enterprise (unsampled) | GA4 360, reported about $50,000/year starting; Google does not publish a price |
 
 ### Mixpanel
 
@@ -160,7 +164,7 @@ Cost: Plausible $9/mo + hosting costs for PostHog.
 - Pro: Best-in-class funnel analysis
 - Pro: Excellent retention and cohort tools
 - Pro: Strong mobile SDKs
-- Pro: Generous free tier (20M events)
+- Pro: Generous free tier (1M events)
 - Con: No session replay, heatmaps, or feature flags
 - Con: Can be complex for non-technical users
 - Con: Requires careful event instrumentation (no autocapture)
@@ -198,7 +202,7 @@ Cost: Plausible $9/mo + hosting costs for PostHog.
 - Pro: Simple, clean dashboard
 - Pro: Self-host option
 - Pro: Lightweight script (~1KB)
-- Con: Pageviews only — no custom events or funnels
+- Con: No user identification. No session replay or product analytics. Funnels and ecommerce revenue attribution exist at the $19 tier.
 - Con: No user identification
 - Con: No session replay or product analytics
 - Con: Not suitable as your only analytics tool for a SaaS
@@ -272,7 +276,7 @@ Need Google Ads integration?
   → Yes: GA4 (for acquisition) + PostHog (for product)
   → No:
     Privacy-critical (EU, healthcare)?
-      → Yes: PostHog (self-hosted) + Plausible
+      → Yes: PostHog Cloud (EU) + Plausible, or a first-party event pipeline with no vendor at all
       → No:
         Want one tool for everything?
           → Yes: PostHog
@@ -290,3 +294,8 @@ Need Google Ads integration?
 - `docs/developer/analytics-setup.md` — Implementation guide with code
 - `docs/architecture/ANALYTICS_ARCHITECTURE.md` — Admin dashboard, KPIs, growth metrics
 - `docs/developer/tracking-plan.md` — Event implementation checklist
+- `docs/guides/GA4_AND_WEB_ANALYTICS.md` — GA4 decisions for the web, day-one settings, why the web tag does not belong in an app
+- `docs/guides/ATTRIBUTION_END_TO_END.md` — Attribution from first visit to customer record
+- `docs/guides/ADMIN_DASHBOARD.md` — The admin dashboard choice on the web
+- `docs/guides/ANALYTICS_DATABASES_AND_CUSTOMER_RECORDS.md` — DB choices for analytics and customer records
+- `docs/guides/FREE_VS_PAID_AND_LICENSES.md` — Free vs paid tiers and commercial-use licensing

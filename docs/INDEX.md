@@ -55,7 +55,12 @@ docs/
 │   ├── SEO_STRATEGY.md ← SEO strategy (runbook: search-indexing skill)
 │   ├── AGENT_OPTIMIZATION.md ← for AI agents, and for the agents that build
 │   ├── PLG_FRAMEWORK.md ← product-led growth
-│   └── DESIGN_DESLOP.md ← integrated anti-slop design, own version
+│   ├── DESIGN_DESLOP.md ← integrated anti-slop design, own version
+│   ├── GA4_AND_WEB_ANALYTICS.md ← GA4 for the web, day-one settings
+│   ├── ATTRIBUTION_END_TO_END.md ← first visit to customer record
+│   ├── ADMIN_DASHBOARD.md ← the admin dashboard choice
+│   ├── ANALYTICS_DATABASES_AND_CUSTOMER_RECORDS.md ← DB choices, identity model
+│   └── FREE_VS_PAID_AND_LICENSES.md ← free vs paid, commercial-use licensing
 │
 ├── ai-agents/                ← AI-assisted development guides
 │   ├── MODERN_AGENTIC_DEVELOPMENT.md
@@ -102,6 +107,8 @@ You care about what we're building, why, and when.
 | [FAQ.md](./FAQ.md) | [DEMO_MODE.md](./DEMO_MODE.md) | [BILLING_MODELS.md](./architecture/BILLING_MODELS.md) |
 | [DEVELOPER_IDENTITY_CHOICES.md](../decisions/DEVELOPER_IDENTITY_CHOICES.md) | [EMAIL_AND_DOMAIN_SETUP.md](./guides/EMAIL_AND_DOMAIN_SETUP.md) | [PAYMENTS_IN_APP_VS_WEB.md](./guides/PAYMENTS_IN_APP_VS_WEB.md) |
 | [PLG_FRAMEWORK.md](./guides/PLG_FRAMEWORK.md) | [SEO_STRATEGY.md](./guides/SEO_STRATEGY.md) | [DESIGN_DESLOP.md](./guides/DESIGN_DESLOP.md) |
+| [GA4_AND_WEB_ANALYTICS.md](./guides/GA4_AND_WEB_ANALYTICS.md) | [ATTRIBUTION_END_TO_END.md](./guides/ATTRIBUTION_END_TO_END.md) | [ADMIN_DASHBOARD.md](./guides/ADMIN_DASHBOARD.md) |
+| [ANALYTICS_DATABASES_AND_CUSTOMER_RECORDS.md](./guides/ANALYTICS_DATABASES_AND_CUSTOMER_RECORDS.md) | [FREE_VS_PAID_AND_LICENSES.md](./guides/FREE_VS_PAID_AND_LICENSES.md) | [ANALYTICS_CHOICES.md](../decisions/ANALYTICS_CHOICES.md) |
 
 **Key questions this path answers:**
 - What is the current state of the product?
