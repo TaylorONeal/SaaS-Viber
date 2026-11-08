@@ -320,6 +320,7 @@ by a late red-team pass, which is the expensive way to find them.
 - Webhook handling is idempotent. Handle the checkout and webhook race.
 - Handle status transitions: trial, active, grace, billing retry, cancelled, refunded, expired.
 - Restore purchases is a visible, working control. Reviewers test it.
+- Apple retention offers arrive as discounted renewals or plan switches from the cancel flow. Make sure the server and webhook accept them, then set up a retention message per auto-renewable subscription. See `skills/retention-messaging-skill/SKILL.md`.
 - Amounts are integers. Timestamps are UTC.
 
 ### 5.3 When you cannot run a real purchase

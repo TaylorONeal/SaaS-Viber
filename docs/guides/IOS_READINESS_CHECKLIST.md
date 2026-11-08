@@ -145,6 +145,7 @@ You get 100 characters for keywords in App Store Connect. Make them count.
 - [ ] Implement restore purchases functionality (required)
 - [ ] Test in sandbox environment before submission
 - [ ] Create subscription group if offering multiple tiers
+- [ ] Configure a retention message for each auto-renewable subscription (App Store Connect > Monetization > Subscriptions > Retention Messaging; see `skills/retention-messaging-skill/SKILL.md`)
 
 ### If Your App Does NOT Have In-App Purchases
 

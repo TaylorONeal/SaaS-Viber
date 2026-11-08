@@ -835,6 +835,22 @@ a signed or production build -- it may be fetchable by anyone with the URL,
 and that's not where you want a release binary sitting. Use a channel
 scoped to the people who should have it.
 
+### 108. Store-Billed Subscribers Cancel Where You Can't See Them
+
+An App Store subscriber cancels in Apple's settings, not in your app, so an
+in-app exit survey or "before you go" screen never runs for them. Apple's
+retention messages are the only place to speak in that flow. Set one up per
+auto-renewable subscription as part of launch, not after churn shows up. See
+`skills/retention-messaging-skill/SKILL.md`.
+
+### 109. Keep Prices Out of Retention Message Text
+
+Retention message header and body are shown to every subscriber, including
+those not eligible for the attached offer, so App Review rejects text that
+mentions prices, discounts or free months. Put the value in the text and the
+price in the offer card. Also: edits to a live message cannot be rolled back,
+and sandbox shows the newest draft, not the published version.
+
 ---
 
 ## Adding New Lessons

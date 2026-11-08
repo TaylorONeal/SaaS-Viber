@@ -162,6 +162,8 @@ For high-volume or critical integrations, consider direct API integration:
 
 **Important**: Respect the user's decision. Do not be aggressive. One or two attempts to retain is fine; more than that is annoying.
 
+**App Store subscriptions cancel inside Apple's UI**, so steps 1 and 3 never reach your app before the decision. The only in-flow touchpoint is Apple's retention message (text, image, or a retention offer on the Confirm Cancellation page). Set it up per `skills/retention-messaging-skill/SKILL.md`, and do not stack a second discount email on top of a retention offer the subscriber already declined.
+
 ### Usage Threshold Alert
 
 **Trigger**: `usage.threshold` (at 80% and 100%)

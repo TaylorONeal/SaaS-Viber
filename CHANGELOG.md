@@ -12,6 +12,15 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
 ## [Unreleased]
 
 ### Added
+- `skills/retention-messaging-skill/` -- Apple retention messages for
+  auto-renewable subscriptions (generally available in App Store Connect
+  since 2026-11-04): path choice (App Store Connect, Retention Messaging API,
+  or a subscription platform), limits, retention offers and eligibility,
+  App Review copy rules, real-time endpoint rules (700 ms, performance test,
+  fallback order), entitlement checks, sandbox testing and measurement.
+  Linked from the launch skill, launch playbook, launch and iOS checklists,
+  workflow automation retention flow, `CLAUDE.md` and `AGENTS.md`. Lessons
+  108-109 added.
 - `skills/search-indexing-skill/` -- portable search and AI-crawler indexing
   runbook for any public site: pre-flight crawlability checks, Google Search
   Console, Bing Webmaster Tools and regional consoles, IndexNow, sitemap and
