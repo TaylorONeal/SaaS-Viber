@@ -12,7 +12,7 @@ Everything required to publish your app on the Google Play Store. Google's revie
 - [ ] Set up a Google Cloud project for Play Developer API access (optional, for CI/CD)
 - [ ] Add team members with appropriate roles (if applicable)
 
-**Note**: New developer accounts have a "testing period" -- you must run a closed test with at least 20 testers for 14+ days before you can publish to production. Plan for this.
+**Note**: New personal developer accounts created after Nov 13, 2023 have a "testing period" -- you must run a closed test with at least 12 testers opted in continuously for 14 days before you can apply for production access. (Google lowered this from 20 testers; corrected Nov 8, 2026. Verify the current rule in Play Console help before you plan around it.) Plan for this.
 
 ---
 
@@ -182,7 +182,7 @@ Google Play offers multiple testing tracks. Use them.
 
 - [ ] Create closed test track
 - [ ] Add testers by email or Google Group
-- [ ] **Required**: 20+ testers for 14+ consecutive days before first production release
+- [ ] **Required**: 12+ testers opted in continuously for 14+ consecutive days before first production release (personal accounts created after Nov 13, 2023)
 - [ ] Monitor crash rates and ANR rates
 - [ ] Collect feedback via Play Console or your own channels
 

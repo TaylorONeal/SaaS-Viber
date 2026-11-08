@@ -60,6 +60,31 @@ A: We maintain [UPTIME_SLA, e.g., "99.9% uptime"]. You can check our service sta
 
 ---
 
+## For Founders Setting Up (added Nov 8, 2026)
+
+**Q: Should I publish as an individual or as a company?**
+A: Publish as an individual if you are testing one idea and you do not mind your personal legal name showing as the seller. Publish as an organization, usually an LLC, if you want your name kept private, you plan several apps under one studio name, or you will take payments and sign contracts in the company name. Decide before your first public launch, because switching later is a new enrollment or a transfer, not a setting. See `decisions/DEVELOPER_IDENTITY_CHOICES.md`.
+
+**Q: What email should I use for my app?**
+A: Use a business address on your own domain, for example support@yourapp.com, not a personal Gmail address. Your options are free Gmail (fast, but personal and not accepted as Apple's organization work email), email bundled with your domain registrar (usually cheapest, often basic), or Google Workspace (Gmail with your domain, Business Starter $7 per user per month on the annual plan as of Oct 2026). See `docs/guides/EMAIL_AND_DOMAIN_SETUP.md`.
+
+**Q: Do I have to use in-app purchase, or can I take payments on my website?**
+A: It depends on what is being bought. Digital goods and subscriptions used inside the app normally require Apple IAP on iOS and Google Play Billing on Android. Physical goods and services used outside the app use web checkout, for example Stripe. In the US, linking out to web checkout currently carries 0% Apple commission, but that rule is in court and may change, so do not build a business that only works at 0%. See `docs/guides/PAYMENTS_IN_APP_VS_WEB.md`.
+
+**Q: When do I create my subscription products?**
+A: In the first submission, all of them, attached to the same draft as the app. Adding a product later means a new review, and your paywall cannot ship until Apple approves it. See `docs/guides/PAYMENTS_IN_APP_VS_WEB.md`.
+
+**Q: What pages does my app need before launch?**
+A: A landing page, a privacy policy, terms of service, a support page, and a data deletion page, all live on your own domain, plus a waitlist before launch and a feedback form after it. Fill-in templates are in `docs/templates/LEGAL_PAGES_TEMPLATE.md`, and the page guide is `docs/guides/LANDING_WAITLIST_FEEDBACK.md`.
+
+**Q: What is product-led growth, in one sentence?**
+A: The product sells itself: a person discovers it, signs up alone, reaches one valuable moment fast, and invites someone else because the work needs them. See `docs/guides/PLG_FRAMEWORK.md`.
+
+**Q: What does deslop mean here?**
+A: Removing the generic AI look (purple gradients, default fonts, centered hero, three equal cards, hollow copy) by studying a pattern, extracting the principle, rebuilding it in your own voice, and adding one improvement, never lifting the original. See `docs/guides/DESIGN_DESLOP.md` and `skills/taste-skill/SKILL.md`.
+
+---
+
 ## For Developers
 
 ### Setup & Development

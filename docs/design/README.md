@@ -1,5 +1,7 @@
 # Design System Overview
 
+> **Known conflicts, Nov 8, 2026:** `02-design-tokens.md` still lists Inter as the default body font while `skills/taste-skill/SKILL.md` bans Inter as a default, and `04-consumer-pages.md` still templates a centered hero and feature grid while the taste skill bans both at high variance. Follow the taste skill. Those two templates are on the fix list; see [Design Deslop](../guides/DESIGN_DESLOP.md).
+
 > Your design system is the single source of truth for visual and interaction design.
 > This directory contains templates to build your own system. Customize every section.
 

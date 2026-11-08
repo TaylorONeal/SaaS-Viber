@@ -10,7 +10,7 @@ SaaS-Viber is a comprehensive template repository that gives you the file struct
 
 ### What You Get
 
-- **Decision frameworks** for the choices that matter (auth, payments, backend, hosting)
+- **Decision frameworks** for the choices that matter (auth, payments, backend, hosting, developer identity, email and domain, in-app vs web payments)
 - **Prompt guides** tuned for agentic coding workflows (Cursor, Claude Code, Copilot)
 - **Documentation templates** that scale from solo founder to team
 - **Architecture patterns** for the most common SaaS shapes
@@ -174,6 +174,22 @@ Carry opinionated capabilities from app to app via the `skills/` folder:
 - `docs/templates/IOS_READINESS_TEMPLATE.md` -- repo-tailoring template for iOS readiness
 - `docs/guides/ANDROID_READINESS_CHECKLIST.md` -- Android launch counterpart
 
+### From Idea to Execution (added Nov 8, 2026)
+
+The guides that turn a prototype into a shippable product, written plain enough for a first-time founder, detailed enough for an expert, and explicit enough for an AI agent to build from:
+
+- [Developer Identity Choices](decisions/DEVELOPER_IDENTITY_CHOICES.md) -- individual vs organization developer account, LLC, seller-name privacy, D-U-N-S
+- [Email and Domain Setup](docs/guides/EMAIL_AND_DOMAIN_SETUP.md) -- free Gmail vs registrar email vs Google Workspace, with costs
+- [Payments: In-App vs Web](docs/guides/PAYMENTS_IN_APP_VS_WEB.md) -- IAP / Play Billing vs Stripe web checkout, RevenueCat as the bridge, subscription offers, first-submission timing
+- [Storefront Copy](docs/guides/STOREFRONT_COPY.md) -- customer-facing, store-facing, and internal copy, kept separate
+- [Studio Publisher Page](docs/guides/STUDIO_PUBLISHER_PAGE.md) -- one studio site for many apps
+- [Landing Page, Waitlist, and Feedback](docs/guides/LANDING_WAITLIST_FEEDBACK.md) -- the pages every app needs before launch
+- [Legal Pages Template](docs/templates/LEGAL_PAGES_TEMPLATE.md) -- fill-in privacy policy, terms, support, and data deletion pages
+- [SEO Strategy](docs/guides/SEO_STRATEGY.md) -- strategy on top of the search-indexing runbook
+- [Agent Optimization](docs/guides/AGENT_OPTIMIZATION.md) -- optimizing for AI agents and AI search, and optimizing the agents that build the app
+- [Product-Led Growth Framework](docs/guides/PLG_FRAMEWORK.md) -- activation, aha moment, free tier vs trial, honest viral loops
+- [Design Deslop](docs/guides/DESIGN_DESLOP.md) -- an integrated anti-slop design system in our own version, built on the taste skill
+
 ---
 
 ## Project Structure
@@ -246,6 +262,8 @@ Key architectural decisions are documented in the `decisions/` folder:
 | Authentication provider | `decisions/AUTH_CHOICES.md` |
 | Payment processing | `decisions/PAYMENT_CHOICES.md` |
 | Hosting platform | `decisions/PLATFORM_CHOICES.md` |
+| Developer identity (individual vs organization, LLC) | `decisions/DEVELOPER_IDENTITY_CHOICES.md` |
+| Payments in-app vs web (IAP vs Stripe, RevenueCat) | `docs/guides/PAYMENTS_IN_APP_VS_WEB.md` |
 
 <!-- TEMPLATE: Add rows as you make more decisions. The pattern is: -->
 <!-- one file per decision, with context, options, and rationale. -->

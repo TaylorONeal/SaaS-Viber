@@ -18,7 +18,18 @@
 [Device Test Runbook](./DEVICE_TEST_RUNBOOK.md) |
 [Launch Tracker Template](../templates/LAUNCH_TRACKER_TEMPLATE.md) |
 [Submit-Day Packet Template](../templates/SUBMIT_DAY_PACKET_TEMPLATE.md) |
-[Launch Lessons](../ai-agents/LESSONS_LEARNED.md) (section "Launch and Store Submission")
+[Launch Lessons](../ai-agents/LESSONS_LEARNED.md) (section "Launch and Store Submission") |
+[Developer Identity Choices](../../decisions/DEVELOPER_IDENTITY_CHOICES.md) |
+[Email and Domain Setup](./EMAIL_AND_DOMAIN_SETUP.md) |
+[Payments: In-App vs Web](./PAYMENTS_IN_APP_VS_WEB.md) |
+[Storefront Copy](./STOREFRONT_COPY.md) |
+[Studio Publisher Page](./STUDIO_PUBLISHER_PAGE.md) |
+[Landing, Waitlist, Feedback](./LANDING_WAITLIST_FEEDBACK.md) |
+[Legal Pages Template](../templates/LEGAL_PAGES_TEMPLATE.md) |
+[SEO Strategy](./SEO_STRATEGY.md) |
+[Agent Optimization](./AGENT_OPTIMIZATION.md) |
+[PLG Framework](./PLG_FRAMEWORK.md) |
+[Design Deslop](./DESIGN_DESLOP.md)
 
 ---
 
@@ -134,6 +145,11 @@ a written 1.0.1 list. A submit date that slips while scope stays open keeps slip
 One legal publisher entity can own many apps. Set it up once, reuse it for
 the whole portfolio, and keep a portfolio-level tracker (see
 [Launch Tracker Template](../templates/LAUNCH_TRACKER_TEMPLATE.md)).
+The full decision, individual vs organization, LLC, seller-name privacy,
+and what is hard to change later, is in
+[Developer Identity Choices](../../decisions/DEVELOPER_IDENTITY_CHOICES.md).
+The public page that lists those apps under one studio name is in
+[Studio Publisher Page](./STUDIO_PUBLISHER_PAGE.md).
 
 **Exit gates:** delivery path chosen, billing model per platform chosen,
 privacy posture written, scope-freeze rule agreed, publisher entity decided.
@@ -149,18 +165,19 @@ person with legal authority submits, signs and pays.
 
 | Item | Why it gates you | Typical wait (verify, it varies) | Human-only |
 |---|---|---|---|
-| Legal entity (if publishing as a company) | Org-level developer accounts need one | Days to weeks, jurisdiction dependent | Yes |
+| Legal entity (if publishing as a company) | Org-level developer accounts need one. See [Developer Identity Choices](../../decisions/DEVELOPER_IDENTITY_CHOICES.md). | Days to weeks, jurisdiction dependent | Yes |
 | Business identifier (for example D-U-N-S) | Required by Apple and Google for organization accounts | Days to weeks | Yes |
 | Apple Developer Program enrollment (organization) | No App Store Connect without it | Days to weeks after identifiers exist | Yes |
 | Google Play Console account (organization preferred) | No Play Console without it | Days for identity verification | Yes |
 | Paid-apps agreements, banking, tax forms (both stores) | Required before any paid product can be sold | Days; banking verification can lag | Yes |
 | EU trader status (Apple DSA declaration, Google equivalent) | Needed to distribute in the EU | Days after documents are submitted | Yes |
-| Domain, support email, privacy policy URL, marketing URL | Every store listing needs them live | Hours | No |
+| Domain, support email, privacy policy URL, marketing URL | Every store listing needs them live. See [Email and Domain Setup](./EMAIL_AND_DOMAIN_SETUP.md) and [Legal Pages Template](../templates/LEGAL_PAGES_TEMPLATE.md). | Hours | No |
 | Code-signing ownership decision (who owns keys and certificates) | Wrong owner means re-signing later | Hours | Yes |
 
-**Google Play personal accounts:** new personal developer accounts have had
-a closed-testing requirement before production access (a minimum number of
-testers opted in for a minimum number of days). Check the current rule on the
+**Google Play personal accounts:** personal accounts created after Nov 13, 2023
+must run a closed test with at least 12 testers opted in continuously for 14
+days before applying for production access (Google lowered this from 20 testers;
+corrected Nov 8, 2026). Check the current rule on the
 [Play Console help page](https://support.google.com/googleplay/android-developer/answer/14151465)
 and start the clock early, or publish under an organization account if one is available.
 

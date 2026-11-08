@@ -43,10 +43,9 @@
 
 ### SaaS / "Reader App" Exemption Details
 
-If [YOUR_APP_NAME] qualifies as a **multiplatform SaaS**:
-- You **may** use external payment processing (Stripe, etc.) instead of Apple IAP
+If [YOUR_APP_NAME] **may qualify** as a **multiplatform SaaS** or reader app, it **may** be allowed to use external payment processing (Stripe, etc.) instead of Apple IAP for some sales. Whether it qualifies depends on your category, what the app does without a subscription, and your region. Do not assume it qualifies. Read the full decision guide first: `../guides/PAYMENTS_IN_APP_VS_WEB.md`, section 5.
 - Your app must also be available on **non-Apple platforms** (web, Android)
-- You **may** link to your website for account management and billing
+- You **may** link to your website for account management and billing, where the rules allow it
 - You **cannot** include in-app purchase buttons or prompts that bypass Apple IAP for non-exempt digital goods
 - **Apply for the exemption** via App Store Connect if applicable
 
