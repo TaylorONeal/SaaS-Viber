@@ -12,6 +12,7 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
 ## [Unreleased]
 
 ### Added
+- Idea-to-execution guides (Nov 8, 2026): `decisions/DEVELOPER_IDENTITY_CHOICES.md` (individual vs organization, LLC, seller-name privacy, D-U-N-S); `docs/guides/EMAIL_AND_DOMAIN_SETUP.md` (Gmail vs registrar email vs Google Workspace, verified Oct 2026 prices); `docs/guides/PAYMENTS_IN_APP_VS_WEB.md` (IAP / Play Billing vs Stripe web, RevenueCat bridge, US external-link rule as moving law, first-submission timing, subscription offers) plus Option 5 in `decisions/PAYMENT_CHOICES.md`; `docs/guides/STOREFRONT_COPY.md` (three copy audiences); `docs/guides/STUDIO_PUBLISHER_PAGE.md`; `docs/guides/LANDING_WAITLIST_FEEDBACK.md`; `docs/templates/LEGAL_PAGES_TEMPLATE.md`; `docs/guides/SEO_STRATEGY.md`; `docs/guides/AGENT_OPTIMIZATION.md`; `docs/guides/PLG_FRAMEWORK.md`; `docs/guides/DESIGN_DESLOP.md` (integrated anti-slop design in our own version, built on the taste skill). Wired into README, docs index, FAQ, and the launch playbook. Also corrected: Google Play closed-test rule is 12 testers for 14 days, not 20 (verified against Play Console help, Nov 8, 2026), fixed in the Android checklist, the landing guide, and the identity doc; softened the SaaS exemption wording in `docs/architecture/APP_STORE_COMPLIANCE.md`.
 - `skills/retention-messaging-skill/` -- Apple retention messages for
   auto-renewable subscriptions (generally available in App Store Connect
   since 2026-11-04): path choice (App Store Connect, Retention Messaging API,

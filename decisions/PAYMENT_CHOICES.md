@@ -208,6 +208,42 @@ CREATE TABLE subscriptions (
 
 ---
 
+### Option 5: RevenueCat + Stripe (recommended for apps on iOS + Android + web)
+
+**What it is:** RevenueCat is a subscription platform, not a payment processor. It sits between your app and the two app stores: one SDK wraps Apple StoreKit and Google Play Billing, tracks entitlements, serves paywalls, and sends your server one normalized webhook whatever store the purchase came from. Stripe stays in place for web checkout. Your server keeps one entitlement table that both RevenueCat webhooks and Stripe webhooks write to. Reconcile by product id: the same plan must carry the same product id string in App Store Connect, Google Play Console, RevenueCat, your paywall code, and your server.
+
+**When to choose it:**
+
+- You sell subscriptions on iOS and Android, or on iOS, Android, and the web.
+- You want one purchase implementation instead of two store integrations plus receipt validation written twice.
+- You want paywall tests and subscription offers without an app release.
+
+**When not to choose it:**
+
+- Web-only product with no app, or a single one-time purchase where StoreKit alone is a day of work. Do not add a platform for a problem you do not have.
+
+**Tradeoffs:**
+
+- **Pro:** One SDK for both stores; entitlements across Apple, Google, and web; paywalls and offer handling built in.
+- **Pro:** RevenueCat does not replace Stripe. Web checkout keeps Stripe's fees and tooling.
+- **Pro:** Offer and retention handling (introductory, promotional, win-back) flows through one place.
+- **Con:** RevenueCat is a plan cost on top of the store fee and the Stripe fee. It does not lower either one. Check current RevenueCat pricing in their docs before you budget; this guide does not state a RevenueCat fee, because stating one from memory would be guessing. Verify in the provider docs before you ship.
+- **Con:** One more vendor in the billing path. If RevenueCat is down, your purchase flow needs a fallback plan.
+- **Con:** You still own the entitlement table, idempotent webhook handling, restore purchases, and account deletion. RevenueCat does not remove any of those jobs.
+
+**Fees to budget, as of Nov 8, 2026. Verify in the store console or provider docs before you ship.** Apple IAP: 30% standard, 15% in the Small Business Program under $1M and for auto-renewable subscriptions after year one. Google Play Billing: 30% standard, 15% on the first $1M per year and on subscriptions after 12 months. Stripe web checkout: 2.9% + $0.30 per successful US card charge. On a $10 per month subscription that is $7.00 kept on IAP at 30%, $8.50 kept on IAP at 15%, and $9.41 kept on Stripe web, before your RevenueCat plan cost. See `../docs/guides/PAYMENTS_IN_APP_VS_WEB.md`, section 6, for the full table.
+
+**Implementation notes:**
+
+- Create every store product in the first submission and attach all of them, plus the subscription group, to the same draft. Adding a product later means a new review and a paywall that cannot ship until Apple approves it.
+- Never change price, product type, or paywall copy mid-review.
+- A renewal that carries a retention offer or promotional offer must be accepted by your server and webhook handler. A strict parser that rejects unknown offer types can drop the entitlement of the subscriber you just saved.
+- Full setup: `../docs/guides/PAYMENTS_IN_APP_VS_WEB.md` (sections 2.4, 7, 9, and 11).
+
+### In-app vs web: which rail for which sale
+
+One question decides the rail: is the thing being bought used inside the app, or outside it? Digital goods and subscriptions used inside the app normally require Apple IAP on iOS and Google Play Billing on Android. Physical goods and real-world services used outside the app use web checkout, for example Stripe, and the stores do not take a cut. Reader apps (books, magazines, newspapers, audio, music, video bought elsewhere) and some multiplatform services have their own exemptions; each needs a deliberate check of the current guidelines for your category and region, not an assumption. In the United States, apps can currently link out to the web for payment with Apple taking 0% on that purchase, as of Nov 8, 2026, because of the Epic v. Apple contempt order of Apr 30, 2025 and the Ninth Circuit decision of Dec 11, 2025, which sent the rate back to the district court; Apple proposed 15% (10% for some partners and renewals, 5% for Small Business Program members) on Aug 13, 2026, the court has not decided, and Supreme Court briefing is running. Do not build a business that only works at 0%: price your plan at 0% and at 15% before you launch. Outside the US the standard rules still apply unless a regional carve-out (for example the EU Digital Markets Act) applies. Verify in the store console or provider docs before you ship. Full decision tree, fee table, and offer rules: `../docs/guides/PAYMENTS_IN_APP_VS_WEB.md`.
+
 ## Billing Patterns
 
 ### 1. Flat-Rate Subscription
@@ -317,6 +353,10 @@ export async function handleWebhook(req: Request) {
 Start here:
   |
   v
+Selling digital goods or subscriptions used inside an iOS or Android app? ──Yes──> Read `../docs/guides/PAYMENTS_IN_APP_VS_WEB.md` and pick the rail per sale before choosing a web provider.
+  |
+  No
+  v
 Building a marketplace? ──Yes──> Stripe Connect
   |
   No
@@ -349,3 +389,5 @@ Stripe (most flexible billing engine available)
 **Tax strategy**: [Stripe Tax / MoR handles it / TaxJar / Manual]
 **International plan**: [US-only initially / Global from day one]
 **Review trigger**: [When to re-evaluate -- e.g., "when processing >$50K/mo"]
+**In-app vs web rail per sale**: [rail per sale, with exemption relied on]
+**US external-link position**: [0% today, margin tested at 15%: Yes / No]
