@@ -127,14 +127,19 @@ function FAQSchema({ items }: { items: { question: string; answer: string }[] })
 
 ```typescript
 // {PROJECT_NAME}/src/lib/sitemap.ts
+// Only loc + lastmod. Google and Bing ignore changefreq and priority.
+// lastmod = last significant content change, never the build timestamp.
 const staticPages: SitemapEntry[] = [
-  { url: "{BASE_URL}/", changefreq: "weekly", priority: 1.0 },
-  { url: "{BASE_URL}/pricing", changefreq: "weekly", priority: 0.9 },
-  { url: "{BASE_URL}/features", changefreq: "monthly", priority: 0.8 },
-  { url: "{BASE_URL}/blog", changefreq: "daily", priority: 0.7 },
+  { url: "{BASE_URL}/", lastmod: "{CONTENT_UPDATED_AT}" },
+  { url: "{BASE_URL}/pricing", lastmod: "{CONTENT_UPDATED_AT}" },
+  { url: "{BASE_URL}/features", lastmod: "{CONTENT_UPDATED_AT}" },
+  { url: "{BASE_URL}/blog", lastmod: "{CONTENT_UPDATED_AT}" },
   // TODO: Add dynamic pages (blog posts, public profiles, etc.)
 ];
 ```
+
+After deploy, notify Bing and other IndexNow engines of changed URLs; see
+`skills/search-indexing-skill/SKILL.md` section 4.
 
 ## robots.txt Configuration
 
@@ -147,6 +152,10 @@ Disallow: /admin/
 Disallow: /auth/
 Sitemap: {BASE_URL}/sitemap.xml
 ```
+
+Add explicit AI crawler groups (search bots vs training bots) using the template
+in `skills/search-indexing-skill/SKILL.md` section 2.2. Named groups must repeat
+the `Disallow` lines above.
 
 ---
 

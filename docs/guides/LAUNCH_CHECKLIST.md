@@ -176,7 +176,7 @@ Determine applicable obligations from product, audience and jurisdiction with th
 
 ## SEO
 
-- [ ] Sitemap generated and submitted to Google Search Console
+- [ ] Sitemap generated and submitted to Google Search Console and Bing Webmaster Tools; IndexNow wired to deploys (see `skills/search-indexing-skill/SKILL.md`)
 - [ ] `robots.txt` configured (public pages allowed, app routes blocked)
 - [ ] Meta title and description on every public page
 - [ ] Open Graph tags on every public page

@@ -12,6 +12,14 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
 ## [Unreleased]
 
 ### Added
+- `skills/search-indexing-skill/` -- portable search and AI-crawler indexing
+  runbook for any public site: pre-flight crawlability checks, Google Search
+  Console, Bing Webmaster Tools and regional consoles, IndexNow, sitemap and
+  robots.txt rules (including AI search vs training crawler policy), page tags,
+  JSON-LD by site type, local business profiles, status report and
+  troubleshooting map. Credential rule: agent stops at passwords; logins are
+  never stored in the repo.
+
 - Evidence-based production hardening guide and review record validator; classify actual risks, preserve release ownership, and require recovery evidence for live changes. Launch checklist now routes through applicability review and avoids production alert outages.
 
 - Platform-independence guard: `scripts/check-platform-independence.sh` plus
@@ -62,6 +70,9 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
 - This `CHANGELOG.md`.
 
 ### Changed
+- SEO guides updated for 2026: dropped `changefreq`/`priority` from sitemap
+  examples, added IndexNow, AI crawler policy, the retirement of HowTo and FAQ
+  rich results, and a realistic note on `llms.txt`.
 - Designated `skills/taste-skill/SKILL.md` as the single authority on frontend
   visual standards. Reconciled the prior contradictions: `START_HERE.md` and
   `DESIGN_SYSTEM.md` no longer present Inter as the default brand font, and the
