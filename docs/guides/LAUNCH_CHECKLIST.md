@@ -215,6 +215,14 @@ Determine applicable obligations from product, audience and jurisdiction with th
 
 ## SEO
 
+**This section is a launch gate**, next to the analytics gate. Run `skills/seo-geo-audit-skill/SKILL.md` Phase 1 against the live production host and keep its table as the evidence. Do not launch with a Critical item open.
+
+- [ ] Phase 1 table complete for every public host: each check Pass, or Fail with an approved fix, or NOT CHECKED with the reason
+- [ ] Value-proposition copy and one `<h1>` are in the raw HTML (no empty SPA shell on public pages)
+- [ ] Answer-engine bots (`OAI-SearchBot`, `Claude-SearchBot`, `PerplexityBot`, `bingbot`) get the same `200` as a browser, and the firewall or bot-protection settings were read, not assumed
+- [ ] One canonical host: the other host and `http://` redirect permanently (301/308) in one hop; no host variant serves a duplicate `200`
+- [ ] JSON-LD limited to true, visible facts: `Organization`, `WebSite`, `SoftwareApplication`/`MobileApplication`; no `HowTo`, no `FAQPage` for rich results, no unearned ratings
+- [ ] Phase 2 fixes merged only from reviewed diffs; robots.txt, canonical and redirect changes approved by the owner
 - [ ] Sitemap generated and submitted to Google Search Console and Bing Webmaster Tools; IndexNow wired to deploys (see `skills/search-indexing-skill/SKILL.md`)
 - [ ] `robots.txt` configured (public pages allowed, app routes blocked)
 - [ ] Meta title and description on every public page

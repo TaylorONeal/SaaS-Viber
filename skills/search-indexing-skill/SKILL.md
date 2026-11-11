@@ -13,6 +13,10 @@ check the official doc before relying on it.
 The deeper reference is `docs/guides/SEO_SETUP_GUIDE.md`. This skill is the
 operating procedure.
 
+To **audit** a live site first (evidence table, bot User-Agent checks,
+phase gates), run `skills/seo-geo-audit-skill/SKILL.md`. It finds the
+problems; this skill fixes them.
+
 ---
 
 ## 0. Ground rules
