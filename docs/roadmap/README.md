@@ -10,7 +10,7 @@
 |---|---|
 | `ROADMAP.md` | Product roadmap template — 4 phases with features, metrics, and exit criteria |
 | `FEATURE_REFERENCE.md` | Pre-filled reference of common SaaS features organized by phase |
-| `COMPETITOR_ANALYSIS.md` | Framework for evaluating competitors |
+| `COMPETITOR_ANALYSIS.md` | Framework for evaluating competitors (agent runbook: `skills/competitive-research-skill/`) |
 
 ---
 
