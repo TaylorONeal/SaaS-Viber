@@ -1,0 +1,32 @@
+[
+  {
+    "id": "l01",
+    "product": "recipes",
+    "label": "App Store",
+    "url": "https://apps.apple.com/"
+  },
+  {
+    "id": "l02",
+    "product": "recipes",
+    "label": "Google Play",
+    "url": "https://play.google.com/store"
+  },
+  {
+    "id": "l03",
+    "product": "invoices",
+    "label": "PR 42",
+    "url": "https://github.com/your-org/your-repo/pull/42"
+  },
+  {
+    "id": "l04",
+    "product": "plants",
+    "label": "Site preview",
+    "url": "https://example.com"
+  },
+  {
+    "id": "l05",
+    "product": "pricing",
+    "label": "Comparison sheet",
+    "url": "https://example.com/pricing"
+  }
+]

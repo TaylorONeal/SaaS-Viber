@@ -70,6 +70,8 @@ tests/maestro/      → Maestro E2E test flows (cross-platform mobile)
 Reusable, opinionated capabilities live in `skills/` and load automatically when
 a task matches. See `skills/README.md` for the catalog. The `taste-skill` is the
 canonical source for frontend visual standards -- load it for any UI work.
+The `analytics-reports-skill` is the canonical method for GA4 and PostHog
+reporting; private ids live in each product's own repo, never here.
 
 ## Modern Agentic Workflow
 
