@@ -1,32 +1,32 @@
 [
   {
     "id": "l01",
-    "product": "habit",
+    "product": "recipes",
     "label": "App Store",
     "url": "https://apps.apple.com/"
   },
   {
     "id": "l02",
-    "product": "habit",
+    "product": "recipes",
     "label": "Google Play",
     "url": "https://play.google.com/store"
   },
   {
     "id": "l03",
-    "product": "booking",
+    "product": "invoices",
     "label": "PR 42",
-    "url": "https://github.com/your-org/booking/pull/42"
+    "url": "https://github.com/your-org/your-repo/pull/42"
   },
   {
     "id": "l04",
-    "product": "tracker",
+    "product": "plants",
     "label": "Site preview",
     "url": "https://example.com"
   },
   {
     "id": "l05",
-    "product": "research",
-    "label": "Research brief",
-    "url": "https://example.com/brief"
+    "product": "pricing",
+    "label": "Comparison sheet",
+    "url": "https://example.com/pricing"
   }
 ]

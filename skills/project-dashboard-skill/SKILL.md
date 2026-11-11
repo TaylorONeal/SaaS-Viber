@@ -76,7 +76,7 @@ agent or Cowork work.
   ticket codes. One line per ask, under about 25 words.
 - Ask lines are questions that a yes or no settles. Put the undo cost in the
   same line.
-- Dates as the owner reads them ("Due Nov 13"), with the ISO date in `due`.
+- Dates as the owner reads them ("Due Mar 3"), with the ISO date in `due`.
 - Never put a password, key, token, keystore detail, personal phone number or
   home address on the page. Name the account instead ("the review account").
 - No hype words, no emojis.
