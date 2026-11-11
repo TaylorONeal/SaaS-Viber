@@ -1,0 +1,92 @@
+[
+  {
+    "id": "a01",
+    "bucket": "Your yes",
+    "product": "invoices",
+    "ask": "Submit Invoice Helper 1.0 for review once your test passes? Withdrawable before review starts.",
+    "kind": "Yes/no",
+    "due": "",
+    "due_label": "",
+    "order": 1
+  },
+  {
+    "id": "a02",
+    "bucket": "Your yes",
+    "product": "invoices",
+    "ask": "Merge PR 42 (Android signing setup)? A revert undoes it.",
+    "kind": "Yes/no",
+    "due": "",
+    "due_label": "",
+    "order": 2
+  },
+  {
+    "id": "a03",
+    "bucket": "Your yes",
+    "product": "pricing",
+    "ask": "Price the paid plan at the middle of the comparison range?",
+    "kind": "Yes/no",
+    "due": "",
+    "due_label": "",
+    "order": 3
+  },
+  {
+    "id": "a04",
+    "bucket": "Only you",
+    "product": "accounts",
+    "ask": "Click Agree on the revised developer agreement. Cowork opens it and stops at the button.",
+    "kind": "Legal click",
+    "due": "2027-03-03",
+    "due_label": "Due Mar 3",
+    "order": 4
+  },
+  {
+    "id": "a05",
+    "bucket": "Only you",
+    "product": "invoices",
+    "ask": "Install build 5 from the beta app and send one test invoice end to end.",
+    "kind": "On your phone",
+    "due": "",
+    "due_label": "",
+    "order": 5
+  },
+  {
+    "id": "a06",
+    "bucket": "Only you",
+    "product": "invoices",
+    "ask": "Type the review account password into the store console. Cowork opens the field.",
+    "kind": "Secret",
+    "due": "",
+    "due_label": "",
+    "order": 6
+  },
+  {
+    "id": "a07",
+    "bucket": "Cowork runs",
+    "product": "invoices",
+    "ask": "Fill the Google Play listing and upload the build to internal testing.",
+    "kind": "Cowork",
+    "due": "",
+    "due_label": "",
+    "order": 7
+  },
+  {
+    "id": "a08",
+    "bucket": "Cowork runs",
+    "product": "plants",
+    "ask": "Point the domain's DNS at the host (registrar dashboard).",
+    "kind": "Cowork",
+    "due": "",
+    "due_label": "",
+    "order": 8
+  },
+  {
+    "id": "a09",
+    "bucket": "Agents doing",
+    "product": "recipes",
+    "ask": "Ship 2.1 release notes and screenshots through the store API.",
+    "kind": "Agents",
+    "due": "",
+    "due_label": "",
+    "order": 9
+  }
+]
