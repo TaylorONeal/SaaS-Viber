@@ -25,6 +25,7 @@ Retire stale packets and submit notes the moment a new RC replaces them.
 | Account deletion tested | | |
 | Pre-release copy removed | | |
 | Pre-flight (console clicked through) | | Date |
+| Analytics gate ([checklist](../guides/LAUNCH_CHECKLIST.md#analytics)) | | Live event seen from this build, privacy label matches |
 
 ---
 
