@@ -80,6 +80,18 @@ A: A landing page, a privacy policy, terms of service, a support page, and a dat
 **Q: What is product-led growth, in one sentence?**
 A: The product sells itself: a person discovers it, signs up alone, reaches one valuable moment fast, and invites someone else because the work needs them. See `docs/guides/PLG_FRAMEWORK.md`.
 
+**Q: Should I put GA4 in my app?**
+A: No, not the web tag. GA4 is for the website: where visitors came from and what they did before they signed up. In the app, use a first-party event table or a vendor SDK chosen with the privacy label and manifest in mind, because Apple treats analytics SDKs that repurpose data as tracking under ATT. See `docs/guides/GA4_AND_WEB_ANALYTICS.md`.
+
+**Q: What is the cheapest analytics stack that actually works?**
+A: GA4 standard ($0) for acquisition, PostHog Cloud free (1M events a month) for product, and your own database for customer records. Build and validate on free, run paying customers on paid: a free Supabase project pauses after a week idle, and free PostHog drops usage over the limit instead of billing you. See `docs/guides/FREE_VS_PAID_AND_LICENSES.md`.
+
+**Q: Where does my analytics data live?**
+A: In three stores that must never be added together: customer records in your app database, analytics events in a first-party event table, and vendor copies in GA4 or PostHog. One user id joins them, from the first anonymous visit through sign-up to the first payment. See `docs/guides/ANALYTICS_DATABASES_AND_CUSTOMER_RECORDS.md`.
+
+**Q: Can I see which ad brought a paying customer?**
+A: Only partway. Web attribution joins at sign-up if you capture UTMs and store them on the customer record. Store installs do not join to in-app behavior: App Store Connect and Play Console report downloads and sources, but not per-person, and iOS gives you the install source only. See `docs/guides/ATTRIBUTION_END_TO_END.md`.
+
 **Q: What does deslop mean here?**
 A: Removing the generic AI look (purple gradients, default fonts, centered hero, three equal cards, hollow copy) by studying a pattern, extracting the principle, rebuilding it in your own voice, and adding one improvement, never lifting the original. See `docs/guides/DESIGN_DESLOP.md` and `skills/taste-skill/SKILL.md`.
 

@@ -29,7 +29,12 @@
 [SEO Strategy](./SEO_STRATEGY.md) |
 [Agent Optimization](./AGENT_OPTIMIZATION.md) |
 [PLG Framework](./PLG_FRAMEWORK.md) |
-[Design Deslop](./DESIGN_DESLOP.md)
+[Design Deslop](./DESIGN_DESLOP.md) |
+[GA4 and Web Analytics](./GA4_AND_WEB_ANALYTICS.md) |
+[Attribution End to End](./ATTRIBUTION_END_TO_END.md) |
+[Admin Dashboard](./ADMIN_DASHBOARD.md) |
+[Analytics Databases and Customer Records](./ANALYTICS_DATABASES_AND_CUSTOMER_RECORDS.md) |
+[Free vs Paid and Licenses](./FREE_VS_PAID_AND_LICENSES.md)
 
 ---
 
@@ -521,7 +526,7 @@ so nobody polls by hand:
 | Window | Do |
 |---|---|
 | First hour | Install from the store on a clean device. Run sign-up, purchase (real or sandbox per store rules), restore, delete |
-| First 72 hours | Watch crash-free rate, sign-up funnel, first real purchases and webhooks landing in the entitlement table |
+| First 72 hours | Watch crash-free rate, sign-up funnel, first real purchases and webhooks landing in the entitlement table. Read them in the [Admin Dashboard](./ADMIN_DASHBOARD.md), not in GA4, which only sees the web side. |
 | First week | Triage reviews, publish the 1.0.1 list, ask for ratings at a happy moment |
 | Ongoing | Yearly target-API and SDK bumps on a calendar, dependency updates, store policy changes |
 
