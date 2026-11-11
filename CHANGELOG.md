@@ -13,8 +13,9 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
 
 ### Added
 - `skills/competitive-research-skill/` (Nov 11, 2026) -- evidence-first
-  competitive research: four-ring competitor set (peers, challengers, adjacent,
-  substitutes), normalized pricing teardown at three customer sizes, App Store /
+  competitive research: every competitor typed Direct (Peer Competitor or
+  Innovative Challenger, the ThinkerMetrics categories), Different but Related,
+  Substitute or DIY / status quo, with top threats ranking Direct only, normalized pricing teardown at three customer sizes, App Store /
   Play listing checks, review mining with counted themes and verbatim quotes
   (`references/review-mining.md`), feature parity vs differentiation classes,
   threat levels with review cadence, battlecards with landmine questions,

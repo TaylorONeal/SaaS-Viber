@@ -10,7 +10,7 @@ over paragraphs.
 ```markdown
 ## [Competitor] -- [THREAT: EXTREME | HIGH | MEDIUM | LOW | NONE]
 
-> Ring: Peer | Challenger | Adjacent | Substitute
+> Type: Direct (Peer Competitor | Innovative Challenger) | Different but Related | Substitute | DIY / status quo
 > Last researched: YYYY-MM-DD
 
 ### Snapshot
@@ -64,7 +64,7 @@ The buyer they serve better than we do. Do not chase this one.
 
 ## Summary sections (after the cards)
 
-1. **Threat matrix:** competitor, ring, threat, pricing model, one-line why.
+1. **Threat matrix:** competitor, type and direct tier, threat, pricing model, one-line why.
 2. **Pricing comparison:** link to `pricing.md` or inline the normalized table.
 3. **Unserved gaps:** what nobody does well.
 4. **Positioning weapons:** 3-5 differentiators with why each wins and the proof.

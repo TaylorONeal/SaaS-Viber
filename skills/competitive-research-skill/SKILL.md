@@ -1,6 +1,6 @@
 ---
 name: competitive-research
-description: Evidence-first competitive research for any app or SaaS -- competitor set in four rings, pricing teardown, App Store / Play listing and review mining, feature parity vs differentiation, threat levels, buyer-ready battlecards with objection handlers, and positioning, every claim cited and dated. Load for "battlecard", "competitive analysis", "who are our competitors", "how do we beat X", "pricing vs X", "what are reviewers complaining about", or before positioning, pricing, roadmap parity calls, or a store listing.
+description: Evidence-first competitive research for any app or SaaS -- competitor set typed Direct (Peer Competitor, Innovative Challenger) vs Different but Related, Substitute and DIY, pricing teardown, App Store / Play listing and review mining, feature parity vs differentiation, threat levels, buyer-ready battlecards with objection handlers, and positioning, every claim cited and dated. Load for "battlecard", "competitive analysis", "who are our competitors", "how do we beat X", "pricing vs X", "what are reviewers complaining about", or before positioning, pricing, roadmap parity calls, or a store listing.
 ---
 
 # Competitive Research Skill
@@ -49,14 +49,32 @@ Before searching, write three lines at the top of the output:
 If the decision is unclear, ask one question. Otherwise default to `brief` and
 say so.
 
-## 2. Build the competitor set (four rings)
+## 2. Build the competitor set (direct vs indirect)
 
-| Ring | Definition | How many |
-|------|------------|----------|
-| **Peers** | Same job, same buyer, similar product | 3-5 |
-| **Challengers** | Newer or disruptive players reshaping the category (new model, new channel, new price point) | 2-4 |
-| **Adjacent** | Different category the buyer could stretch to cover the job, or one feature away from competing | 2-3 |
-| **Substitutes** | What people do instead: spreadsheets, Notes app, DMs, paper, a generic tool, hiring someone, doing nothing | 1-3 |
+Every competitor gets a **Type**, and every Direct competitor gets a **Direct
+tier**. The tier names come from the ThinkerMetrics competitor-selection
+framework (Peer Competitor, Innovative Challenger, Different but Related); this
+skill adds Substitute and DIY / status quo so that products solving the job a
+different way never get ranked as direct rivals.
+
+| Type | Direct tier | Definition | How many |
+|------|-------------|------------|----------|
+| **Direct** | **Peer Competitor** | Same buyer, same job, solved the same way. The "traditional" competitor. | 3-5 |
+| **Direct** | **Innovative Challenger** | Same buyer and job, but changing how the market works: new model, channel or price point, often smaller or newer. **Not** an established status quo player; an incumbent with a new feature is still a Peer. | 2-4 |
+| **Different but Related** | | Same kind of product for a neighboring buyer or market, or one feature away from competing (a Pilates planner vs a yoga planner, consumer practice apps vs a teacher tool). | 2-3 |
+| **Substitute** | | A different kind of product the buyer uses to get the same job done (Canva for schedule graphics, Calendly for bookings, Etsy PDFs instead of a planner). Solves the job, is not the same product. | 1-3 |
+| **DIY / status quo** | | No product built for the job: spreadsheets, Venmo and DMs, paper, a bio line, a bookkeeper, doing nothing. | 1-3 |
+
+Rules that follow from the split:
+
+- **Top threats rank Direct only.** Substitutes and DIY get their own short list
+  ("what we really replace") and never sit in the top-threats ranking, however
+  big they are. Canva is not a direct competitor to a schedule tool even though
+  every buyer uses it.
+- **Different but Related** can be rated HIGH when it is one feature or one
+  market move away; say which move in the rationale.
+- When a tracking sheet exists, add `Type` and `Direct tier` columns and tag
+  every row; never leave a row untyped.
 
 Find candidates from: store search for your top 5 keywords (top 10 results each),
 "alternatives to X" pages, G2 / Capterra category pages, Reddit and community
@@ -130,7 +148,7 @@ Do not just list tiers. Normalize so prices compare:
 List every feature the buyer weighs, then classify it. This is the roadmap
 output.
 
-| Feature | Us | Peer A | Peer B | Challenger | Class | Call |
+| Feature | Us | Peer A | Peer B | Innovative Challenger | Class | Call |
 |---------|----|--------|--------|------------|-------|------|
 
 Ratings: Full (F), Partial (P), None (N), Planned (PL), each with a source for
@@ -159,7 +177,7 @@ vibe.
 
 ## 7. Battlecards
 
-One card per Peer and Challenger at MEDIUM or above (Adjacent only if HIGH+).
+One card per Direct competitor (Peer Competitor or Innovative Challenger) at MEDIUM or above. Different but Related only if HIGH+. Substitutes and DIY get a line in the README, not a card.
 Use `references/battlecard.md`. Every card has, at minimum:
 
 - Snapshot table (model, pricing, funding, buyer, last update)
@@ -211,7 +229,7 @@ names, internal metrics), keep it in a private research repo and link to it.
 The chat summary is short:
 
 1. The decision and your recommendation in one or two sentences.
-2. Threat matrix (competitor, ring, threat, one-line why).
+2. Threat matrix for Direct competitors (competitor, direct tier, threat, one-line why), then a separate line listing the substitutes and DIY habits we replace.
 3. Top 3 parity gaps and top 3 differentiators.
 4. Anything `UNVERIFIED` that the recommendation leans on.
 5. Link to the output folder or PR.
