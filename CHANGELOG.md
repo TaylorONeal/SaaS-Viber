@@ -12,6 +12,24 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
 ## [Unreleased]
 
 ### Added
+- Idea-to-execution guides (Nov 8, 2026): `decisions/DEVELOPER_IDENTITY_CHOICES.md` (individual vs organization, LLC, seller-name privacy, D-U-N-S); `docs/guides/EMAIL_AND_DOMAIN_SETUP.md` (Gmail vs registrar email vs Google Workspace, verified Oct 2026 prices); `docs/guides/PAYMENTS_IN_APP_VS_WEB.md` (IAP / Play Billing vs Stripe web, RevenueCat bridge, US external-link rule as moving law, first-submission timing, subscription offers) plus Option 5 in `decisions/PAYMENT_CHOICES.md`; `docs/guides/STOREFRONT_COPY.md` (three copy audiences); `docs/guides/STUDIO_PUBLISHER_PAGE.md`; `docs/guides/LANDING_WAITLIST_FEEDBACK.md`; `docs/templates/LEGAL_PAGES_TEMPLATE.md`; `docs/guides/SEO_STRATEGY.md`; `docs/guides/AGENT_OPTIMIZATION.md`; `docs/guides/PLG_FRAMEWORK.md`; `docs/guides/DESIGN_DESLOP.md` (integrated anti-slop design in our own version, built on the taste skill). Wired into README, docs index, FAQ, and the launch playbook. Also corrected: Google Play closed-test rule is 12 testers for 14 days, not 20 (verified against Play Console help, Nov 8, 2026), fixed in the Android checklist, the landing guide, and the identity doc; softened the SaaS exemption wording in `docs/architecture/APP_STORE_COMPLIANCE.md`.
+- `skills/retention-messaging-skill/` -- Apple retention messages for
+  auto-renewable subscriptions (generally available in App Store Connect
+  since 2026-11-04): path choice (App Store Connect, Retention Messaging API,
+  or a subscription platform), limits, retention offers and eligibility,
+  App Review copy rules, real-time endpoint rules (700 ms, performance test,
+  fallback order), entitlement checks, sandbox testing and measurement.
+  Linked from the launch skill, launch playbook, launch and iOS checklists,
+  workflow automation retention flow, `CLAUDE.md` and `AGENTS.md`. Lessons
+  108-109 added.
+- `skills/search-indexing-skill/` -- portable search and AI-crawler indexing
+  runbook for any public site: pre-flight crawlability checks, Google Search
+  Console, Bing Webmaster Tools and regional consoles, IndexNow, sitemap and
+  robots.txt rules (including AI search vs training crawler policy), page tags,
+  JSON-LD by site type, local business profiles, status report and
+  troubleshooting map. Credential rule: agent stops at passwords; logins are
+  never stored in the repo.
+
 - Evidence-based production hardening guide and review record validator; classify actual risks, preserve release ownership, and require recovery evidence for live changes. Launch checklist now routes through applicability review and avoids production alert outages.
 
 - Platform-independence guard: `scripts/check-platform-independence.sh` plus
@@ -62,6 +80,9 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
 - This `CHANGELOG.md`.
 
 ### Changed
+- SEO guides updated for 2026: dropped `changefreq`/`priority` from sitemap
+  examples, added IndexNow, AI crawler policy, the retirement of HowTo and FAQ
+  rich results, and a realistic note on `llms.txt`.
 - Designated `skills/taste-skill/SKILL.md` as the single authority on frontend
   visual standards. Reconciled the prior contradictions: `START_HERE.md` and
   `DESIGN_SYSTEM.md` no longer present Inter as the default brand font, and the

@@ -76,6 +76,13 @@ empty account. Add every product and the subscription group to one draft. Match
 the "items ready" count. Leave legacy products explicitly unattached. Plan two human
 touches: drag screenshots, click Submit.
 
+## 9a. Subscription retention (auto-renewable apps)
+
+Before or right after the first approved version, set up an App Store Connect
+retention message for every auto-renewable subscription, localized for every
+storefront sold. Agent drafts and fills the form; human approves offer pricing
+and clicks Add for Review. Procedure: `skills/retention-messaging-skill/SKILL.md`.
+
 ## 10. After submit
 
 Create a scheduled mailbox check: quiet while pending, on rejection report the

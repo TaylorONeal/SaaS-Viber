@@ -2,6 +2,10 @@
 
 Practical search engine optimization for SaaS products. This is not an exhaustive SEO course -- it covers the technical foundations that most SaaS builders skip or get wrong.
 
+> **Agent procedure:** `skills/search-indexing-skill/SKILL.md` is the step-by-step
+> runbook (pre-flight checks, console setup, IndexNow, AI crawler policy,
+> structured data by site type, troubleshooting). This guide is the background.
+
 ---
 
 ## 1. Google Search Console
@@ -32,14 +36,19 @@ This is your single most important SEO tool. Set it up before anything else.
 
 ## 2. Bing Webmaster Tools
 
-Takes 5 minutes and covers Bing, Yahoo, and DuckDuckGo search.
+Takes 5 minutes. Bing's index also feeds Yahoo, DuckDuckGo, Ecosia and several AI assistants. DuckDuckGo and Brave have no submission console of their own.
 
 1. Go to https://www.bing.com/webmasters
 2. Import from Google Search Console (easiest) or add manually
 3. Submit your sitemap
 4. Verify ownership
+5. Set up IndexNow (below)
 
 Bing gets less traffic but the users tend to convert well, especially for B2B.
+
+### IndexNow
+
+One POST to `https://api.indexnow.org/indexnow` notifies Bing, Yandex, Naver, Seznam and Yep when URLs change. Google does not support it. Host a key file at `/<key>.txt` and submit changed URLs on each deploy. Full recipe: `skills/search-indexing-skill/SKILL.md` section 4.
 
 ---
 
@@ -180,12 +189,12 @@ Do **not** include:
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://yourapp.com/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-01-15</lastmod>
   </url>
 </urlset>
 ```
+
+Leave out `changefreq` and `priority`: Google and Bing ignore both. `lastmod` is used, but only if honest (date of the last significant content change, not the build date). The old sitemap "ping" URLs were retired in 2023; submit via Search Console, Bing and the `Sitemap:` line in robots.txt.
 
 - [ ] Submit sitemap to Google Search Console
 - [ ] Submit sitemap to Bing Webmaster Tools
@@ -215,6 +224,8 @@ Sitemap: https://yourapp.com/sitemap.xml
 - Block admin areas
 - Allow all marketing/public pages
 - Reference your sitemap
+- Decide your AI crawler policy explicitly: allow AI *search* bots (`OAI-SearchBot`, `Claude-SearchBot`, `PerplexityBot`) and user fetchers if you want to be cited; training bots (`GPTBot`, `ClaudeBot`, `Google-Extended`) are a separate choice. `Google-Extended` does not affect Google Search. Template: `skills/search-indexing-skill/SKILL.md` section 2.2
+- Check your host's "block AI bots" or WAF settings are not silently blocking the bots you allowed
 
 - [ ] Test with Google's robots.txt tester in Search Console
 - [ ] Verify you are not accidentally blocking important pages
@@ -256,9 +267,10 @@ Speed directly affects rankings and conversion. Target 90+ on Lighthouse.
 Beyond the basics above, consider adding:
 
 - [ ] **BreadcrumbList** -- For documentation and multi-level pages
-- [ ] **HowTo** -- For tutorial/guide content
 - [ ] **Article** -- For blog posts (with author, date, image)
-- [ ] **Review/AggregateRating** -- If you have testimonials or ratings
+- [ ] **Review/AggregateRating** -- Only from real, verifiable reviews. Self-serving ratings on your own Organization/LocalBusiness are not eligible for stars
+
+Note: Google removed `HowTo` rich results (2023) and finished phasing out `FAQPage` rich results for all sites in 2026. The markup is still valid but will not produce rich results.
 - [ ] **PriceSpecification** -- Detailed pricing on your pricing page
 
 ### Implementation Tips
@@ -282,9 +294,9 @@ Search is evolving. AI assistants (ChatGPT, Perplexity, Google AI Overviews) inc
 - [ ] **Schema markup** -- Structured data helps AI models understand your content.
 - [ ] **Comprehensive coverage** -- Long-form content that thoroughly covers a topic gets cited more.
 
-### llms.txt (Emerging Standard)
+### llms.txt (Optional, Unproven)
 
-Some sites are adopting a `/llms.txt` file that describes the site for AI crawlers:
+About 1 in 10 sites now ship a `/llms.txt`, but as of 2026 no major AI search product has committed to reading it and Google says it does not use it. Your main text must be in the server-rendered HTML; most AI crawlers do not run JavaScript. If you add llms.txt anyway, serve it with `X-Robots-Tag: noindex`:
 
 ```
 # Your Product Name
@@ -299,7 +311,7 @@ Some sites are adopting a `/llms.txt` file that describes the site for AI crawle
 - [About](https://yourapp.com/about)
 ```
 
-This is not yet a standard but costs nothing to add and may help AI systems understand your site.
+Cheap to add, but never a substitute for crawlable HTML, a clean sitemap and an explicit robots.txt policy.
 
 ### What to Avoid
 

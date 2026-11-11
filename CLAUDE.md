@@ -101,6 +101,7 @@ device-testing work, check:
 - `docs/guides/DEVICE_TEST_RUNBOOK.md` -> Real-device test matrix and evidence log
 - `docs/templates/LAUNCH_TRACKER_TEMPLATE.md` -> One canonical, evidence-based tracker
 - `skills/launch-skill/SKILL.md` -> Agent procedure; evidence over documents, human-only gates
+- `skills/retention-messaging-skill/SKILL.md` -> Apple cancel-flow retention messages and offers (any app with auto-renewable subscriptions)
 
 ## Common Tasks
 

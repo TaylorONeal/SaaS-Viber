@@ -215,7 +215,7 @@ Determine applicable obligations from product, audience and jurisdiction with th
 
 ## SEO
 
-- [ ] Sitemap generated and submitted to Google Search Console
+- [ ] Sitemap generated and submitted to Google Search Console and Bing Webmaster Tools; IndexNow wired to deploys (see `skills/search-indexing-skill/SKILL.md`)
 - [ ] `robots.txt` configured (public pages allowed, app routes blocked)
 - [ ] Meta title and description on every public page
 - [ ] Open Graph tags on every public page
@@ -255,6 +255,7 @@ Determine applicable obligations from product, audience and jurisdiction with th
 - [ ] **Webhook reliability**: Stripe webhooks verified with signature checking
 - [ ] **Failed payment handling**: Dunning emails configured
 - [ ] **Subscription lifecycle**: Create, upgrade, downgrade, cancel all work
+- [ ] **Apple retention message** (auto-renewable subscriptions): one approved message per subscription, every sold locale, offer redemption tested in sandbox (see `skills/retention-messaging-skill/SKILL.md`)
 - [ ] **Billing portal**: Users can update payment method and view invoices
 - [ ] **Refund process**: Documented and tested
 - [ ] **Tax handling**: Stripe Tax or manual tax configuration (varies by jurisdiction)

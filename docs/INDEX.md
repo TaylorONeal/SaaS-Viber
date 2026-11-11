@@ -46,7 +46,16 @@ docs/
 ├── guides/                   ← User and team guides
 │   ├── BRANDING_GUIDE.md
 │   ├── WEB_TO_MOBILE_LAUNCH_PLAYBOOK.md ← Web, then iOS and Android, end to end
-│   └── DEVICE_TEST_RUNBOOK.md
+│   ├── DEVICE_TEST_RUNBOOK.md
+│   ├── EMAIL_AND_DOMAIN_SETUP.md ← Gmail vs registrar email vs Google Workspace
+│   ├── PAYMENTS_IN_APP_VS_WEB.md ← IAP / Play Billing vs Stripe web, RevenueCat
+│   ├── STOREFRONT_COPY.md ← customer, store, and internal copy
+│   ├── STUDIO_PUBLISHER_PAGE.md ← one studio site for many apps
+│   ├── LANDING_WAITLIST_FEEDBACK.md ← landing, waitlist, feedback
+│   ├── SEO_STRATEGY.md ← SEO strategy (runbook: search-indexing skill)
+│   ├── AGENT_OPTIMIZATION.md ← for AI agents, and for the agents that build
+│   ├── PLG_FRAMEWORK.md ← product-led growth
+│   └── DESIGN_DESLOP.md ← integrated anti-slop design, own version
 │
 ├── ai-agents/                ← AI-assisted development guides
 │   ├── MODERN_AGENTIC_DEVELOPMENT.md
@@ -56,7 +65,8 @@ docs/
 │   ├── IOS_READINESS_TEMPLATE.md
 │   ├── LAUNCH_TRACKER_TEMPLATE.md
 │   ├── SUBMIT_DAY_PACKET_TEMPLATE.md
-│   └── CONNECTOR_AUTOMATION_TEMPLATE.md
+│   ├── CONNECTOR_AUTOMATION_TEMPLATE.md
+│   └── LEGAL_PAGES_TEMPLATE.md ← privacy, terms, support, data deletion
 │
 ├── roadmap/                  ← Product roadmap and planning
 │   ├── ROADMAP.md            ← Product roadmap by phase
@@ -73,7 +83,7 @@ docs/
 
 | Path | Purpose |
 |---|---|
-| `decisions/` | Architecture Decision Records -- backend, auth, payments, hosting, analytics, testing |
+| `decisions/` | Architecture Decision Records -- backend, auth, payments, hosting, analytics, testing, developer identity |
 | `skills/` | Reusable Claude Code skills (see `skills/README.md`; the `taste-skill` governs frontend visual standards) |
 | `CHANGELOG.md` | Version history for the template itself |
 
@@ -90,6 +100,8 @@ You care about what we're building, why, and when.
 | [ROADMAP.md](./roadmap/ROADMAP.md) | [FEATURE_INDEX.md](./FEATURE_INDEX.md) | `prd/` directory |
 | [STATUS.md](./STATUS.md) | [NEXT_STEPS.md](./NEXT_STEPS.md) | `decisions/` directory |
 | [FAQ.md](./FAQ.md) | [DEMO_MODE.md](./DEMO_MODE.md) | [BILLING_MODELS.md](./architecture/BILLING_MODELS.md) |
+| [DEVELOPER_IDENTITY_CHOICES.md](../decisions/DEVELOPER_IDENTITY_CHOICES.md) | [EMAIL_AND_DOMAIN_SETUP.md](./guides/EMAIL_AND_DOMAIN_SETUP.md) | [PAYMENTS_IN_APP_VS_WEB.md](./guides/PAYMENTS_IN_APP_VS_WEB.md) |
+| [PLG_FRAMEWORK.md](./guides/PLG_FRAMEWORK.md) | [SEO_STRATEGY.md](./guides/SEO_STRATEGY.md) | [DESIGN_DESLOP.md](./guides/DESIGN_DESLOP.md) |
 
 **Key questions this path answers:**
 - What is the current state of the product?
