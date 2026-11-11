@@ -2,6 +2,9 @@
 
 > Framework for systematically evaluating competitors in your SaaS space.
 > Use this to identify opportunities, threats, and positioning strategies.
+>
+> For the agent procedure (sourcing rules, pricing teardown, review mining,
+> battlecards), load [`skills/competitive-research-skill/`](../../skills/competitive-research-skill/SKILL.md).
 
 ---
 

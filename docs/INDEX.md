@@ -71,7 +71,7 @@ docs/
 ├── roadmap/                  ← Product roadmap and planning
 │   ├── ROADMAP.md            ← Product roadmap by phase
 │   ├── FEATURE_REFERENCE.md  ← Common SaaS features by phase
-│   └── COMPETITOR_ANALYSIS.md← Competitive analysis framework
+│   └── COMPETITOR_ANALYSIS.md← Competitive analysis framework (runbook: competitive-research skill)
 │
 └── prd/                      ← Product Requirements Documents
     ├── PRD-TEMPLATE.md       ← Template for new PRDs
