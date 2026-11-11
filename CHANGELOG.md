@@ -19,7 +19,9 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
   (`references/review-mining.md`), feature parity vs differentiation classes,
   threat levels with review cadence, battlecards with landmine questions,
   objection handlers and walk-away criteria (`references/battlecard.md`),
-  positioning weapons. Every claim cited and dated; outputs live in each app's
+  positioning weapons, and a social-first sweep (Meta Ad Library, TikTok
+  Creative Center, creator hashtags, bio links) for apps that grow on social
+  instead of store search; pasted reports count as leads, not evidence. Every claim cited and dated; outputs live in each app's
   `docs/competitive/`, never in this template. Grown from a battlecard skill
   first used on a coaching marketplace app. Linked from
   `docs/roadmap/COMPETITOR_ANALYSIS.md`.

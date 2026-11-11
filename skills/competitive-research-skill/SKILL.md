@@ -64,6 +64,27 @@ threads where buyers ask for recommendations, the competitors' own comparison
 pages, and Product Hunt. Substitutes almost never show up in search; ask what the
 buyer did last week.
 
+**Social-first sweep.** Many new consumer and creator apps never rank in store
+search or on G2; they grow through Instagram, TikTok, creator founders and paid
+ads. Run this sweep for any consumer, creator or prosumer product:
+
+- **Ad libraries:** Meta Ad Library (facebook.com/ads/library, all countries,
+  "All ads") and TikTok's Top Ads / Creative Center for your top 5 job keywords
+  ("class planner", not your category jargon). A competitor running ads now is
+  spending to win your buyer now. Record the hook line and the first frame.
+- **Creator search:** the buyer's own hashtags plus "app" (for example
+  `#pilatesinstructor app`) and "how I plan my classes" style posts. Note which
+  tools appear on screen, not just in captions.
+- **Bio links:** a social account's bio link is often the only route to the
+  product; follow it to the store page or site and verify there.
+- **Pasted reports and screenshots** (from a person, a newsletter or another AI)
+  are leads, not evidence. Verify every named product on its own page before it
+  enters the log, and record what did not check out.
+
+Count a social-first product in the set when it targets the same buyer and job,
+even with tiny store ratings: ad spend and creator reach move faster than
+reviews.
+
 Cap the set at 12. More is a list, not research.
 
 ## 3. Research lanes (per competitor)
@@ -82,8 +103,10 @@ Run the lanes that matter for the decision. `brief` runs 1-3; `full` runs all.
    blog. What shipped in the last 90 days tells you direction.
 5. **Money and team:** funding (Crunchbase, press), headcount trend (LinkedIn),
    job postings (where they are investing next).
-6. **Go-to-market:** paid ads (Meta Ad Library, Google Ads Transparency),
-   social presence, partnerships, SEO pages they rank for.
+6. **Go-to-market:** paid ads (Meta Ad Library, TikTok Creative Center, Google
+   Ads Transparency), social presence (handle, posting cadence, founder-creator
+   or not), partnerships, SEO pages they rank for. Quote the ad hook; hooks are
+   the competitor's positioning in their own words.
 7. **Community voice:** Reddit, Facebook groups, Discord, forums. What buyers say
    when the vendor is not in the room.
 
