@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Dashboard</title>
+<style>
+:root{
+  --bg:#f7f7f5;--panel:#ffffff;--fg:#1d1d1b;--muted:#66665f;--line:#e2e1dc;
+  --ok:#1f8a4c;--go:#2f6fd6;--warn:#b7791f;--bad:#c2410c;
+  --radius:12px;--font:"Geist","Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141413;--panel:#1f1f1d;--fg:#ecebe6;--muted:#a3a29b;--line:#34332f;
+  --ok:#4cc07f;--go:#6ea2f2;--warn:#e0a74a;--bad:#f0784a;
+}}
+:root[data-theme="dark"]{--bg:#141413;--panel:#1f1f1d;--fg:#ecebe6;--muted:#a3a29b;--line:#34332f;--ok:#4cc07f;--go:#6ea2f2;--warn:#e0a74a;--bad:#f0784a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);line-height:1.5}
+.wrap{max-width:980px;margin:0 auto;padding:24px 16px 64px;display:flex;flex-direction:column;gap:32px}
+h1{font-size:24px;margin:0 0 8px;font-weight:600}
+h2{font-size:18px;margin:0 0 12px;font-weight:600}
+h3{font-size:15px;margin:0;font-weight:600}
+p{margin:0}
+.lede{font-size:16px}
+.meta,.sub,.note,.gnote{color:var(--muted);font-size:13px}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.jump a{font-size:13px;color:var(--fg);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 10px;min-height:32px;display:inline-flex;align-items:center}
+.chip,.stage,.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;line-height:1.2;padding:3px 9px;border-radius:999px;border:1px solid var(--line);white-space:nowrap;color:var(--fg)}
+.stage::before,.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--tone,var(--muted))}
+.t-ok{--tone:var(--ok)}.t-go{--tone:var(--go)}.t-warn{--tone:var(--warn)}.t-bad{--tone:var(--bad)}
+.chip.due{border-color:var(--warn);font-weight:600}
+.board{display:grid;grid-template-columns:minmax(110px,1.4fr) repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.board>div{background:var(--panel);padding:10px 12px;min-width:0}
+.board .hd{font-size:12px;color:var(--muted);font-weight:600}
+.board a{color:var(--fg);text-decoration:none;font-weight:600;overflow-wrap:anywhere}
+.group{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-bottom:12px}
+.ghead{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.gcount{font-size:12px;color:var(--muted)}
+.alist{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.alist li{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:10px}
+.alist li:first-child{border-top:0;padding-top:0}
+.anum{font-variant-numeric:tabular-nums;color:var(--muted);margin-right:6px}
+.achips{display:flex;flex-wrap:wrap;gap:6px}
+.agents .atext{color:var(--muted)}
+.cards{display:grid;grid-template-columns:1fr;gap:12px}
+@media (min-width:720px){.cards{grid-template-columns:1fr 1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.chead{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.plat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.plabel{font-size:12px;color:var(--muted)}
+.countlink{font-size:13px;color:var(--fg)}
+dl{margin:0;display:flex;flex-direction:column;gap:6px}
+dt{font-size:12px;color:var(--muted)}dd{margin:0;font-size:14px}
+.links{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.links a{color:var(--fg);text-decoration:none}
+.legend{margin-top:8px}
+@media (max-width:520px){.plat{grid-template-columns:1fr}.board{grid-template-columns:minmax(90px,1.2fr) repeat(3,minmax(0,1fr))}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap" id="app">
+  <header>
+    <h1 id="title">Project Dashboard</h1>
+    <p class="lede" id="lede">Loading.</p>
+    <p class="meta" id="meta"></p>
+    <nav class="jump" id="jump" aria-label="Jump to a project"></nav>
+  </header>
+  <section id="board-sec"><h2>Where each product stands</h2><div class="board" id="board"></div>
+    <p class="note legend">Ready: store record filled, waits on your test and your yes to submit. Build: a build exists, no listing yet. Draft: the work sits in an unmerged pull request.</p></section>
+  <section id="waiting"><h2>Waiting on you</h2><p class="sub">Sorted by who does it. Deadlines come first in each list.</p><div id="asks"></div></section>
+  <section id="core-sec"><h2>Products</h2><div class="cards" id="core"></div></section>
+  <section id="sup-sec"><h2>Supporting work</h2><div class="cards" id="sup"></div></section>
+</main>
+<script>
+(function () {
+  // Edit these to fit your portfolio.
+  const CONFIG = {
+    title: 'Project Dashboard',
+    platforms: [['ios', 'iOS'], ['android', 'Android'], ['web', 'Web']],
+    buckets: [
+      ['Your yes', 'One word each. Agents do the work after you answer.'],
+      ['Only you', 'Secrets, your phone and legal clicks.'],
+      ['Cowork runs', 'Paste the Cowork script into Cowork on your computer. It stops at every password and Save that is yours.'],
+      ['Agents doing', 'Nothing for you. Listed so you can see it.']
+    ]
+  };
+
+  const $ = (id) => document.getElementById(id);
+  const make = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = String(text); return e; };
+  const tone = (v) => {
+    const s = String(v || '').toLowerCase();
+    if (s === 'live') return 't-ok';
+    if (s === 'ready' || s === 'on track') return 't-go';
+    if (s === 'needs you' || s === 'build' || s === 'draft') return 't-warn';
+    if (s === 'blocked') return 't-bad';
+    return '';
+  };
+  const safeUrl = (u) => { try { const x = new URL(u); return x.protocol === 'https:' ? x.href : null; } catch (e) { return null; } };
+
+  async function load(name) {
+    for (const path of ['data/' + name + '.json', 'data/' + name + '.example.json']) {
+      try { const r = await fetch(path, {cache: 'no-store'}); if (r.ok) return await r.json(); } catch (e) { /* try next */ }
+    }
+    throw new Error('Could not load ' + name + '. Serve this folder over HTTP (for example: npx serve .).');
+  }
+
+  function render(P, A, L) {
+    document.title = CONFIG.title; $('title').textContent = CONFIG.title;
+    P.sort((x, y) => Number(x.order) - Number(y.order));
+    const name = new Map(P.map((p) => [p.id, p.name]));
+    const order = new Map(P.map((p) => [p.id, Number(p.order)]));
+    const mine = A.filter((a) => a.bucket !== 'Agents doing');
+    const dated = mine.filter((a) => a.due).sort((x, y) => String(x.due).localeCompare(String(y.due)));
+    const products = new Set(mine.map((a) => a.product)).size;
+    $('lede').textContent = mine.length + ' things wait on you across ' + products + ' projects. ' +
+      (dated[0] ? 'The nearest deadline is ' + String(dated[0].due_label).replace(/^Due /, '') + ', for ' + (name.get(dated[0].product) || dated[0].product) + '.' : 'Nothing has a deadline.');
+    $('meta').textContent = 'Last checked ' + (P[0] ? P[0].checked : '') + '. Nothing on this page was merged, submitted or paid.';
+
+    P.forEach((p) => { const a = make('a', null, p.name); a.href = '#p-' + p.id; $('jump').appendChild(a); });
+
+    const board = $('board');
+    board.appendChild(make('div', 'hd', 'Product'));
+    CONFIG.platforms.forEach(([, label]) => board.appendChild(make('div', 'hd', label)));
+    P.filter((p) => p.group === 'core').forEach((p) => {
+      const c = make('div'); const a = make('a', null, p.name); a.href = '#p-' + p.id; c.appendChild(a); board.appendChild(c);
+      CONFIG.platforms.forEach(([k]) => { const d = make('div'); d.appendChild(make('span', 'stage ' + tone(p[k]), p[k] || 'n/a')); board.appendChild(d); });
+    });
+
+    const counts = new Map(); mine.forEach((a) => counts.set(a.product, (counts.get(a.product) || 0) + 1));
+    const seen = new Set(); let n = 0;
+    CONFIG.buckets.forEach(([b, note]) => {
+      const items = A.filter((a) => a.bucket === b).sort((x, y) =>
+        (x.due ? 0 : 1) - (y.due ? 0 : 1) || String(x.due).localeCompare(String(y.due)) ||
+        (order.get(x.product) ?? 99) - (order.get(y.product) ?? 99) || Number(x.order) - Number(y.order));
+      if (!items.length) return;
+      const g = make('div', 'group' + (b === 'Agents doing' ? ' agents' : ''));
+      const head = make('div', 'ghead'); head.append(make('h3', null, b), make('span', 'gcount', items.length === 1 ? '1 ask' : items.length + ' asks'));
+      const ol = make('ol', 'alist');
+      items.forEach((a) => {
+        n += 1;
+        const li = make('li');
+        if (b !== 'Agents doing' && !seen.has(a.product)) { seen.add(a.product); li.id = 'w-' + a.product; }
+        const t = make('span', 'atext'); t.append(make('span', 'anum', n + '.'), document.createTextNode(String(a.ask)));
+        const chips = make('span', 'achips');
+        chips.appendChild(make('span', 'chip', name.get(a.product) || a.product));
+        if (!['Yes/no', 'Cowork', 'Agents'].includes(a.kind)) chips.appendChild(make('span', 'chip', a.kind));
+        if (a.due_label) chips.appendChild(make('span', 'chip due', a.due_label));
+        li.append(t, chips); ol.appendChild(li);
+      });
+      g.append(head, make('p', 'gnote', note), ol); $('asks').appendChild(g);
+    });
+
+    P.forEach((p) => {
+      const card = make('article', 'card'); card.id = 'p-' + p.id;
+      const ch = make('div', 'chead'); ch.append(make('h3', null, p.name), make('span', 'pill ' + tone(p.status), p.status)); card.appendChild(ch);
+      if (p.also) card.appendChild(make('p', 'note', p.also));
+      card.appendChild(make('p', null, p.headline));
+      if (p.group === 'core') {
+        const plat = make('div', 'plat');
+        CONFIG.platforms.forEach(([k, label]) => {
+          const d = make('div'); d.append(make('div', 'plabel', label), make('span', 'stage ' + tone(p[k]), p[k] || 'n/a'));
+          if (p[k + '_note']) d.appendChild(make('p', 'note', p[k + '_note']));
+          plat.appendChild(d);
+        });
+        card.appendChild(plat);
+      }
+      const c = counts.get(p.id) || 0;
+      if (c) { const a = make('a', 'countlink', c + ' waiting on you'); a.href = '#w-' + p.id; card.appendChild(a); }
+      const dl = make('dl');
+      [['Done', p.done], ['Waiting on others', p.others], ['Next', p.next]].forEach(([k, v]) => { if (v) { const w = make('div'); w.append(make('dt', null, k), make('dd', null, v)); dl.appendChild(w); } });
+      card.appendChild(dl);
+      const ul = make('ul', 'links');
+      L.filter((l) => l.product === p.id).forEach((l) => { const u = safeUrl(l.url); if (!u) return; const li = make('li'); const a = make('a', 'chip', l.label); a.href = u; a.rel = 'noopener'; a.target = '_blank'; li.appendChild(a); ul.appendChild(li); });
+      if (ul.children.length) card.appendChild(ul);
+      $(p.group === 'core' ? 'core' : 'sup').appendChild(card);
+    });
+    if (!$('sup').children.length) $('sup-sec').hidden = true;
+  }
+
+  Promise.all(['projects', 'asks', 'links'].map(load))
+    .then(([P, A, L]) => render(P, A, L))
+    .catch((e) => { $('lede').textContent = e.message; });
+})();
+</script>
+</body>
+</html>

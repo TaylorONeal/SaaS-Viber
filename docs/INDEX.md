@@ -204,6 +204,7 @@ You are leveraging AI assistants (Claude, ChatGPT, Copilot, etc.) to accelerate 
 - [Web to Mobile Launch Playbook](./guides/WEB_TO_MOBILE_LAUNCH_PLAYBOOK.md) — End-to-end sequence: parallel paperwork, build, billing, device testing, submission, release
 - [Device Test Runbook](./guides/DEVICE_TEST_RUNBOOK.md) — Real-device test matrix, evidence log, mirroring fallbacks
 - [Launch Tracker Template](./templates/LAUNCH_TRACKER_TEMPLATE.md) — Evidence-based gate tracker for one app or a portfolio
+- [Project Dashboard Template](./templates/project-dashboard/README.md): portfolio status page with a four-bucket "Waiting on you" list and a Cowork script template
 - [Submit-Day Packet Template](./templates/SUBMIT_DAY_PACKET_TEMPLATE.md) — Fill in the day before store submission
 - [iOS Readiness Checklist](./guides/IOS_READINESS_CHECKLIST.md) — App Store launch readiness
 - [iOS Readiness Template](./templates/IOS_READINESS_TEMPLATE.md) — Repo-tailored iOS readiness planning
