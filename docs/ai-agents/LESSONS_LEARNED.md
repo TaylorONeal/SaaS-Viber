@@ -311,7 +311,7 @@ does nothing in production.
 ### 25. Context Beats Cleverness
 
 An agent with the right docs in context outperforms a cleverly-worded prompt
-against an empty repo. Point it at `CLAUDE.md`, the domain model, and the
+against an empty repo. Point it at `AGENTS.md`, the domain model, and the
 relevant decision record *before* asking for code. The time spent writing
 durable docs is repaid every session, on every app.
 
@@ -343,7 +343,7 @@ and an afternoon of untangling.
 
 The same rule stated in two files will eventually contradict itself, and the
 agent will obey whichever it read last. Designate one canonical file per concern
-(design -> the taste skill, conventions -> `CLAUDE.md`) and have the others link
+(design -> the taste skill, conventions -> `AGENTS.md`) and have the others link
 to it rather than restate it.
 
 ### 85. Check for Existing Infrastructure Before Asking
@@ -715,7 +715,7 @@ environment variable on a short list for a human, with the exact location.
 ### 60. Protect Live Billing During a Launch
 
 Do not change live subscriber billing configuration or webhooks while launching
-something else. Mark it do-not-touch in `CLAUDE.md`.
+something else. Mark it do-not-touch in `AGENTS.md`.
 
 ### 61. Find Submit-Day Blockers a Week Early
 
@@ -888,7 +888,7 @@ flowchart LR
     D --> E{Seen in 2+ apps?}
     E -->|Yes| F[Promote: encode as a rule]
     E -->|Not yet| G[Leave as a lesson]
-    F --> H[Skill / CLAUDE.md / .cursorrules]
+    F --> H[Skill / AGENTS.md / .cursorrules]
     H --> I[Note it in CHANGELOG.md]
 ```
 
@@ -898,7 +898,7 @@ flowchart LR
 |----------|----------|--------|
 | One-off, app-specific | The app's own repo | None on the template |
 | Generalizable insight | This file (`LESSONS_LEARNED.md`) | Informs future builds |
-| Proven across 2+ apps | A rule in `CLAUDE.md` / `.cursorrules` | Enforced on every generation |
+| Proven across 2+ apps | A rule in `AGENTS.md` / `.cursorrules` | Enforced on every generation |
 | Repeatable capability | A skill in `skills/` | Loads automatically when relevant |
 | A decision others re-make | A record in `decisions/` | Saves the next builder the analysis |
 
@@ -906,7 +906,7 @@ flowchart LR
 
 A lesson is *information*; a rule or skill is *enforcement*. When the same
 pitfall bites you in a second app, stop writing prose and promote it: add a line
-to `CLAUDE.md`/`.cursorrules`, or -- if it is a whole way of working -- a skill.
+to `AGENTS.md`/`.cursorrules`, or -- if it is a whole way of working -- a skill.
 Record the promotion in `CHANGELOG.md` so apps syncing from this template know a
 new standard landed.
 

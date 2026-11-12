@@ -99,4 +99,4 @@ continuation steps. Do not touch live billing configuration.
 
 After significant work, add new generalizable lessons to
 `docs/ai-agents/LESSONS_LEARNED.md` (section "Launch and Store Submission") and
-promote anything seen in two apps into this skill or `CLAUDE.md`.
+promote anything seen in two apps into this skill or `AGENTS.md`.
