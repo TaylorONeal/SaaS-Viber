@@ -95,7 +95,7 @@ comes back into this template.
 3. Write the instruction body. Keep rules concrete and testable ("use
    `min-h-[100dvh]`, never `h-screen`") rather than vague ("make it responsive").
 4. Register it in the table above.
-5. If it changes how agents work repo-wide, cross-link it from `CLAUDE.md`,
+5. If it changes how agents work repo-wide, cross-link it from `AGENTS.md`,
    `AGENTS.md`, and `docs/INDEX.md`.
 
 ---

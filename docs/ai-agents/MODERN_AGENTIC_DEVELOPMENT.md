@@ -42,7 +42,7 @@ Use this operating model for substantial work.
 
 ### Default Agent Loop
 
-1. **Read first:** `README.md`, `START_HERE.md`, `docs/INDEX.md`, `docs/ai-agents/KEY_FILES.md`, `CLAUDE.md`, and applicable decision records.
+1. **Read first:** `README.md`, `START_HERE.md`, `docs/INDEX.md`, `docs/ai-agents/KEY_FILES.md`, `AGENTS.md`, and applicable decision records.
 2. **State assumptions:** list product, stack, environment, and data assumptions before editing.
 3. **Plan in slices:** separate docs, data model, UI, API, tests, and migration work.
 4. **Edit surgically:** prefer small changes that keep template placeholders intact unless the task is explicitly product-specific.
@@ -152,7 +152,7 @@ Use this checklist when turning SaaS-Viber into a stronger open-source starter s
 ```md
 Review this repository as a SaaS starter shell for modern agentic coding.
 
-Read: README.md, START_HERE.md, docs/INDEX.md, docs/ai-agents/KEY_FILES.md, CLAUDE.md, AGENTS.md, decisions/*.md, skills/README.md.
+Read: README.md, START_HERE.md, docs/INDEX.md, docs/ai-agents/KEY_FILES.md, AGENTS.md, decisions/*.md, skills/README.md.
 
 Return:
 1. What this repo is optimized for today.
