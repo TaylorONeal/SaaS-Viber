@@ -11,6 +11,7 @@
 
 | Device | Resolution (px) | Display Size | Required? |
 |--------|-----------------|-------------|-----------|
+| iPhone 6.9" (16 Pro Max and later) | 1320 x 2868 | Super Retina XDR | Largest current size |
 | iPhone 6.7" (15 Pro Max, 14 Pro Max) | 1290 x 2796 | Super Retina XDR | Yes |
 | iPhone 6.5" (11 Pro Max, XS Max) | 1242 x 2688 | Super Retina | Yes |
 | iPhone 5.5" (8 Plus, 7 Plus) | 1242 x 2208 | Retina HD | If supporting |
@@ -82,33 +83,52 @@ and captures screenshots in all required sizes and languages.
 
 ## Best Practices
 
-### Content Strategy
+### Content Strategy: one job per frame
 
-1. **Lead with your strongest screen** -- the first screenshot gets the most views
-2. **Show the value, not the login screen** -- demonstrate what users will get
-3. **Use real data** -- placeholder content looks unprofessional
-4. **Tell a story** -- screenshots should flow logically from left to right
-5. **Highlight differentiators** -- show what makes your app unique
+People scroll a listing in a second or two. They are asking "is this for me, and
+will it fix my problem?", not "what features does it have?". Write each frame
+from the user's side, as a job they want done and how it feels once it is done.
 
-### Recommended Screenshot Sequence (5-6 Screenshots)
+1. **Say who it is for first** -- if the app only helps a certain person (owners of
+   a device, members of a service, a role at work), frame 1 says so in plain words.
+   A listing that pulls in the wrong people earns installs that end in one-star
+   reviews.
+2. **One job per frame** -- the headline is the user's own words for the job
+   ("Out of cards?") and the second line is the payoff ("Brewing again."). Name the
+   situation and the feeling, not the screen ("Analytics dashboard").
+3. **Show the solution, not the setting** -- the screen in the frame is the moment
+   the job gets done: the result, the confirmation, the one tap.
+4. **Show real data** -- placeholder content looks unprofessional.
+5. **Read every headline at 30 percent size** -- that is roughly how big the frames
+   are in search results.
 
-| Position | Content | Purpose |
-|----------|---------|---------|
-| 1 | Hero feature / main dashboard | First impression, value prop |
-| 2 | Key feature A | Core functionality |
-| 3 | Key feature B | Second major benefit |
-| 4 | Key feature C or unique differentiator | Stand out from competitors |
-| 5 | Social proof / results | Build trust |
-| 6 | Settings / customization | Show flexibility (optional) |
+### Recommended Screenshot Sequence (5-8 Screenshots)
 
-### Visual Design
+| Position | Job it answers | Example headline |
+|----------|----------------|------------------|
+| 1 | Is this for me? | "Own a [device]? Keep it running." |
+| 2 | The problem that brought them here, solved | "Out of X? Back to Y." (before and after) |
+| 3 | The everyday job, made effortless | "Your usual. One tap." |
+| 4 | The question that blocks them from starting | "Know exactly what to buy." |
+| 5 | A job they did not know the app could do | "Set it tonight. Ready by morning." |
+| 6 | Why to trust it | "Made by people like you." / "No account. No ads." |
 
-- **Add captions** -- 3-5 word text above or below the device frame
-- **Use your brand colors** -- consistent with your app and website
-- **Device frames are optional** -- Apple allows both framed and unframed
-- **Keep backgrounds simple** -- solid color or subtle gradient
-- **Ensure text is readable** -- minimum 30px font size at display resolution
-- **Maintain consistency** -- same style, fonts, and colors across all screenshots
+### Visual Design: vary the layout, keep the palette
+
+A set where every frame is the same tilted phone on a new colour reads as one
+screenshot eight times. Keep the palette, fonts and voice consistent, and change the
+composition from frame to frame:
+
+- **Before and after split** -- the problem in muted colour above, the result in brand colour below
+- **Straight phone with a giant breakout** -- the one control that does the job, enlarged
+- **Object close-up, no phone** -- the physical thing, document or result the job is about
+- **Scene** -- a time of day, a place, the moment of use
+- **Type first** -- a short manifesto or a value the brand stands for, phone small or absent
+- **Phone peeking in** -- off the edge, at an angle, as a supporting detail
+
+Check the set as a strip: if two neighbouring frames share a composition, change one.
+Captions stay large (30px at display resolution at the very least) and short.
+Device frames are optional; Apple allows both framed and unframed.
 
 ### What to Avoid
 
