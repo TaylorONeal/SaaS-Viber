@@ -12,6 +12,10 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
 ## [Unreleased]
 
 ### Added
+- Secret scan (Nov 12, 2026) -- `.github/workflows/secret-scan.yml` runs gitleaks with
+  `.gitleaks.toml` on every pull request and fails if a change adds a key, token
+  or private key. `AGENTS.md` gains a Secrets rule: say where a secret lives,
+  never paste it.
 - `skills/competitive-research-skill/` (Nov 11, 2026) -- evidence-first
   competitive research: every competitor typed Direct (Peer Competitor or
   Innovative Challenger, the ThinkerMetrics categories), Different but Related,
