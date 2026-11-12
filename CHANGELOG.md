@@ -12,7 +12,7 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
 ## [Unreleased]
 
 ### Added
-- Secret scan (Nov 12, 2026) -- `.github/workflows/secret-scan.yml` runs gitleaks with It also scans merge commits and self-tests its rules on every run.
+- Secret scan (Nov 12, 2026) -- `.github/workflows/secret-scan.yml` runs gitleaks with It also scans every commit a merge brings in and self-tests its rules on every run.
   `.gitleaks.toml` on every pull request and fails if a change adds a key, token
   or private key. `AGENTS.md` gains a Secrets rule: say where a secret lives,
   never paste it.
