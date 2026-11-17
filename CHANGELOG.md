@@ -12,6 +12,14 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
 ## [Unreleased]
 
 ### Added
+- `skills/backlink-directories-skill/` (Nov 17, 2026) -- free directory
+  listings for a portfolio of public properties: pre-flight fixes before any
+  link (duplicate host redirects, canonical and og:url, noindex, honest meta
+  descriptions, repo Website fields), directories matched by property type,
+  rel and terms checks, a listing copy kit, `references/tracker-template.csv`,
+  `references/browser-agent-brief.md` (one yes per batch, human types
+  passwords and submits), badge-gated directories, and a launch-day queue.
+  Never pays. Linked from `docs/guides/DIGITAL_PRESENCE_CHECKLIST.md`.
 - Secret scan (Nov 12, 2026) -- `.github/workflows/secret-scan.yml` runs gitleaks with It also scans every commit a merge brings in and self-tests its rules on every run.
   `.gitleaks.toml` on every pull request and fails if a change adds a key, token
   or private key. `AGENTS.md` gains a Secrets rule: say where a secret lives,

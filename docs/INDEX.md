@@ -52,7 +52,7 @@ docs/
 │   ├── STOREFRONT_COPY.md ← customer, store, and internal copy
 │   ├── STUDIO_PUBLISHER_PAGE.md ← one studio site for many apps
 │   ├── LANDING_WAITLIST_FEEDBACK.md ← landing, waitlist, feedback
-│   ├── SEO_STRATEGY.md ← SEO strategy (runbook: search-indexing skill)
+│   ├── SEO_STRATEGY.md ← SEO strategy (runbooks: search-indexing and backlink-directories skills)
 │   ├── AGENT_OPTIMIZATION.md ← for AI agents, and for the agents that build
 │   ├── PLG_FRAMEWORK.md ← product-led growth
 │   └── DESIGN_DESLOP.md ← integrated anti-slop design, own version
