@@ -125,6 +125,8 @@ People will look for reviews before buying. Control the narrative by being prese
 
 Get listed in relevant directories for your niche. This helps with SEO (backlinks) and discovery.
 
+Runbook: [backlink-directories skill](../../skills/backlink-directories-skill/SKILL.md) (pre-flight fixes, which directories fit, rel checks, tracking sheet, browser-agent brief).
+
 ### General SaaS Directories
 
 - [ ] Product Hunt
