@@ -861,6 +861,24 @@ and sandbox shows the newest draft, not the published version.
 
 **Also:** some hosting analytics toggles have no API. Enabling them is a dashboard click per project, so put that click on the pre-launch list.
 
+### 110. List the Product That Earns First
+
+**Wrong:** Run a directory or backlink batch in the order that is easiest: open-source repos and no-account sites first. The run ends with a dozen live links for side projects and none for the one product on sale.
+
+**Right:** Sort every batch by status. Live, paid products go first, then everything else. Before reporting a run as done, count live rows per product. See `skills/backlink-directories-skill/SKILL.md` section 6.
+
+### 111. A Launch Date Needs a Gate and a Calendar Check
+
+**Wrong:** Pick a launch day because it sounds right, then find the app is still in store review, or the founder is on a plane when the comments arrive.
+
+**Right:** Each launch date carries its gate (store page live, sign-up open) and is checked against the owner's calendar. Check the gate two days before; if it is open, move the date instead of launching a waitlist page.
+
+### 112. Turn Relative Dates Into Calendar Dates Before Writing Them Down
+
+**Wrong:** The owner says "when I'm back" or "same as the other one". The agent guesses a date, writes it to the decision log, the tracker and the plan, and then rewrites all three when the guess was off by two days.
+
+**Right:** Restate it as one calendar date ("both on Wednesday the 14th?"), get a yes, then write it everywhere once.
+
 ## Adding New Lessons
 
 When you encounter a new pitfall, add it here with:
