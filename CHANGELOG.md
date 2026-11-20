@@ -16,8 +16,16 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
   member an owner adds: invite that ends in a usable credential, the in-between
   states to show, role change, removal as a process (record first, end access
   on every request, hand open work back, keep history), an append-only audit
-  trail, and the end-to-end test that proves it. Lessons 110 to 113 in
+  trail, and the end-to-end test that proves it. Lessons 113 to 116 in
   `docs/ai-agents/LESSONS_LEARNED.md`. Registered in `docs/INDEX.md`.
+- `skills/backlink-directories-skill/` launch calendar (Nov 20, 2026) --
+  section 8 now covers setting launch dates for several products: name the
+  goal, check the owner's calendar, a gate on every date, weekday versus
+  weekend, spacing, new-account waits, analytics before the day, and writing
+  the plan down once. Also: check for existing accounts, create accounts only
+  with the owner present, order every batch by live products first, and how
+  to park and resume a run. `references/tracker-template.csv` gains
+  `planned_date` and `gate`. Lessons 110 to 112 added.
 - `skills/backlink-directories-skill/` (Nov 17, 2026) -- free directory
   listings for a portfolio of public properties: pre-flight fixes before any
   link (duplicate host redirects, canonical and og:url, noindex, honest meta

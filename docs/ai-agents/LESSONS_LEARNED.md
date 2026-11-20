@@ -843,7 +843,7 @@ retention messages are the only place to speak in that flow. Set one up per
 auto-renewable subscription as part of launch, not after churn shows up. See
 `skills/retention-messaging-skill/SKILL.md`.
 
-### 113. An Invite That Signs Someone In Is Not an Account They Can Use
+### 116. An Invite That Signs Someone In Is Not an Account They Can Use
 
 **Wrong:** Send the auth provider's invite email and call staff onboarding done. The link signs the person in on the web with no password. The mobile app asks for email and password, so they are locked out on day one.
 
@@ -851,7 +851,7 @@ auto-renewable subscription as part of launch, not after churn shows up. See
 
 ---
 
-### 112. Record the Access Change Before You Apply It
+### 115. Record the Access Change Before You Apply It
 
 **Wrong:** Update the role or active flag, then write the audit row. When the audit write fails (missing table privilege, in our case) the change stands with no record.
 
@@ -859,7 +859,7 @@ auto-renewable subscription as part of launch, not after churn shows up. See
 
 ---
 
-### 111. Removal Is a Process: Access, Open Work, History
+### 114. Removal Is a Process: Access, Open Work, History
 
 **Wrong:** "Remove teammate" flips a flag or deletes the row. Their open session keeps working until the token expires, and their name stays on future work.
 
@@ -867,7 +867,7 @@ auto-renewable subscription as part of launch, not after churn shows up. See
 
 ---
 
-### 110. A Skipped Step in the End-to-End Test Is an Untested Feature
+### 113. A Skipped Step in the End-to-End Test Is an Untested Feature
 
 **Wrong:** The sign-up test skips the optional "add your team" step to keep the run short. The step works in isolation, the page that should manage the team afterwards is sample data behind a "not available yet" screen, and nobody notices because the test is green.
 
@@ -892,6 +892,24 @@ and sandbox shows the newest draft, not the published version.
 **Right:** Treat analytics like billing: a gate that blocks submission. Before launch, web pages have hosting analytics, GA4 with consent defaults and Search Console; apps send one shared event taxonomy to a product analytics tool with cohorts and flags; every store link carries a campaign or referrer; privacy labels ship in the same release as the SDK. See the Analytics section of the [Launch Checklist](../guides/LAUNCH_CHECKLIST.md#analytics).
 
 **Also:** some hosting analytics toggles have no API. Enabling them is a dashboard click per project, so put that click on the pre-launch list.
+
+### 110. List the Product That Earns First
+
+**Wrong:** Run a directory or backlink batch in the order that is easiest: open-source repos and no-account sites first. The run ends with a dozen live links for side projects and none for the one product on sale.
+
+**Right:** Sort every batch by status. Live, paid products go first, then everything else. Before reporting a run as done, count live rows per product. See `skills/backlink-directories-skill/SKILL.md` section 6.
+
+### 111. A Launch Date Needs a Gate and a Calendar Check
+
+**Wrong:** Pick a launch day because it sounds right, then find the app is still in store review, or the founder is on a plane when the comments arrive.
+
+**Right:** Each launch date carries its gate (store page live, sign-up open) and is checked against the owner's calendar. Check the gate two days before; if it is open, move the date instead of launching a waitlist page.
+
+### 112. Turn Relative Dates Into Calendar Dates Before Writing Them Down
+
+**Wrong:** The owner says "when I'm back" or "same as the other one". The agent guesses a date, writes it to the decision log, the tracker and the plan, and then rewrites all three when the guess was off by two days.
+
+**Right:** Restate it as one calendar date ("both on Wednesday the 14th?"), get a yes, then write it everywhere once.
 
 ## Adding New Lessons
 

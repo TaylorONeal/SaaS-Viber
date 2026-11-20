@@ -129,6 +129,13 @@ For each candidate directory, record in the sheet:
 Drop anything that needs payment, a payment method on file "just in case",
 or an ID check the owner didn't agree to.
 
+**Accounts.** Before planning a sign-up, check whether the owner already has
+an account there (search their inbox for mail from the directory). An old
+account skips new-account waiting periods and looks less like spam. Create
+new accounts only while the owner is at the keyboard: confirmation links
+often expire within a day, and an unconfirmed account blocks every listing
+behind it.
+
 ---
 
 ## 4. Listing copy kit
@@ -184,8 +191,20 @@ Hand a browser agent `references/browser-agent-brief.md`, filled in with the
 copy kit and the batch list. After each listing goes live: open it, inspect
 the link to the property, and record `rel` and the live URL.
 
+**Order by status, then by batch.** Within every batch, do the properties
+that are live and earning first. It is easy to finish the easy rows (repos,
+no-account sites) and end a run with ten links for side projects and none for
+the one product people can buy. Check the sheet for that before calling a
+run done.
+
 Pace: a few listings an hour, not a script. Directories ban accounts that
 look automated.
+
+**Parking and resuming.** If the owner parks the run, write down each step
+that waits on them (page, account, what is already filled in) and stop
+asking. When they bring it back, re-read the sheet, re-check anything that
+expires (confirmation links, queues, free tiers) and start with their
+shortest steps.
 
 ---
 
@@ -210,7 +229,7 @@ Never add badges to a site whose owner hasn't agreed to that specific site.
 
 ---
 
-## 8. Launch-day queue
+## 8. Launch-day queue and launch calendar
 
 Properties not live yet (an app waiting on store review, a site still
 `noindex`) go in the sheet as `launch-day` rows. On the day the store page is
@@ -219,9 +238,37 @@ live:
 1. Add the store links to every existing listing of that product.
 2. Submit to the launch sites that care about recency (Product Hunt, launch
    queues).
-3. Pick a Product Hunt day that avoids holidays and travel; launch at
-   12:01am Pacific; have the maker profile, gallery and first comment ready
-   the day before. Ask for feedback, never upvotes.
+3. Launch on Product Hunt at 12:01am Pacific; have the maker profile, gallery
+   and first comment ready the day before. Ask for feedback, never upvotes.
+
+**Setting dates.** With more than one product, write a launch calendar: one
+row per product with the date, the gate and the state. Fill `planned_date`
+and `gate` in the sheet for each launch-day row.
+
+- **Name the goal first.** A listing, badge and link is a different job from
+  installs. If the product's buyers are not on a launch site, plan a small
+  launch there and spend the effort on the channel where they are.
+- **Use the owner's calendar.** Someone has to answer comments all day. Pick
+  days they are at a desk: no travel days, no holidays. When they give a date
+  relative to something else ("when I'm back", "same as the other one"),
+  restate it as a calendar date and get a yes before writing it anywhere.
+- **Every date has a gate.** The product must be public and usable on the day
+  (store page live, sign-up open). Check the gate two days before. If it is
+  still open, move the date. Do not launch a waitlist page to keep a date.
+- **Weekday or weekend.** Weekends bring less traffic and less competition.
+  Fine for a listing-and-badge goal, weak for an installs goal. **verify**
+  how the site ranks and features launches before relying on this.
+- **Spacing.** Two launches from one maker on one day share one supporter
+  list. Space them when reach matters; the same day is fine when the owner's
+  time is the limit. It is the owner's call: say the tradeoff once, then
+  record the choice.
+- **New accounts wait.** Product Hunt has made new personal accounts wait
+  about a week before posting (**verify**). Count that into the first date.
+- **Measure it.** Confirm the landing page is counted by analytics before the
+  day, and give each launch site its own campaign tag.
+- **Write it down once.** Put the calendar and the reasons in the project's
+  decision log, and the per-directory rows in the sheet. A date that lives
+  only in a chat is gone by the next session.
 
 ---
 

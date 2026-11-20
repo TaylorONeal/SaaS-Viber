@@ -1,7 +1,7 @@
-batch,property,directory,submit_url,login,listing_contact_email,expected_link,status,live_listing_url,rel_checked,date,notes
-0,<property>,Pre-flight fixes,,,,n/a,todo,,,,"canonical, duplicate host redirect, meta description, repo Website field"
-1,<repo>,LibHunt,<submit url>,none,,followed (verify),todo,,,,
-2,<property>,dev.to write-up,<submit url>,GitHub sign-in,,followed (verify),todo,,,,Draft only; owner publishes
-3,<saas>,SaaSHub,<submit url>,listings inbox,<public email>,followed once verified (verify),todo,,,,Verify ownership with the meta tag
-4,<app>,AlternativeTo,<submit url>,listings inbox,,nofollow (verify),todo,,,,Alternative to <competitor>
-LD,<unreleased app>,Launch sites + store links on every listing,,,,,launch-day,,,,When the store page is live
+batch,property,directory,submit_url,login,listing_contact_email,expected_link,status,live_listing_url,rel_checked,date,planned_date,gate,notes
+0,<property>,Pre-flight fixes,,,,n/a,todo,,,,,,"canonical, duplicate host redirect, meta description, repo Website field"
+1,<repo>,LibHunt,<submit url>,none,,followed (verify),todo,,,,,,
+2,<property>,dev.to write-up,<submit url>,GitHub sign-in,,followed (verify),todo,,,,,,Draft only; owner publishes
+3,<saas>,SaaSHub,<submit url>,listings inbox,<public email>,followed once verified (verify),todo,,,,,,Verify ownership with the meta tag
+4,<app>,AlternativeTo,<submit url>,listings inbox,,nofollow (verify),todo,,,,,,Alternative to <competitor>
+LD,<unreleased app>,Launch sites + store links on every listing,,,,,launch-day,,,,<launch date>,Store page live,When the store page is live
