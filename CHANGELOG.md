@@ -12,6 +12,12 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
 ## [Unreleased]
 
 ### Added
+- `docs/guides/TEAM_ACCESS_LIFECYCLE.md` (Nov 20, 2026) -- the life of a team
+  member an owner adds: invite that ends in a usable credential, the in-between
+  states to show, role change, removal as a process (record first, end access
+  on every request, hand open work back, keep history), an append-only audit
+  trail, and the end-to-end test that proves it. Lessons 110 to 113 in
+  `docs/ai-agents/LESSONS_LEARNED.md`. Registered in `docs/INDEX.md`.
 - `skills/backlink-directories-skill/` (Nov 17, 2026) -- free directory
   listings for a portfolio of public properties: pre-flight fixes before any
   link (duplicate host redirects, canonical and og:url, noindex, honest meta

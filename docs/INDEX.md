@@ -202,6 +202,7 @@ You are leveraging AI assistants (Claude, ChatGPT, Copilot, etc.) to accelerate 
 - [Public Repo Repurposing Guide](./guides/PUBLIC_REPO_REPURPOSING_GUIDE.md) — Patterns mined from related public repos for SaaS starter-kit reuse
 - [Skills](../skills/README.md) — Reusable agent skills (taste-skill governs frontend visual standards)
 - [Web to Mobile Launch Playbook](./guides/WEB_TO_MOBILE_LAUNCH_PLAYBOOK.md) — End-to-end sequence: parallel paperwork, build, billing, device testing, submission, release
+- [Team Access Lifecycle](./guides/TEAM_ACCESS_LIFECYCLE.md): invite to first sign-in, role changes, removal with work handover, append-only audit trail, and the states to show in between
 - [Device Test Runbook](./guides/DEVICE_TEST_RUNBOOK.md) — Real-device test matrix, evidence log, mirroring fallbacks
 - [Launch Tracker Template](./templates/LAUNCH_TRACKER_TEMPLATE.md) — Evidence-based gate tracker for one app or a portfolio
 - [Project Dashboard Template](./templates/project-dashboard/README.md): portfolio status page with a four-bucket "Waiting on you" list and a Cowork script template
