@@ -12,6 +12,12 @@ and uses date-based template versions (`Template vMAJOR.MINOR`).
 ## [Unreleased]
 
 ### Added
+- `docs/guides/TEAM_ACCESS_LIFECYCLE.md` (Nov 20, 2026) -- the life of a team
+  member an owner adds: invite that ends in a usable credential, the in-between
+  states to show, role change, removal as a process (record first, end access
+  on every request, hand open work back, keep history), an append-only audit
+  trail, and the end-to-end test that proves it. Lessons 113 to 116 in
+  `docs/ai-agents/LESSONS_LEARNED.md`. Registered in `docs/INDEX.md`.
 - `skills/backlink-directories-skill/` launch calendar (Nov 20, 2026) --
   section 8 now covers setting launch dates for several products: name the
   goal, check the owner's calendar, a gate on every date, weekday versus

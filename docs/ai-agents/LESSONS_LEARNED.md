@@ -843,6 +843,38 @@ retention messages are the only place to speak in that flow. Set one up per
 auto-renewable subscription as part of launch, not after churn shows up. See
 `skills/retention-messaging-skill/SKILL.md`.
 
+### 116. An Invite That Signs Someone In Is Not an Account They Can Use
+
+**Wrong:** Send the auth provider's invite email and call staff onboarding done. The link signs the person in on the web with no password. The mobile app asks for email and password, so they are locked out on day one.
+
+**Right:** Land the invite on a "choose your password" page, then tell them to open the app and sign in with that email. Handle the expired link (point to "Forgot password"). Put the redirect on the auth provider's allow list. See [Team Access Lifecycle](../guides/TEAM_ACCESS_LIFECYCLE.md).
+
+---
+
+### 115. Record the Access Change Before You Apply It
+
+**Wrong:** Update the role or active flag, then write the audit row. When the audit write fails (missing table privilege, in our case) the change stands with no record.
+
+**Right:** Write the audit row first and refuse the change if it cannot be written. Make the audit table append-only with a trigger, for the server role too, and allow only foreign keys cleared by a cascade so deleting a tenant still works.
+
+---
+
+### 114. Removal Is a Process: Access, Open Work, History
+
+**Wrong:** "Remove teammate" flips a flag or deletes the row. Their open session keeps working until the token expires, and their name stays on future work.
+
+**Right:** Authorization reads the active flag on every request, so an open session stops working at once. Future assignments go back to "nobody assigned". The membership row is deactivated, never deleted. The owner sees all of this in a confirmation before it happens.
+
+---
+
+### 113. A Skipped Step in the End-to-End Test Is an Untested Feature
+
+**Wrong:** The sign-up test skips the optional "add your team" step to keep the run short. The step works in isolation, the page that should manage the team afterwards is sample data behind a "not available yet" screen, and nobody notices because the test is green.
+
+**Right:** Run optional steps in the test. Before trusting a green run, list what it skipped and check production for evidence the flow has ever happened (for example, a count of invited users).
+
+---
+
 ### 109. Keep Prices Out of Retention Message Text
 
 Retention message header and body are shown to every subscriber, including
